@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_container"
+    tools:context="com.vtb.vtbproject.MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rectangle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="490dp"
+        android:background="@drawable/background_visa_card"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/master_logo"
+            android:layout_width="57dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:contentDescription="@string/master_logo"
+            android:src="@drawable/master_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="77dp"
+            android:layout_height="27dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:contentDescription="@string/logo_vtb"
+            android:src="@drawable/logo_vtb"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rectangle_3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="163dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/rectangle"
+        app:layout_constraintVertical_bias="1.0">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sing_in_apple"
+            android:layout_width="345dp"
+            android:layout_height="44dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="23dp"
+            android:background="@drawable/background_sing_in_apple"
+            android:clickable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="10dp"
+                android:contentDescription="@string/icon_apple"
+                android:src="@drawable/icon_apple"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/headLine"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="54dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="25dp"
+
+                android:fontFamily="@font/gotham_pro"
+                android:gravity="center_horizontal|center_vertical"
+                android:lineSpacingExtra="5sp"
+                android:text="@string/text_headLine"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="normal"
+
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_goneMarginBottom="11dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sing_in_facebook"
+            android:layout_width="345dp"
+            android:layout_height="44dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/background_sing_in_facebook"
+            android:clickable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sing_in_apple">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="13dp"
+                android:contentDescription="@string/icon_facebook"
+                android:src="@drawable/icon_fb"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/headLine_facebook"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="54dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="11dp"
+                android:fontFamily="@font/gotham_pro"
+                android:gravity="center_horizontal|center_vertical"
+                android:lineSpacingExtra="5sp"
+                android:text="@string/text_headLine_facebook"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sing_in_vk"
+            android:layout_width="345dp"
+            android:layout_height="44dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/background_sing_in_vk"
+            android:clickable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sing_in_facebook">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="12dp"
+                android:layout_marginStart="17dp"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/icon_vkontakte"
+                android:src="@drawable/icon_vk"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/headLine_vk"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="54dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="11dp"
+                android:fontFamily="@font/gotham_pro"
+                android:gravity="center_horizontal|center_vertical"
+                android:lineSpacingExtra="5sp"
+                android:text="@string/text_headline_vk"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_goneMarginBottom="11dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sing_in_email"
+            android:layout_width="345dp"
+            android:layout_height="44dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/background_sing_in_email"
+            android:clickable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sing_in_vk">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="12.8dp"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/icon_email"
+                android:src="@drawable/icon_email"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/headLine_email"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="54dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="11dp"
+                android:fontFamily="@font/gotham_pro"
+                android:gravity="center_horizontal|center_vertical"
+                android:lineSpacingExtra="5sp"
+                android:text="@string/text_headline_email"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_goneMarginBottom="11dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tab_bar"
+            android:layout_width="188dp"
+            android:layout_height="54dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="49dp"
+            android:background="@drawable/background_tab_bar"
+            android:elevation="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/icon_airplane"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="18dp"
+                android:clickable="true"
+                android:contentDescription="@string/icon_airplane"
+                android:src="@drawable/icon_airplane"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/icon_hotel"
+                android:layout_width="23dp"
+                android:layout_height="13dp"
+                android:layout_marginStart="23.5dp"
+                android:layout_marginTop="21dp"
+                android:layout_marginBottom="20dp"
+                android:clickable="true"
+                android:contentDescription="@string/icon_hotel"
+                android:src="@drawable/icon_hotel"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/icon_airplane"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/icon_rest"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="10.5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:clickable="true"
+                android:contentDescription="@string/icon_rest"
+                android:src="@drawable/icon_rest"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/icon_hotel"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/icon_logo"
+                android:layout_width="19dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="19dp"
+                android:layout_marginBottom="16dp"
+                android:clickable="true"
+                android:contentDescription="@string/icon_logo"
+                android:src="@drawable/icon_logo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/icon_rest"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rectangle_2"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="135dp"
+        android:layout_marginBottom="518dp"
+        android:background="@drawable/background_rectangle_2"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="276dp"
+            android:layout_marginBottom="11dp"
+            android:fontFamily="@font/gotham_pro"
+            android:gravity="top"
+            android:lineSpacingExtra="4sp"
+            android:text="@string/text_title"
+            android:textAppearance="@style/title"
+            android:textSize="18sp"
+            android:textStyle="normal"
+            android:translationY="-2.19sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/component"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginHorizontal="175dp"
+            android:layout_marginBottom="43dp"
+            android:background="@drawable/background_component"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

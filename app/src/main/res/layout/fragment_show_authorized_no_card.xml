@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/container_layout_user"
+    android:background="@color/background_container">
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/visa_card"
+        android:layout_width="345dp"
+        android:layout_height="218dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="490dp"
+        android:background="@drawable/background_visa_card"
+        android:clickable="true"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="54.01dp"
+            android:layout_height="26.21dp"
+            android:layout_marginStart="51.49dp"
+            android:layout_marginBottom="19.08dp"
+            android:contentDescription="@string/icon_armenian_guide"
+            android:src="@drawable/icon_armenia_guide"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/master_logo"
+            android:layout_width="57dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:contentDescription="@string/master_logo"
+            android:src="@drawable/master_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="77dp"
+            android:layout_height="27dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:contentDescription="@string/logo_vtb"
+            android:src="@drawable/logo_vtb"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btn_get_virtual_card"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="15sp"
+            android:layout_marginBottom="15sp"
+            android:background="@drawable/background_button_create_card"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/text_get_virtual_card"
+                android:layout_width="131dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="11.5dp"
+                android:layout_marginBottom="10.5dp"
+                android:fontFamily="@font/gotham_pro"
+                android:gravity="end|center_vertical"
+                android:lineSpacingExtra="4sp"
+                android:text="@string/text_get_virtual_card"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="2dp"
+                android:layout_height="11dp"
+                android:layout_marginVertical="15dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="13.5dp"
+                android:contentDescription="@string/icon_next"
+                android:src="@drawable/icon_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/text_get_virtual_card"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:layout_width="27.98dp"
+            android:layout_height="34.94dp"
+            android:layout_marginStart="19.46dp"
+            android:layout_marginBottom="15.82dp"
+            android:contentDescription="@string/icon_logo_white"
+            android:src="@drawable/icon_logo_white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rectangle_1"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="105dp"
+        android:background="@drawable/background_rectangle_2"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/component"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginBottom="43dp"
+            android:background="@drawable/background_component"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rectangle_2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="28dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/rectangle_1">
+
+        <ImageView
+            android:id="@+id/facebook_icon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="136dp"
+            android:layout_marginTop="125dp"
+            android:layout_marginEnd="223dp"
+            android:clickable="true"
+            android:contentDescription="@string/icon_facebook"
+            android:src="@drawable/icon_fb_red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/twitter_icon"
+            android:layout_width="18dp"
+            android:layout_height="14.73dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="126.27dp"
+            android:clickable="true"
+            android:contentDescription="@string/twitter_icon"
+            android:src="@drawable/icon_tw"
+            app:layout_constraintStart_toEndOf="@id/facebook_icon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="124dp"
+            android:layout_marginEnd="134dp"
+            android:clickable="true"
+            android:contentDescription="@string/instagram_icon"
+            android:src="@drawable/icon_insta"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/twitter_icon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tab_bar"
+        android:layout_width="188dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="49dp"
+        android:background="@drawable/background_tab_bar"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/icon_airplane"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="18dp"
+            android:clickable="true"
+            android:contentDescription="@string/icon_airplane"
+            android:src="@drawable/icon_airplane"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/icon_hotel"
+            android:layout_width="23dp"
+            android:layout_height="13dp"
+            android:layout_marginStart="23.5dp"
+            android:layout_marginTop="21dp"
+            android:layout_marginBottom="20dp"
+            android:clickable="true"
+            android:contentDescription="@string/icon_hotel"
+            android:src="@drawable/icon_hotel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/icon_airplane"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/icon_rest"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="10.5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:clickable="true"
+            android:contentDescription="@string/icon_rest"
+            android:src="@drawable/icon_rest"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/icon_hotel"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/icon_logo"
+            android:layout_width="19dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="19dp"
+            android:layout_marginBottom="16dp"
+            android:clickable="true"
+            android:contentDescription="@string/icon_logo"
+            android:src="@drawable/icon_logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/icon_rest"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_user"
+        android:layout_width="0dp"
+        android:layout_height="78dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/background_rectangle_2"
+        android:clickable="true"
+        android:elevation="20dp"
+        app:layout_constraintEnd_toEndOf="@id/rectangle_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/rectangle_1">
+
+        <ImageView
+            android:id="@+id/user_avatar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/background_user_avatar"
+            android:contentDescription="@string/user_avatar"
+            android:src="@drawable/user_avatar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/gotham_pro"
+            android:gravity="bottom"
+            android:text="@string/user_name"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            android:translationY="2.34sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_user_email"
+            android:layout_width="113dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="45dp"
+            android:fontFamily="@font/gotham_pro"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="3sp"
+            android:text="@string/user_email"
+            android:textColor="@color/text_user_email"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            android:translationY="2.34sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="11.9dp"
+            android:layout_height="11.9dp"
+            android:layout_marginStart="312dp"
+            android:layout_marginTop="33dp"
+            android:layout_marginEnd="19dp"
+            android:layout_marginBottom="31dp"
+            android:contentDescription="@string/icon_next"
+            android:src="@drawable/icon_next_gray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

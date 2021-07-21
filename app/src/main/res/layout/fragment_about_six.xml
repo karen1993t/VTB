@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fragments_about">
+
+    <TextView
+        android:id="@+id/subhead_6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/gotham_pro"
+        android:gravity="center_horizontal|center_vertical"
+        android:lineHeight="30dp"
+        android:lineSpacingExtra="6sp"
+        android:text="@string/subhead_6"
+        android:textColor="#FFFFFF"
+        android:textFontWeight="700"
+        android:textSize="25sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="p" />
+
+    <TextView
+        android:id="@+id/subhead_6_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="44.5dp"
+        android:layout_marginTop="121dp"
+        android:alpha="0.5"
+        android:fontFamily="@font/gotham_pro"
+        android:gravity="center_vertical|center_horizontal"
+        android:lineHeight="18dp"
+        android:text="@string/headline_6_1"
+        android:textColor="#FFFFFF"
+        android:textFontWeight="400"
+        android:textSize="15sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="p" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bg_1"
+        android:layout_width="289dp"
+        android:layout_height="64dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="157dp"
+        android:background="@drawable/fragment_five_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+
+        >
+
+        <ImageView
+            android:id="@+id/icon_mail"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginStart="13dp"
+            android:src="@drawable/icon_fragment_six"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/icon_email" />
+
+        <TextView
+            android:id="@+id/confirm_you"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="67dp"
+            android:layout_marginTop="13.5dp"
+            android:fontFamily="@font/gotham_pro"
+            android:lineHeight="18dp"
+            android:lineSpacingExtra="4sp"
+            android:text="@string/confirm_you"
+            android:textColor="#FFFFFF"
+            android:textFontWeight="400"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="p" />
+
+        <TextView
+            android:id="@+id/minutes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="67dp"
+            android:layout_marginTop="36.5dp"
+            android:fontFamily="@font/gotham_pro"
+            android:gravity="top"
+            android:lineHeight="14.4dp"
+            android:lineSpacingExtra="3sp"
+            android:text="@string/_2_minutes"
+            android:textColor="#80FFFFFF"
+            android:textFontWeight="400"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            android:translationY="-1.46sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="p" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bg_2"
+        android:layout_width="289dp"
+        android:layout_height="64dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/fragment_five_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bg_1"
+
+
+        >
+
+        <ImageView
+            android:id="@+id/icon_person"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+          android:layout_marginTop="14dp"
+            android:layout_marginStart="13dp"
+            android:src="@drawable/icon_person"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/icon_person" />
+
+        <TextView
+            android:id="@+id/verify_you"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="67dp"
+            android:layout_marginTop="13.5dp"
+            android:fontFamily="@font/gotham_pro"
+            android:lineHeight="18dp"
+            android:lineSpacingExtra="4sp"
+            android:text="@string/verify_you"
+            android:textColor="#FFFFFF"
+            android:textFontWeight="400"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="p" />
+
+        <TextView
+            android:id="@+id/minutes_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="67dp"
+            android:layout_marginTop="36.5dp"
+            android:fontFamily="@font/gotham_pro"
+            android:gravity="top"
+            android:lineHeight="14.4dp"
+            android:lineSpacingExtra="3sp"
+            android:text="@string/_2_minutes"
+            android:textColor="#80FFFFFF"
+            android:textFontWeight="400"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            android:translationY="-1.46sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="p" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bg_3"
+        android:layout_width="289dp"
+        android:layout_height="64dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/fragment_five_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bg_2"
+
+
+        >
+
+        <ImageView
+            android:id="@+id/icon_card"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+           android:layout_marginTop="14dp"
+            android:layout_marginStart="13dp"
+            android:src="@drawable/icon_fragment_six_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/icon_card" />
+
+        <TextView
+            android:id="@+id/get_you"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="67dp"
+            android:layout_marginTop="13.5dp"
+            android:fontFamily="@font/gotham_pro"
+            android:lineHeight="18dp"
+            android:lineSpacingExtra="4sp"
+            android:text="@string/get_you"
+            android:textColor="#FFFFFF"
+            android:textFontWeight="400"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="p" />
+
+        <TextView
+            android:id="@+id/minutes_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="67dp"
+            android:layout_marginTop="36.5dp"
+            android:fontFamily="@font/gotham_pro"
+            android:gravity="top"
+            android:lineHeight="14.4dp"
+            android:lineSpacingExtra="3sp"
+            android:text="@string/_1_minutes"
+            android:textColor="#80FFFFFF"
+            android:textFontWeight="400"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            android:translationY="-1.46sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="p" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:layout_width="57dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="24.34dp"
+        android:src="@drawable/logo_vtb_fragment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="@string/logo_vtb" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="37dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="14dp"
+        android:src="@drawable/logo_master"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/logo_vtb" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

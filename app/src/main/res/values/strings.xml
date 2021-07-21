@@ -1,0 +1,92 @@
+<resources>
+    <string name="app_name">VtbProject</string>
+    <string name="logo_vtb">logo_vtb</string>
+    <string name="text_title">Login via</string>
+    <string name="text_headLine">Apple</string>
+    <string name="text_headLine_facebook">Facebook</string>
+    <string name="text_headline_vk">Vkontakte</string>
+    <string name="text_headline_email">Email</string>
+    <string name="icon_rest">icon_rest</string>
+    <string name="icon_airplane">icon_airplane</string>
+    <string name="icon_hotel">icon_hotel</string>
+    <string name="master_logo">master_logo</string>
+    <string name="icon_apple">icon_apple</string>
+    <string name="icon_facebook">icon_facebook</string>
+    <string name="icon_vkontakte">icon_vkontakte</string>
+    <string name="icon_email">icon_email</string>
+    <string name="icon_logo">icon_logo</string>
+    <string name="action_settings">action_settings</string>
+    <string name="text_get_virtual_card">Get a virtual card</string>
+    <string name="icon_armenian_guide">icon_armenian_guide</string>
+    <string name="icon_next">icon_next</string>
+    <string name="icon_logo_white">icon_logo_white</string>
+    <string name="tab_me">Me</string>
+    <string name="tab_bookings">Bookings</string>
+    <string name="tab_favorites">Favorites</string>
+    <string name="twitter_icon">twitter_icon</string>
+    <string name="instagram_icon">instagram_icon</string>
+    <string name="user_name">Anastasia Mos</string>
+    <string name="user_email">anmos@gmail.com</string>
+    <string name="user_avatar">user_avatar</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="amd_usd_eur">(AMD, USD, EUR, RUR) with preferential conversion rate</string>
+    <string name="subhead">Multi-currency debit account</string>
+    <string name="subhead_1">Instant registration of a virtual card through the application</string>
+    <string name="subhead_2">Full control over your banking activity online</string>
+    <string name="subhead_3">Payment through the Armenia Guide app</string>
+    <string name="subhead_6">Open your VTB card in 3 steps</string>
+    <string name="headline_6_1">Start your account, It will take you 5 minutes</string>
+    <string name="get_started">Get Started</string>
+    <string name="text_login">Login</string>
+    <string name="next">Next</string>
+    <string name="confirm_you">Confirm your e-mail address</string>
+    <string name="verify_you">Verify your identity</string>
+    <string name="_2_minutes">2 minutes</string>
+    <string name="get_you">Get your virtual debit card</string>
+    <string name="_1_minutes">1 minutes</string>
+    <string name="authorization_title_1">Authorization</string>
+    <string name="authorization_title_2">Email</string>
+    <string name="authorization_title_3">Create a password</string>
+    <string name="authorization_title_4">Repeat Password</string>
+    <string name="authorization_title_5">Log In</string>
+    <string name="a">We have sent you an email with a link to confirm your email.</string>
+    <string name="auth_title_1">Resend email</string>
+    <string name="icon_envelop">icon_envelop</string>
+    <string name="card_five">card_five</string>
+    <string name="icon_about">icon_about</string>
+    <string name="title_fragment_one">The virtual card you will love</string>
+    <string name="icon_person">icon_person</string>
+    <string name="icon_card">icon_card</string>
+    <string name="gravity_sce">gravity_sce</string>
+    <string name="open_vtb_card_in_3_steps">Open VTB card in 3 steps</string>
+    <string name="icon_close">icon_close</string>
+    <string name="confirm_you_1">Fill in the form</string>
+    <string name="timer_minutes">2 minutes</string>
+    <string name="text_take_biometrics">Take biometrics</string>
+    <string name="icon_steps_biometric">icon_steps_biometric</string>
+    <string name="icon_steps">icon_steps</string>
+    <string name="text_take_photo">Take a photo of your passport</string>
+    <string name="timer_minutes_1">1 minutes</string>
+    <string name="icon_steps_photo_passport">icon_steps_photo_passport</string>
+    <string name="text_btn_get_started">Get started</string>
+    <string name="title_personal_information">Personal information</string>
+    <string name="text_info_information_user">To get started, tell us about yourself</string>
+    <string name="ed_hint_text_first_name">First name</string>
+    <string name="ed_hint_text_surname">Surname</string>
+    <string name="text_et_date_birth">Date of birth</string>
+    <string name="text_et_country">Country</string>
+    <string name="ed_hint_text_gender">Gender</string>
+    <string name="et_hint_text_citizenship">Citizenship</string>
+    <string-array name="country_name">
+        <item>"Russia"</item>
+        <item>"Armenia"</item>
+    </string-array>
+    <string-array name="citizen_ship">
+        <item>"Russian Federation"</item>
+        <item>"Armenian Federation"</item>
+    </string-array>
+    <string-array name="gender">
+        <item>"Male"</item>
+        <item>"Female"</item>
+    </string-array>
+</resources>

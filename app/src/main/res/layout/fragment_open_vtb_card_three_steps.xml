@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="73dp"
+        android:contentDescription="@string/icon_close"
+        android:src="@drawable/icon_close_vtb_card_steps"
+        app:layout_constraintBottom_toTopOf="@id/text_open_vtb"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_open_vtb"
+        android:layout_width="0dp"
+        android:layout_height="61dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="132.9dp"
+        android:layout_marginBottom="590dp"
+        android:fontFamily="@font/gotham_pro"
+        android:gravity="center_horizontal|center_vertical"
+        android:lineSpacingExtra="6sp"
+        android:text="@string/open_vtb_card_in_3_steps"
+        android:textColor="@color/black"
+        android:textFontWeight="700"
+        android:textSize="25sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="p" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/step_1"
+        android:layout_width="0dp"
+        android:layout_height="74dp"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/background_open_vtb_card_steps"
+        android:clickable="true"
+        android:elevation="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_open_vtb">
+
+        <TextView
+            android:id="@+id/text_fill_in_the_form"
+            android:layout_width="248dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="67dp"
+            android:layout_marginTop="18.5dp"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/gotham_pro"
+            android:gravity="top"
+            android:lineHeight="18dp"
+            android:lineSpacingExtra="4sp"
+            android:text="@string/confirm_you_1"
+            android:textColor="@color/black"
+            android:textFontWeight="400"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            android:translationY="-1.82sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="p" />
+
+        <TextView
+            android:id="@+id/timer_minutes"
+            android:layout_width="0dp"
+            android:layout_height="14dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/gotham_pro"
+            android:gravity="top"
+            android:lineHeight="14.4dp"
+            android:lineSpacingExtra="3sp"
+            android:text="@string/timer_minutes"
+            android:textColor="@color/grey"
+            android:textFontWeight="400"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            android:translationY="-1.46sp"
+            app:layout_constraintEnd_toEndOf="@id/text_fill_in_the_form"
+            app:layout_constraintStart_toStartOf="@id/text_fill_in_the_form"
+            app:layout_constraintTop_toBottomOf="@id/text_fill_in_the_form"
+            tools:targetApi="p" />
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginVertical="19dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginBottom="15sp"
+            android:contentDescription="@string/icon_steps"
+            android:src="@drawable/icons_steps"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/step_2"
+        android:layout_width="0dp"
+        android:layout_height="74dp"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/background_open_vtb_card_steps"
+        android:clickable="true"
+        android:elevation="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/step_1">
+
+        <TextView
+            android:id="@+id/text_take_biometric"
+            android:layout_width="248dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="67dp"
+            android:layout_marginTop="18.5dp"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/gotham_pro"
+            android:gravity="top"
+            android:lineHeight="18dp"
+            android:lineSpacingExtra="4sp"
+            android:text="@string/text_take_biometrics"
+            android:textColor="@color/black"
+            android:textFontWeight="400"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            android:translationY="-1.82sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="p" />
+
+        <TextView
+            android:id="@+id/timer_minutes_1"
+            android:layout_width="0dp"
+            android:layout_height="14dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/gotham_pro"
+            android:gravity="top"
+            android:lineHeight="14.4dp"
+            android:lineSpacingExtra="3sp"
+            android:text="@string/timer_minutes"
+            android:textColor="@color/grey"
+            android:textFontWeight="400"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            android:translationY="-1.46sp"
+            app:layout_constraintEnd_toEndOf="@id/text_take_biometric"
+            app:layout_constraintStart_toStartOf="@id/text_take_biometric"
+            app:layout_constraintTop_toBottomOf="@id/text_take_biometric"
+            tools:targetApi="p" />
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginVertical="19dp"
+            android:layout_marginStart="17dp"
+            android:contentDescription="@string/icon_steps_biometric"
+            android:src="@drawable/icons_steps_biometric"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/step_3"
+        android:layout_width="0dp"
+        android:layout_height="74dp"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/background_open_vtb_card_steps"
+        android:clickable="true"
+        android:elevation="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/step_2">
+
+        <TextView
+            android:id="@+id/text_take_photo"
+            android:layout_width="248dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="67dp"
+            android:layout_marginTop="18.5dp"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/gotham_pro"
+            android:gravity="top"
+            android:lineHeight="18dp"
+            android:lineSpacingExtra="4sp"
+            android:text="@string/text_take_photo"
+            android:textColor="@color/black"
+            android:textFontWeight="400"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            android:translationY="-1.82sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="p" />
+
+        <TextView
+            android:id="@+id/timer_minutes_2"
+            android:layout_width="0dp"
+            android:layout_height="14dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/gotham_pro"
+            android:gravity="top"
+            android:lineHeight="14.4dp"
+            android:lineSpacingExtra="3sp"
+            android:text="@string/timer_minutes_1"
+            android:textColor="@color/grey"
+            android:textFontWeight="400"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            android:translationY="-1.46sp"
+            app:layout_constraintEnd_toEndOf="@id/text_take_photo"
+            app:layout_constraintStart_toStartOf="@id/text_take_photo"
+            app:layout_constraintTop_toBottomOf="@id/text_take_photo"
+            tools:targetApi="p" />
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginVertical="19dp"
+            android:layout_marginStart="17dp"
+            android:contentDescription="@string/icon_steps_photo_passport"
+            android:src="@drawable/icons_steps_photo_passport"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_get_started"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginBottom="44dp"
+        android:text="@string/text_btn_get_started"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:lineSpacingExtra="5sp"
+        android:gravity="center_vertical|center_horizontal"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        android:lineHeight="20dp"
+        android:textFontWeight="400"
+        android:fontFamily="@font/gotham_pro"
+        android:background="@drawable/button_next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:targetApi="p" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

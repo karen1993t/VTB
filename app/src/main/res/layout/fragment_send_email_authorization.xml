@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:alpha="0.99"
+    android:background="#CCF2F0F0"
+    tools:context=".authorization.AuthorizationFragmentSendEmail">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:fontFamily="@font/gotham_pro"
+        android:gravity="center_horizontal|center_vertical"
+        android:lineHeight="20dp"
+        android:lineSpacingExtra="5sp"
+        android:text="@string/authorization_title_1"
+        android:textColor="#000000"
+        android:textFontWeight="400"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="p" />
+
+    <ImageView
+        android:id="@+id/icon_close_fragment"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginTop="14.69dp"
+        android:layout_marginEnd="19.69dp"
+        android:background="#00000000"
+        android:clickable="true"
+        android:contentDescription="@string/icon_close"
+        android:src="@drawable/icon_close_vtb_card_steps"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/icon_envelop"
+        android:layout_width="185dp"
+        android:layout_height="50dp"
+        android:contentDescription="@string/icon_envelop"
+        android:src="@drawable/icon_envelop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/subhead_auth"
+        android:layout_width="252dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/gotham_pro"
+        android:gravity="center_horizontal|center_vertical"
+        android:lineHeight="20dp"
+        android:lineSpacingExtra="5sp"
+        android:text="@string/a"
+        android:textColor="#000000"
+        android:textFontWeight="400"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        android:translationY="-2.34dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/icon_envelop"
+        tools:targetApi="p" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginBottom="44dp"
+        android:background="@drawable/background_resend_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/subhead_auth_1"
+            android:layout_width="252dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gotham_pro"
+            android:gravity="center_horizontal|center_vertical"
+            android:lineHeight="20dp"
+            android:lineSpacingExtra="5sp"
+            android:text="@string/auth_title_1"
+            android:textColor="#000000"
+            android:textFontWeight="400"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="p" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
