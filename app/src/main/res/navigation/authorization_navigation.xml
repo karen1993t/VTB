@@ -21,6 +21,8 @@
         tools:layout="@layout/fragment_send_email_authorization" >
         <action
             android:id="@+id/action_authorizationFragmentSendEmail_to_authorizationFirstFragment"
-            app:destination="@id/authorizationFirstFragment" />
+            app:destination="@id/authorizationFirstFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
     </fragment>
 </navigation>

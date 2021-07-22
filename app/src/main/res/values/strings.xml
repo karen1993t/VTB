@@ -77,6 +77,11 @@
     <string name="text_et_country">Country</string>
     <string name="ed_hint_text_gender">Gender</string>
     <string name="et_hint_text_citizenship">Citizenship</string>
+    <string name="sign_in_title">Create a 5 digest-code</string>
+    <string name="circle1">circle1</string>
+    <string name="title_face_id">Allow app to use Face ID?</string>
+    <string name="title_face_">Not now</string>
+    <string name="title_face_1">Allow</string>
     <string-array name="country_name">
         <item>"Russia"</item>
         <item>"Armenia"</item>

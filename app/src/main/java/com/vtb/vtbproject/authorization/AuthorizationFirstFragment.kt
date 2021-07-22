@@ -51,13 +51,20 @@ class AuthorizationFirstFragment : Fragment() {
                 }
 
                 override fun afterTextChanged(s: Editable?) {
-                    if (bindingAuthFirst.editPass.editText!!.length() == 0
-                    ) {
-                        bindingAuthFirst.editPass.error = "enter minimum 8 symbols"
-                    } else {
-                        bindingAuthFirst.editPass.error = null
+                    when {
+                        bindingAuthFirst.editPass.editText!!.length() == 0 -> {
+                            bindingAuthFirst.editPass.error = "enter password"
+                        }
+                        bindingAuthFirst.editPass.editText!!.length()<6 -> {
+
+                            bindingAuthFirst.editPass.error = "min length  is 6"
+                        }
+                        else -> {
+                            bindingAuthFirst.editPass.error = null
+                        }
                     }
                 }
+
                 override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 }
             }
@@ -71,15 +78,58 @@ class AuthorizationFirstFragment : Fragment() {
                 }
 
                 override fun afterTextChanged(s: Editable?) {
-                    if (bindingAuthFirst.repPass.editText!!.length() == 0
-                    ) {
-                        bindingAuthFirst.repPass.error = "enter minimum 8 symbols"
-                    } else {
-                        bindingAuthFirst.repPass.error = null
+                    when {
+                        bindingAuthFirst.repPass.editText!!.length() == 0 -> {
+                            bindingAuthFirst.repPass.error = "repeat password"
+                        }
+                        bindingAuthFirst.repPass.editText!!.length()<6 -> {
+
+                            bindingAuthFirst.repPass.error = "min length  is 6"
+                        }
+                        password2 != password1->{
+                            bindingAuthFirst.repPass.error = "password do not match"
+                        }
+                        else -> {
+                            bindingAuthFirst.repPass.error = null
+                        }
                     }
                 }
+
                 override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 }
+            }
+        )
+        bindingAuthFirst.editEmail.editText?.addTextChangedListener(
+            object :TextWatcher{
+                override fun beforeTextChanged(
+                    s: CharSequence?,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
+                }
+
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                }
+
+                override fun afterTextChanged(s: Editable?) {
+                    when{
+                        !bindingAuthFirst.editEmail.editText.toString().endsWith("@gmail.com")->{
+                            bindingAuthFirst.editEmail.error = "enter @gmail.com"
+                        }
+                        bindingAuthFirst.editEmail.editText!!.length() == 0->{
+                           bindingAuthFirst.editEmail.error =  "enter email"
+                        }
+//                        bindingAuthFirst.editEmail.editText!!.length() <= 12->{
+//                            bindingAuthFirst.editEmail.error =  "enter correct email"
+//                        }
+                        else -> {
+                            bindingAuthFirst.editEmail.error = null
+                        }
+
+                    }
+                }
+
             }
         )
     }

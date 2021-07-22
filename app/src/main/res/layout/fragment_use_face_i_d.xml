@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".sign_in.UseFaceIDFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="270dp"
+        android:layout_height="100dp"
+        android:elevation="10dp"
+        android:background="@drawable/background_face_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+
+    <TextView
+        android:id="@+id/title_face_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/s_f_pro"
+        android:gravity="center_horizontal|top"
+        android:text="@string/title_face_id"
+        android:textColor="#000000"
+        android:textFontWeight="600"
+        android:textSize="17sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="p" />
+
+        <TextView
+            android:id="@+id/title_not_now"
+            android:layout_width="135dp"
+            android:layout_height="50dp"
+            android:fontFamily="@font/s_f_pro"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/title_face_"
+            android:textColor="#007AFF"
+            android:textFontWeight="400"
+            android:textSize="17sp"
+
+            android:clickable="true"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:targetApi="p" />
+        <TextView
+            android:id="@+id/title_allow"
+            android:layout_width="135dp"
+            android:layout_height="50dp"
+            android:fontFamily="@font/s_f_pro"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/title_face_1"
+            android:textColor="#007AFF"
+            android:textFontWeight="400"
+            android:clickable="true"
+            android:textSize="17sp"
+            android:textStyle="normal"
+           app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:targetApi="p" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
