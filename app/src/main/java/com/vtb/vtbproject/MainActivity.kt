@@ -7,6 +7,7 @@ import android.view.Menu
 import android.view.MenuItem
 import com.vtb.vtbproject.create_account_and_visa_card.ShowAuthorizationActivity
 import com.vtb.vtbproject.databinding.ActivityMainBinding
+import com.vtb.vtbproject.sign_in.SignIn
 
 
 class MainActivity : AppCompatActivity() {
@@ -22,6 +23,12 @@ class MainActivity : AppCompatActivity() {
         val intentShowAuthorization = Intent(this, ShowAuthorizationActivity::class.java)
         bindingMain.headLineEmail.setOnClickListener() {
             startActivity(intentShowAuthorization)
+        }
+
+
+        //Enter Sign in ......temporary
+        bindingMain.singInApple.setOnClickListener {
+            startActivity(Intent(this,SignIn::class.java))
         }
 
     }

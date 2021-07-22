@@ -8,18 +8,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.VtbProject">
-        <activity android:name=".open_vtb_card_steps.OpenVtbCardStepsActivity"
-            android:theme="@style/action_bar_white"/>
-        <activity android:name=".authorization.Authorization"
+        <activity android:name=".sign_in.SignIn"
             android:theme="@style/themeAuth"/>
         <activity
+            android:name=".open_vtb_card_steps.OpenVtbCardStepsActivity"
+            android:theme="@style/action_bar_white" />
+        <activity
+            android:name=".authorization.Authorization"
+            android:theme="@style/themeAuth" />
+        <activity
             android:name=".on_boarding_about_fragments.OnBoardingAbout"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:screenOrientation="locked"/>
+            android:screenOrientation="locked"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".create_account_and_visa_card.ShowAuthorizationActivity" />
-        <activity android:name=".MainActivity" >
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
