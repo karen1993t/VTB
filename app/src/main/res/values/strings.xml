@@ -77,16 +77,32 @@
     <string name="text_et_country">Country</string>
     <string name="ed_hint_text_gender">Gender</string>
     <string name="et_hint_text_citizenship">Citizenship</string>
+    <string name="title_mobile_phone_number">Mobile phone number</string>
+    <string name="text_info_mobile_phone_number">WeII need it later to pair your smartphone to your account. This helps keep your account safe</string>
+    <string name="et_hint_phone_number">Mobile number</string>
     <string-array name="country_name">
-        <item>"Russia"</item>
         <item>"Armenia"</item>
+        <item>Belarus</item>
+        <item>"Russia"</item>
+        <item>Tajikistan</item>
+        <item>"Ukraine"</item>
+        <item>"USA"</item>
     </string-array>
     <string-array name="citizen_ship">
-        <item>"Russian Federation"</item>
         <item>"Armenian Federation"</item>
+               <item>"Russian Federation"</item>
+
     </string-array>
     <string-array name="gender">
         <item>"Male"</item>
         <item>"Female"</item>
+    </string-array>
+    <string-array name="slots_type">
+        <item>"+374(__)___-___"</item>
+        <item>"+375(___)____-___"</item>
+        <item>+992(__)___-___"</item>
+        <item>"+7(___)___-__-__"</item>
+        <item>"+380(___)___-__-__"</item>
+        <item>"+1(___)___-__-__"</item>
     </string-array>
 </resources>
