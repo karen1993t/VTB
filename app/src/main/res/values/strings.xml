@@ -85,6 +85,12 @@
     <string name="title_mobile_phone_number">Mobile phone number</string>
     <string name="text_info_mobile_phone_number">WeII need it later to pair your smartphone to your account. This helps keep your account safe</string>
     <string name="et_hint_phone_number">Mobile number</string>
+    <string name="title_legal_address">Legal Address</string>
+    <string name="text_info_legal_address">Please indicate your legal address</string>
+    <string name="text_et_city">City</string>
+    <string name="text_et_street_name">Street name</string>
+    <string name="ed_hint_text_house_number">House number</string>
+    <string name="ed_hint_text_apartment">Apartment</string>
     <string-array name="country_name">
         <item>"Armenia"</item>
         <item>Belarus</item>
@@ -95,7 +101,7 @@
     </string-array>
     <string-array name="citizen_ship">
         <item>"Armenian Federation"</item>
-               <item>"Russian Federation"</item>
+        <item>"Russian Federation"</item>
     </string-array>
     <string-array name="gender">
         <item>"Male"</item>

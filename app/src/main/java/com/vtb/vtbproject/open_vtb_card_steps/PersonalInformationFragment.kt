@@ -2,7 +2,6 @@ package com.vtb.vtbproject.open_vtb_card_steps
 
 import android.app.DatePickerDialog
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,8 +34,6 @@ class PersonalInformationFragment : Fragment() {
         showBinding.btnClose.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_goToHomeFragment)
         }
-
-
 
     }
 
@@ -84,7 +81,8 @@ class PersonalInformationFragment : Fragment() {
 
         showBinding.btnGoToMobilePhoneNumberFragment.setOnClickListener {
             shareViewModel.setCountryName(arrayAdapterCountry.getPosition(showBinding.autoCompleteUserCountry.text.toString()))
-            Navigation.findNavController(showBinding.root).navigate(R.id.action_go_to_mobile_phone_number)
+            Navigation.findNavController(showBinding.root)
+                .navigate(R.id.action_go_to_mobile_phone_number)
         }
     }
 

@@ -39,5 +39,20 @@
             app:destination="@id/showVtbCardThreeStepsFragment"
             app:enterAnim="@android:anim/slide_in_left"
             app:exitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_go_to_legalAddressFragment"
+            app:destination="@id/legalAddressFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/legalAddressFragment"
+        android:name="com.vtb.vtbproject.open_vtb_card_steps.LegalAddressFragment"
+        android:label="LegalAddressFragment" >
+        <action
+            android:id="@+id/action_legalAddressFragment_go_to_home"
+            app:destination="@id/showVtbCardThreeStepsFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
     </fragment>
 </navigation>

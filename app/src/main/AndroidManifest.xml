@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.vtb.vtbproject">
 
     <application
@@ -12,7 +13,9 @@
             android:theme="@style/themeAuth"/>
         <activity
             android:name=".open_vtb_card_steps.OpenVtbCardStepsActivity"
-            android:theme="@style/action_bar_white" />
+            android:theme="@style/action_bar_white"
+            android:screenOrientation="userPortrait"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".authorization.Authorization"
             android:theme="@style/themeAuth" />

@@ -36,6 +36,9 @@ class MobilePhoneNumberFragment : Fragment() {
             Navigation.findNavController(view)
                 .navigate(R.id.action_showMobilePhoneNumberFragment_to_home)
         }
+        showBinding.btnGoToLegalAddressFragment.setOnClickListener{
+            Navigation.findNavController(view).navigate(R.id.action_go_to_legalAddressFragment)
+        }
     }
 
     override fun onResume() {
