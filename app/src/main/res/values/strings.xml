@@ -96,7 +96,6 @@
     <string-array name="citizen_ship">
         <item>"Armenian Federation"</item>
                <item>"Russian Federation"</item>
-
     </string-array>
     <string-array name="gender">
         <item>"Male"</item>
@@ -105,8 +104,8 @@
     <string-array name="slots_type">
         <item>"+374(__)___-___"</item>
         <item>"+375(___)____-___"</item>
-        <item>+992(__)___-___"</item>
         <item>"+7(___)___-__-__"</item>
+        <item>+992(__)___-___"</item>
         <item>"+380(___)___-__-__"</item>
         <item>"+1(___)___-__-__"</item>
     </string-array>
