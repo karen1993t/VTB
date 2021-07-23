@@ -91,6 +91,11 @@
     <string name="text_et_street_name">Street name</string>
     <string name="ed_hint_text_house_number">House number</string>
     <string name="ed_hint_text_apartment">Apartment</string>
+    <string name="enter_password">enter password</string>
+    <string name="min_length">min length is 6</string>
+    <string name="repeat_password">repeat password</string>
+    <string name="password_not_match">password do not match</string>
+    <string name="enter_email">enter email</string>
     <string-array name="country_name">
         <item>"Armenia"</item>
         <item>Belarus</item>
@@ -115,4 +120,6 @@
         <item>"+380(___)___-__-__"</item>
         <item>"+1(___)___-__-__"</item>
     </string-array>
+
+
 </resources>

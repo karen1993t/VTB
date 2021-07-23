@@ -46,7 +46,7 @@ class EnterEmailFragment : Fragment() {
                 override fun afterTextChanged(s: Editable?) {
                     when {
                         bindingEnterEmailFragment.editEmail.editText!!.length() == 0 -> {
-                            bindingEnterEmailFragment.editEmail.error = "enter email"
+                            bindingEnterEmailFragment.editEmail.error = getString(R.string.enter_email)
                         }
                         else -> {
                             bindingEnterEmailFragment.editEmail.error = null

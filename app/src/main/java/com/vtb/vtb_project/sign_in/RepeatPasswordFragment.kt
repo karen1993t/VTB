@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.InputType
 import android.text.TextWatcher
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import com.vtb.vtb_project.R
 import com.vtb.vtb_project.databinding.FragmentRepeatPasswordBinding
@@ -16,6 +18,8 @@ import com.vtb.vtb_project.databinding.FragmentRepeatPasswordBinding
 class RepeatPasswordFragment : Fragment() {
 
     var pin2 = ""
+    var pin1 = ""
+    private val viewModel: ViewModelSignIn by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,9 +34,10 @@ class RepeatPasswordFragment : Fragment() {
             Navigation.findNavController(view)
                 .navigate(R.id.action_enterPasswordFragment_to_enterEmailFragment)
         }
+        viewModel.pin1LiveData.observe(viewLifecycleOwner, {
+            pin1 = it
+        })
 
-//        val pin1 =activity?.intent?.getStringExtra("pin1")
-        val pin1 = "11111"
 
         val requestFocus = bindingRepeatPasswordFragment.editTextRep.requestFocus()
         bindingRepeatPasswordFragment.editTextRep.inputType = InputType.TYPE_CLASS_NUMBER
@@ -74,11 +79,15 @@ class RepeatPasswordFragment : Fragment() {
                             bindingRepeatPasswordFragment.imageviewRepCircle5.setImageResource(R.drawable.circle2)
                         }
                     }
-                    if (pin1 == pin2) {
+                    if (bindingRepeatPasswordFragment.editTextRep.editableText.toString().length == 5 && pin1 == pin2) {
                         Navigation.findNavController(view)
                             .navigate(R.id.action_repeatPasswordFragment_to_useFaceIDFragment)
                     } else if (bindingRepeatPasswordFragment.editTextRep.editableText.toString().length == 5 && pin1 != pin2) {
-                        Toast.makeText(context, "pin codes do not match", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            context,
+                            getString(R.string.password_not_match),
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
 
 

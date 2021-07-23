@@ -3,20 +3,21 @@ package com.vtb.vtb_project.on_boarding_about_fragments
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.viewpager2.widget.MarginPageTransformer
+import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.vtb.vtb_project.R
 import com.vtb.vtb_project.adapters.ViewPagerAdapter
 import com.vtb.vtb_project.authorization.Authorization
-
 import com.vtb.vtb_project.databinding.ActivityOnboardingAboutBinding
 
 
 class OnBoardingAbout : AppCompatActivity() {
     private lateinit var viewPager2: ViewPager2
     private lateinit var tabLayout: TabLayout
+    var booleanFragmentSix: Boolean = false
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,12 +37,28 @@ class OnBoardingAbout : AppCompatActivity() {
             startActivity(Intent(this, Authorization::class.java))
         }
 
-        viewPager2.setPageTransformer(MarginPageTransformer(resources.getDimensionPixelSize(R.dimen.start_margin_fragments)))
+
 
         bindingAbout.bgButtonNext.setOnClickListener {
             viewPager2.currentItem += 1
 
         }
+
+        val livedataOnBoardingAbout = ViewModelProvider(this).get(ViewModelOnBoarding::class.java)
+        livedataOnBoardingAbout.onBoardingLiveData.observe(this, {
+            booleanFragmentSix = it
+            if (booleanFragmentSix) {
+                bindingAbout.headline.text = resources.getString(R.string.get_started)
+                bindingAbout.bgButtonNext.setOnClickListener {
+                    startActivity(Intent(this, Authorization::class.java))
+                }
+            } else {
+                bindingAbout.headline.text = resources.getString(R.string.next)
+
+            }
+        })
+
+
     }
 
 

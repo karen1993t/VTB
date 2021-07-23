@@ -4,16 +4,18 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.InputType.TYPE_CLASS_NUMBER
 import android.text.TextWatcher
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import com.vtb.vtb_project.R
 import com.vtb.vtb_project.databinding.FragmentEnterPasswordBinding
 
 class EnterPasswordFragment : Fragment() {
     private lateinit var pin1: String
+    val viewModel: ViewModelSignIn by activityViewModels()
 
 
     override fun onCreateView(
@@ -21,6 +23,7 @@ class EnterPasswordFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_enter_password, container, false)
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -30,7 +33,8 @@ class EnterPasswordFragment : Fragment() {
             Navigation.findNavController(view)
                 .navigate(R.id.action_enterPasswordFragment_to_enterEmailFragment)
         }
-        val requestFocus = bindingEnterPasswordFragment.editTextEnter.requestFocus()
+
+
         bindingEnterPasswordFragment.editTextEnter.inputType = TYPE_CLASS_NUMBER
         bindingEnterPasswordFragment.editTextEnter.isFocusableInTouchMode
         bindingEnterPasswordFragment.editTextEnter.addTextChangedListener(
@@ -41,16 +45,16 @@ class EnterPasswordFragment : Fragment() {
                     count: Int,
                     after: Int
                 ) {
-
                 }
 
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    pin1 = s.toString()
+
                     if (bindingEnterPasswordFragment.editTextEnter.editableText.toString().length == 5) {
+                        viewModel.setPin1(pin1)
                         Navigation.findNavController(view)
                             .navigate(R.id.action_enterPasswordFragment_to_repeatPasswordFragment)
                     }
-                    pin1 = s.toString()
-
                 }
 
                 override fun afterTextChanged(s: Editable?) {
@@ -71,17 +75,10 @@ class EnterPasswordFragment : Fragment() {
                             bindingEnterPasswordFragment.imageviewCircle5.setImageResource(R.drawable.circle2)
                         }
                     }
-
                 }
-
             }
         )
-//        val intentEnterPassword = Intent(context, RepeatPasswordFragment::class.java)
-//        intentEnterPassword.putExtra("pin1", pin1)
-
     }
-
-
 }
 
 
