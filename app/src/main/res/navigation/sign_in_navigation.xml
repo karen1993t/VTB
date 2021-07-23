@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/enterEmailFragment"
-        android:name="com.vtb.vtbproject.sign_in.EnterEmailFragment"
+        android:name="com.vtb.vtb_project.sign_in.EnterEmailFragment"
         android:label="fragment_enter_email"
         tools:layout="@layout/fragment_enter_email" >
         <action
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/enterPasswordFragment"
-        android:name="com.vtb.vtbproject.sign_in.EnterPasswordFragment"
+        android:name="com.vtb.vtb_project.sign_in.EnterPasswordFragment"
         android:label="fragment_enter_password"
         tools:layout="@layout/fragment_enter_password" >
         <action
@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/repeatPasswordFragment"
-        android:name="com.vtb.vtbproject.sign_in.RepeatPasswordFragment"
+        android:name="com.vtb.vtb_project.sign_in.RepeatPasswordFragment"
         android:label="fragment_repeat_password"
         tools:layout="@layout/fragment_repeat_password" >
         <action
@@ -50,7 +50,7 @@
     </fragment>
     <fragment
         android:id="@+id/useFaceIDFragment"
-        android:name="com.vtb.vtbproject.sign_in.UseFaceIDFragment"
+        android:name="com.vtb.vtb_project.sign_in.UseFaceIDFragment"
         android:label="fragment_use_face_i_d"
         tools:layout="@layout/fragment_use_face_i_d" />
 </navigation>

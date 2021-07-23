@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_container"
-    tools:context="com.vtb.vtbproject.MainActivity">
+    tools:context="com.vtb.vtb_project.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/rectangle"

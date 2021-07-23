@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.vtb.vtbproject">
+    package="com.vtb.vtb_project">
 
     <application
         android:icon="@mipmap/ic_launcher"
@@ -9,22 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.VtbProject">
-        <activity android:name=".sign_in.SignIn"
+        <activity android:name="com.vtb.vtb_project.sign_in.SignIn"
             android:theme="@style/themeAuth"/>
         <activity
-            android:name=".open_vtb_card_steps.OpenVtbCardStepsActivity"
+            android:name="com.vtb.vtb_project.open_vtb_card_steps.OpenVtbCardStepsActivity"
             android:theme="@style/action_bar_white"
             android:screenOrientation="userPortrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".authorization.Authorization"
+            android:name="com.vtb.vtb_project.authorization.Authorization"
             android:theme="@style/themeAuth" />
         <activity
-            android:name=".on_boarding_about_fragments.OnBoardingAbout"
+            android:name="com.vtb.vtb_project.on_boarding_about_fragments.OnBoardingAbout"
             android:screenOrientation="locked"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".create_account_and_visa_card.ShowAuthorizationActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.vtb.vtb_project.create_account_and_visa_card.ShowAuthorizationActivity" />
+        <activity android:name="com.vtb.vtb_project.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
