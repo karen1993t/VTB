@@ -91,28 +91,171 @@
     <string name="text_et_street_name">Street name</string>
     <string name="ed_hint_text_house_number">House number</string>
     <string name="ed_hint_text_apartment">Apartment</string>
+    <string name="title_passport">Passport</string>
+    <string name="text_info_passport">Please tell us your nationality and place of birth</string>
+    <string name="hint_expiry_date">Expiry date</string>
+    <string name="hint_passport_number">Passport number</string>
+    <string name="hint_date_of_issue">Date of issue</string>
+    <string name="hint_social_card_number">Social Card Number</string>
     <string-array name="country_name">
-        <item>"Armenia"</item>
-        <item>Belarus</item>
+        <item>Armenia</item>
+<!--        <item>Belarus</item>-->
         <item>"Russia"</item>
-        <item>Tajikistan</item>
-        <item>"Ukraine"</item>
-        <item>"USA"</item>
+<!--        <item>Tajikistan</item>-->
+<!--        <item>Ukraine</item>-->
+<!--        <item>USA</item>-->
     </string-array>
     <string-array name="citizen_ship">
-        <item>"Armenian Federation"</item>
-        <item>"Russian Federation"</item>
+        <item>Armenian Federation</item>
+        <item>Russian Federation</item>
     </string-array>
     <string-array name="gender">
-        <item>"Male"</item>
-        <item>"Female"</item>
+        <item>Male</item>
+        <item>Female</item>
     </string-array>
     <string-array name="slots_type">
-        <item>"+374(__)___-___"</item>
-        <item>"+375(___)____-___"</item>
-        <item>"+7(___)___-__-__"</item>
-        <item>+992(__)___-___"</item>
-        <item>"+380(___)___-__-__"</item>
-        <item>"+1(___)___-__-__"</item>
+        <item>+374(__)___-___</item>
+<!--     <item>+375(___)____-___</item>-->
+        <item>+7(___)___-__-__</item>
+<!--        <item>+992(__)___-___"</item>-->
+<!--        <item>+380(___)___-__-__</item>-->
+<!--        <item>+1(___)___-__-__</item>-->
     </string-array>
+    <string-array name="city_of_russia">
+        <item>Adygeya (republic)</item>
+        <item>Altay</item>
+        <item>Altay (republic)</item>
+        <item>Amur (oblast)</item>
+        <item>Arkhangelsk (oblast)</item>
+        <item>Astrakhan (oblast)</item>
+        <item>Bashkortostan (republic)</item>
+        <item>Belgorod (oblast)</item>
+        <item>Bryansk (oblast)</item>
+        <item>Buryatiya (republic)</item>
+        <item>Chechnya (republic)</item>
+        <item>Chelyabinsk (oblast)</item>
+        <item>Chukotka (autonomous okrug)</item>
+        <item>Chuvashiya (republic)</item>
+        <item>Dagestan (republic)</item>
+        <item>Ingushetiya (republic)</item>
+        <item>Irkutsk (oblast)</item>
+        <item>Ivanovo (oblast)</item>
+        <item>Kabardino-Balkariya (republic)</item>
+        <item>Kaliningrad (oblast)</item>
+        <item>Kalmykiya (republic)</item>
+        <item>Kaluga (oblast)</item>
+        <item>Kamchatka (kray)</item>
+        <item>Karachayevo-Cherkesiya (republic)</item>
+        <item>Karelia (republic)</item>
+        <item>Kemerovo (oblast)</item>
+        <item>Khabarovsk (kray)</item>
+        <item>Khakasiya (republic)</item>
+        <item>Khanty-Mansi (autonomous okrug)</item>
+        <item>Kirov (oblast)</item>
+        <item>Komi (republic)</item>
+        <item>Kostroma (oblast)</item>
+        <item>Krasnodar (kray)</item>
+        <item>Krasnoyarsk (kray)</item>
+        <item>Kurgan (oblast)</item>
+        <item>Kursk (oblast)</item>
+        <item>Leningrad (oblast)</item>
+        <item>Lipetsk (oblast)</item>
+        <item>Magadan (oblast)</item>
+        <item>Mari El (republic)</item>
+        <item>Mordoviya (republic)</item>
+        <item>Moscow (federal city)</item>
+        <item>Moscow (oblast)</item>l
+        <item>Murmansk (oblast)</item>
+        <item>Nenets (autonomous okrug)</item>
+        <item>Nizhegorod (oblast)</item>
+        <item>North Ossetia–Alania (republic)</item>
+        <item>Novgorod (oblast)</item>
+        <item>Novosibirsk (oblast)</item>
+        <item>Omsk (oblast)</item>
+        <item>Orenburg (oblast)</item>
+        <item>Oryol (oblast)</item>
+        <item>Penza (oblast)</item>
+        <item>Perm (kray)</item>
+        <item>Primorye (kray)</item>
+        <item>Pskov (oblast)</item>
+        <item>Rostov (oblast)</item>
+        <item>Ryazan (oblast)</item>
+        <item>Saint Petersburg (federal city)</item>
+        <item>Sakha (republic)</item>
+        <item>Sakhalin (oblast)</item>
+        <item>Samara (oblast)</item>
+        <item>Saratov (oblast)</item>
+        <item>Smolensk (oblast)</item>
+        <item>Stavropol (kray)</item>
+        <item>Sverdlovsk (oblast)</item>
+        <item>Tambov (oblast)</item>
+        <item>Tatarstan (republic)</item>
+        <item>Tomsk (oblast)</item>
+        <item>Tula (oblast)</item>
+        <item>Tver (oblast)</item>
+        <item>Tyumen (oblast)</item>
+        <item>Tyva (republic)</item>
+        <item>Udmurtiya (republic)</item>
+        <item>Ulyanovsk (oblast)</item>
+        <item>Vladimir (oblast)</item>
+        <item>Volgograd (oblast)</item>
+        <item>Vologda (oblast)</item>
+        <item>Voronezh (oblast)</item>
+        <item>Yamalo-Nenets (autonomous okrug)</item>
+        <item>Yaroslavl (oblast)</item>
+        <item>Yevrey (autonomous oblast)</item>
+        <item>Zabaykalye (kray)</item>
+    </string-array>
+    <string-array name="city_of_armenia">
+        <item>Yerevan</item>
+        <item>Gyumri</item>
+        <item>Vanadzor</item>
+        <item>Vagharshapat</item>
+        <item>Abovyan</item>
+        <item>Kapan</item>
+        <item>Hrazdan</item>
+        <item>Armavir</item>
+        <item>Artashat</item>
+        <item>Ijevan</item>
+        <item>Gavar</item>
+        <item>Goris</item>
+        <item>Charentsavan</item>
+        <item>Ararat</item>
+        <item>Masis</item>
+        <item>Artik</item>
+        <item>Sevan</item>
+        <item>Ashtarak</item>
+        <item>Dilijan</item>
+        <item>Sisian</item>
+        <item>Alaverdi</item>
+        <item>Stepanavan</item>
+        <item>Martuni</item>
+        <item>Spitak</item>
+        <item>Vardenis</item>
+        <item>Yeghvard</item>
+        <item>Vedi</item>
+        <item>Byureghavan</item>
+        <item>Nor Hachn</item>
+        <item>Metsamor</item>
+        <item>Berd</item>
+        <item>Yeghegnadzor</item>
+        <item>Tashir</item>
+        <item>Kajaran</item>
+        <item>Aparan</item>
+        <item>Vayk</item>
+        <item>Chambarak</item>
+        <item>Maralik</item>
+        <item>Noyemberyan</item>
+        <item>Talin</item>
+        <item>Jermuk</item>ւկ)
+        <item>Meghri</item>
+        <item>Ayrum</item>
+        <item>Akhtala</item>
+        <item>Tumanyan</item>
+        <item>Tsaghkadzor</item>
+    </string-array>
+    <string name="error_editText">Not Contains your input name</string>
+    <string name="error_go_to_mobileFragment">Empty Tag! pleas Input full text</string>
+
+
 </resources>

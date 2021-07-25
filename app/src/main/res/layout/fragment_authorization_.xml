@@ -93,9 +93,7 @@
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:hint="@string/authorization_title_3"
-            android:inputType="textPassword"
-
-            />
+            android:inputType="textPassword"/>
     </com.google.android.material.textfield.TextInputLayout>
 
 

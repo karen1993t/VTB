@@ -54,5 +54,20 @@
             app:destination="@id/showVtbCardThreeStepsFragment"
             app:enterAnim="@android:anim/slide_in_left"
             app:exitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_go_to_passportFragment"
+            app:destination="@id/passportFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/passportFragment"
+        android:name="com.vtb.vtb_project.open_vtb_card_steps.PassportFragment"
+        android:label="PassportFragment" >
+        <action
+            android:id="@+id/action_passportFragment_go_to_home"
+            app:destination="@id/showVtbCardThreeStepsFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
     </fragment>
 </navigation>

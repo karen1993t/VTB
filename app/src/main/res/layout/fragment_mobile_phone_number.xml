@@ -66,6 +66,8 @@
         android:layout_marginHorizontal="15dp"
         android:layout_marginTop="33.5dp"
         android:hint="@string/et_hint_phone_number"
+        app:hintTextColor="@color/grey"
+        android:textColorHint="@color/grey"
         app:boxStrokeColor="@color/background_mail"
         app:endIconDrawable="@drawable/icon_next_gray"
         app:endIconMode="custom"

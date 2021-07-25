@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.VtbProject" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
@@ -25,9 +25,11 @@
     <style name="action_bar" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <item name="background">@drawable/background_action_bar</item>
     </style>
+
     <style name="action_bar_white" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="android:statusBarColor">@color/black</item>
     </style>
+
     <style name="MyCustomTextAppearance" parent="TextAppearance.Design.Tab">
         <item name="textAllCaps">false</item>
         <item name="android:textAllCaps">false</item>
@@ -40,19 +42,23 @@
         <item name="tabTextAppearance">@style/MyCustomTextAppearance</item>
         <item name="tabSelectedTextColor">@android:color/black</item>
     </style>
+
     <style name="edit_text_user_information_style" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="hintTextColor">@color/grey</item>
+    </style>
 
-    </style><style name="country_style" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
+    <style name="country_style" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
         <item name="hintTextColor">@color/grey</item>
-           <item name="backgroundTint">@color/white</item>
-    <item name="selectableItemBackground">@color/white</item>
-    <item name="selectableItemBackgroundBorderless">@color/white</item>
-    <item name="boxStrokeColor">@color/grey</item>
-    <item name="fontFamily"> @font/gotham_pro</item>
-<item name="endIconDrawable">@drawable/icon_next_gray</item>
-      </style>
-    <style parent="Theme.MaterialComponents.Light.NoActionBar" name="themeAuth">
+        <item name="backgroundTint">@color/white</item>
+     <item name="mock_labelBackgroundColor">@color/black</item>
+        <item name="selectableItemBackground">@color/white</item>
+        <item name="selectableItemBackgroundBorderless">@color/white</item>
+        <item name="boxStrokeColor">@color/background_mail</item>
+        <item name="fontFamily">@font/gotham_pro</item>
+        <item name="endIconDrawable">@drawable/icon_next_gray</item>
+    </style>
+
+    <style name="themeAuth" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="android:statusBarColor">@color/black</item>
     </style>
 </resources>
