@@ -21,6 +21,8 @@ class MobilePhoneNumberFragment : Fragment() {
     private val sharedViewModel: SharedViewModel by activityViewModels()
     private lateinit var showBinding: FragmentMobilePhoneNumberBinding
     private lateinit var nameSlotsTypeArray: Array<String>
+    var minCountSymbol = 0
+    var isCheckNumberPhone = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,8 +47,7 @@ class MobilePhoneNumberFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        var minCountSymbol = 0
-        var isCheckNumberPhone = false
+
 
         sharedViewModel.countryIndexLiveData.observe(viewLifecycleOwner, {
             val slots = PhoneNumberUnderscoreSlotsParser().parseSlots(nameSlotsTypeArray[it])

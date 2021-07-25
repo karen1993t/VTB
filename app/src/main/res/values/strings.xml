@@ -256,6 +256,11 @@
     </string-array>
     <string name="error_editText">Not Contains your input name</string>
     <string name="error_go_to_mobileFragment">Empty Tag! pleas Input full text</string>
+    <string name="title_communication">Communication</string>
+    <string name="text_info_communication">Please choose a convenient way to receive a statement and contact the bank</string>
+    <string name="et_hint_obtaining_the_statement">Obtaining the statement</string>
+    <string name="et_hint_communication_with_the_bank">Communication with the bank</string>
+    <string name="text_privacy_policy">Agree with Privacy Policy and Terms of Use</string>
 
 
 </resources>

@@ -66,11 +66,11 @@
         android:layout_marginHorizontal="15dp"
         android:layout_marginTop="33.5dp"
         android:hint="@string/et_hint_phone_number"
-        app:hintTextColor="@color/grey"
-        android:textColorHint="@color/grey"
+        android:textColorHint="@color/black"
         app:boxStrokeColor="@color/background_mail"
         app:endIconDrawable="@drawable/icon_next_gray"
         app:endIconMode="custom"
+        app:hintTextColor="@color/grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_info">
@@ -95,6 +95,7 @@
             tools:targetApi="p" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_go_to_legal_address_fragment"
         android:layout_width="0dp"

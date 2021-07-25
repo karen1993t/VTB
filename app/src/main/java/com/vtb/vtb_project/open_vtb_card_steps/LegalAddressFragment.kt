@@ -54,7 +54,9 @@ class LegalAddressFragment : Fragment() {
         showBinding.autoCompleteUserCountry.setText(country[indexArrayOfCountry])
 
         // checked country editText
-
+        if (country.contains(showBinding.autoCompleteUserCountry.text.toString())){
+            isCheckedCountry = true
+        }
         showBinding.autoCompleteUserCountry.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
@@ -78,6 +80,7 @@ class LegalAddressFragment : Fragment() {
             }
 
             override fun afterTextChanged(p0: Editable?) {
+
             }
         })
 
@@ -114,12 +117,6 @@ class LegalAddressFragment : Fragment() {
         })
 
         showBinding.btnGoToIdentityVerificationFragment.setOnClickListener {
-           Log.d("sss","city:$isCheckedCity, country$isCheckedCountry" +
-                   "street:${!showBinding.autoCompleteUserStreet.text.isNullOrEmpty()}" +
-                   "hous:${!showBinding.editUserHouseNumber.text.isNullOrEmpty()}" +
-                   "apart:${ !showBinding.editUserApartment.text.isNullOrEmpty()}"
-
-             )
             when {
                 isCheckedCity && isCheckedCountry &&
                         !showBinding.autoCompleteUserStreet.text.isNullOrEmpty() &&
@@ -134,7 +131,6 @@ class LegalAddressFragment : Fragment() {
                         resources.getString(R.string.error_go_to_mobileFragment),
                         Toast.LENGTH_SHORT
                     ).show()
-
             }
 
         }

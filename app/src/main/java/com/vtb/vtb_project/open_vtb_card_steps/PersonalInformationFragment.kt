@@ -2,6 +2,7 @@ package com.vtb.vtb_project.open_vtb_card_steps
 
 
 import android.app.DatePickerDialog
+
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -13,7 +14,6 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
-import com.google.android.material.textfield.TextInputLayout
 import com.vtb.vtb_project.R
 import com.vtb.vtb_project.databinding.FragmentPersonalInformationBinding
 import java.text.SimpleDateFormat
@@ -49,23 +49,7 @@ class PersonalInformationFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         showBinding.editUserDateOfBirth.setOnClickListener {
-            calendar = Calendar.getInstance()
-            val dateSetListener =
-                DatePickerDialog.OnDateSetListener { _, year, monthOfYear, dayOfMonth ->
-                    calendar.set(Calendar.YEAR, year)
-                    calendar.set(Calendar.MONTH, monthOfYear)
-                    calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
-                    updateDateInView()
-                }
-
-            showBinding.editUserDateOfBirth.setOnClickListener {
-                DatePickerDialog(
-                    requireContext(), dateSetListener,
-                    calendar.get(Calendar.YEAR),
-                    calendar.get(Calendar.MONTH),
-                    calendar.get(Calendar.DAY_OF_MONTH)
-                ).show()
-            }
+            createDateDialog()
         }
         // create Country
         val country = resources.getStringArray(R.array.country_name)
@@ -84,7 +68,8 @@ class PersonalInformationFragment : Fragment() {
             ) {
                 if (!country.contains(autoCompleteUserCountry.toString())) {
                     showBinding.textInputLayoutCountry.isErrorEnabled = true
-                    showBinding.textInputLayoutCountry.error = resources.getString(R.string.error_editText)
+                    showBinding.textInputLayoutCountry.error =
+                        resources.getString(R.string.error_editText)
                     isCheckedCountry = false
                 } else {
                     showBinding.textInputLayoutCountry.isErrorEnabled = false
@@ -114,7 +99,8 @@ class PersonalInformationFragment : Fragment() {
             ) {
                 if (!citizenShip.contains(editUserCitizenShip.toString())) {
                     showBinding.textInputLayoutCitizenShip.isErrorEnabled = true
-                    showBinding.textInputLayoutCitizenShip.error = resources.getString(R.string.error_editText)
+                    showBinding.textInputLayoutCitizenShip.error =
+                        resources.getString(R.string.error_editText)
                     isCheckedCitizenship = false
                 } else {
                     showBinding.textInputLayoutCitizenShip.isErrorEnabled = false
@@ -160,6 +146,24 @@ class PersonalInformationFragment : Fragment() {
         val simpleDateFormat = SimpleDateFormat(myFormat, Locale.US)
         formatDate = simpleDateFormat.format(calendar.time)
         showBinding.editUserDateOfBirth.setText(formatDate)
+    }
+
+    private fun createDateDialog() {
+        calendar = Calendar.getInstance()
+        val dateSetListener =
+            DatePickerDialog.OnDateSetListener { _, year, monthOfYear, dayOfMonth ->
+                calendar.set(Calendar.YEAR, year)
+                calendar.set(Calendar.MONTH, monthOfYear)
+                calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+                updateDateInView()
+            }
+        val dialog = DatePickerDialog(
+            requireContext(), dateSetListener,
+            calendar.get(Calendar.YEAR),
+            calendar.get(Calendar.MONTH),
+            calendar.get(Calendar.DAY_OF_MONTH)
+        )
+        dialog.show()
     }
 
     private fun sendData() {

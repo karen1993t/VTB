@@ -6,16 +6,17 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/title_passport"
+        android:id="@+id/title_communication"
         android:layout_width="0dp"
         android:layout_height="24dp"
         android:layout_marginStart="15.5dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="270.5dp"
+        android:layout_marginEnd="198.5dp"
         android:fontFamily="@font/gotham_pro"
+        android:gravity="center_vertical"
         android:lineHeight="24dp"
         android:lineSpacingExtra="5sp"
-        android:text="@string/title_passport"
+        android:text="@string/title_communication"
         android:textColor="@color/black"
         android:textFontWeight="700"
         android:textSize="20sp"
@@ -29,18 +30,18 @@
         android:id="@+id/btn_close"
         android:layout_width="44dp"
         android:layout_height="44dp"
-        android:layout_marginStart="221.5dp"
+        android:layout_marginStart="149.5dp"
         android:layout_marginEnd="5dp"
         android:clickable="true"
         android:contentDescription="@string/icon_close"
         android:src="@drawable/icon_close_vtb_card_steps"
-        app:layout_constraintBottom_toBottomOf="@id/title_passport"
+        app:layout_constraintBottom_toBottomOf="@+id/title_communication"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/title_passport"
-        app:layout_constraintTop_toTopOf="@id/title_passport" />
+        app:layout_constraintStart_toEndOf="@+id/title_communication"
+        app:layout_constraintTop_toTopOf="@+id/title_communication" />
 
     <TextView
-        android:id="@+id/text_info"
+        android:id="@+id/text_info_communication"
         android:layout_width="0dp"
         android:layout_height="36dp"
         android:layout_marginHorizontal="15dp"
@@ -49,67 +50,39 @@
         android:gravity="center_vertical"
         android:lineHeight="18dp"
         android:lineSpacingExtra="4sp"
-        android:text="@string/text_info_passport"
+        android:text="@string/text_info_communication"
         android:textColor="@color/grey"
         android:textFontWeight="400"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title_passport"
+        app:layout_constraintTop_toBottomOf="@+id/title_communication"
         tools:targetApi="p" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/text_input_layout_passport_number"
+        android:id="@+id/text_input_layout_obtaining_the_statement"
         android:layout_width="345dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="15dp"
-        android:layout_marginTop="28.5dp"
-        android:hint="@string/hint_passport_number"
-        app:boxStrokeColor="@color/grey"
+        android:layout_marginTop="33.5dp"
+        android:hint="@string/et_hint_obtaining_the_statement"
         android:textColorHint="@color/black"
-        app:endIconMode="clear_text"
+        app:boxStrokeColor="@color/background_mail"
+        app:endIconDrawable="@drawable/icon_next_gray"
+        app:endIconMode="custom"
         app:hintTextColor="@color/grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_info">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_user_passport_number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:fontFamily="@font/gotham_pro"
-            android:gravity="center_vertical"
-            android:inputType="textPersonName"
-            android:lineSpacingExtra="4sp"
-            android:textColor="@color/black"
-            android:textFontWeight="400"
-            android:textSize="15sp"
-            android:textStyle="normal"
-            tools:targetApi="p" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/text_input_layout_date_of_issue"
-        style="@style/country_style"
-        android:layout_width="345dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="15dp"
-        android:layout_marginTop="14.5dp"
-        android:textColorHint="@color/black"
-        android:hint="@string/hint_date_of_issue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_input_layout_passport_number">
+        app:layout_constraintTop_toBottomOf="@id/text_info_communication">
 
         <AutoCompleteTextView
-            android:id="@+id/edit_user_citizen_ship"
-            style="@style/country_style"
+            android:id="@+id/edit_obtaining_the_statement"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:fontFamily="@font/gotham_pro"
+            android:backgroundTint="@color/white"
+            android:focusableInTouchMode="true"
             android:gravity="center_vertical"
+            android:inputType="none"
             android:lineSpacingExtra="4sp"
             android:textColor="@color/black"
             android:textFontWeight="400"
@@ -117,29 +90,33 @@
             android:textStyle="normal"
             tools:ignore="LabelFor"
             tools:targetApi="p" />
-    </com.google.android.material.textfield.TextInputLayout>
 
+    </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/text_input_layout_expiry_date"
-        style="@style/country_style"
+        android:id="@+id/text_input_layout_communication_with_the_bank"
         android:layout_width="345dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="23dp"
+        android:hint="@string/et_hint_communication_with_the_bank"
         android:textColorHint="@color/black"
-        android:layout_marginTop="14.5dp"
-        android:hint="@string/hint_expiry_date"
+        app:boxStrokeColor="@color/background_mail"
+        app:endIconDrawable="@drawable/icon_next_gray"
+        app:endIconMode="custom"
+        app:hintTextColor="@color/grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_input_layout_date_of_issue">
+        app:layout_constraintTop_toBottomOf="@id/text_input_layout_obtaining_the_statement">
 
         <AutoCompleteTextView
-            android:id="@+id/autoComplete_expiry_date"
-            style="@style/country_style"
+            android:id="@+id/edit_communication_with_the_bank"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:fontFamily="@font/gotham_pro"
+            android:backgroundTint="@color/white"
+            android:focusableInTouchMode="true"
             android:gravity="center_vertical"
+            android:inputType="none"
             android:lineSpacingExtra="4sp"
             android:textColor="@color/black"
             android:textFontWeight="400"
@@ -147,41 +124,37 @@
             android:textStyle="normal"
             tools:ignore="LabelFor"
             tools:targetApi="p" />
-    </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/text_input_layout_social_card_number"
-        android:layout_width="345dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="15dp"
-        android:layout_marginTop="14.5dp"
-        android:hint="@string/hint_social_card_number"
-        android:textColorHint="@color/black"
-        app:hintTextColor="@color/grey"
-        app:boxStrokeColor="@color/grey"
-        app:endIconMode="clear_text"
-        app:layout_constraintEnd_toEndOf="parent"
+    </com.google.android.material.textfield.TextInputLayout>
+    <CheckBox
+        android:id="@+id/checkBox_privacy_policy"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="15dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_input_layout_expiry_date">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_social_card_number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:fontFamily="@font/gotham_pro"
-            android:gravity="center_vertical"
-            android:inputType="textPersonName"
-            android:lineSpacingExtra="4sp"
-            android:textColor="@color/black"
-            android:textFontWeight="400"
-            android:textSize="15sp"
-            android:textStyle="normal"
-            tools:targetApi="p" />
-    </com.google.android.material.textfield.TextInputLayout>
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_go_to_legal_address_fragment"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="14dp"
+        android:layout_marginBottom="27dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="71dp"
+        android:textStyle="normal"
+        android:lineHeight="14.4dp"
+        android:lineSpacingExtra="3sp"
+        android:gravity="center_vertical"
+        android:fontFamily="@font/gotham_pro"
+        android:textFontWeight="400"
+        android:text="@string/text_privacy_policy"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/checkBox_privacy_policy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_go_to_legal_address_fragment"
+        tools:targetApi="p" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_go_to_communication_fragment"
+        android:id="@+id/btn_go_to_legal_address_fragment"
         android:layout_width="0dp"
         android:layout_height="44dp"
         android:layout_marginHorizontal="15sp"

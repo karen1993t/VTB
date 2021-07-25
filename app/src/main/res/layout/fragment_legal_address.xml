@@ -66,6 +66,7 @@
         android:layout_marginHorizontal="15dp"
         android:layout_marginTop="25dp"
         android:hint="@string/text_et_country"
+        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_info">
@@ -96,6 +97,7 @@
         android:layout_marginHorizontal="15dp"
         android:layout_marginTop="14.5dp"
         android:hint="@string/text_et_city"
+        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_input_layout_country">
@@ -126,6 +128,7 @@
         android:layout_marginHorizontal="15dp"
         android:layout_marginTop="14.5dp"
         android:hint="@string/text_et_street_name"
+        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_input_layout_city">
@@ -154,6 +157,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="14.5dp"
         android:hint="@string/ed_hint_text_house_number"
+        android:textColorHint="@color/black"
         app:boxStrokeColor="@color/grey"
         app:endIconMode="clear_text"
         app:hintTextColor="@color/grey"
@@ -176,12 +180,14 @@
             android:textStyle="normal"
             tools:targetApi="p" />
     </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/text_input_layout_apartment"
         android:layout_width="345dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="14.5dp"
         android:hint="@string/ed_hint_text_apartment"
+        android:textColorHint="@color/black"
         app:boxStrokeColor="@color/grey"
         app:endIconMode="clear_text"
         app:hintTextColor="@color/grey"
@@ -204,6 +210,7 @@
             android:textStyle="normal"
             tools:targetApi="p" />
     </com.google.android.material.textfield.TextInputLayout>
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_go_to_identity_verification_fragment"
         android:layout_width="0dp"

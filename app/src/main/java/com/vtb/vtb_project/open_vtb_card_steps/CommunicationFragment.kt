@@ -7,26 +7,25 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.vtb.vtb_project.R
-import com.vtb.vtb_project.databinding.FragmentPassportBinding
+import com.vtb.vtb_project.databinding.FragmentCommunicationBinding
 
-class PassportFragment : Fragment() {
-    private lateinit var showBinding:FragmentPassportBinding
+class CommunicationFragment : Fragment() {
+    private lateinit var showBinding:FragmentCommunicationBinding
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        showBinding = FragmentPassportBinding.inflate(inflater)
+        showBinding = FragmentCommunicationBinding.inflate(inflater)
         return showBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         showBinding.btnClose.setOnClickListener{
-            Navigation.findNavController(showBinding.root).navigate(R.id.action_passportFragment_go_to_home)
-        }
-        showBinding.btnGoToCommunicationFragment.setOnClickListener{
-            Navigation.findNavController(showBinding.root).navigate(R.id.action_passportFragment_to_communicationFragment)
+            Navigation.findNavController(showBinding.root).navigate(R.id.action_communicationFragment_to_showVtbCardThreeStepsFragment)
         }
     }
 }
