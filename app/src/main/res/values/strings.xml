@@ -269,6 +269,7 @@
     <string name="gmail_com">\@gmail.com</string>
     <string name="enter_gmail_com">enter @gmail.com</string>
     <string name="enter_correct_email">enter correct email</string>
+    <string name="repeat_5_digest_code">Repeat 5 digest-code</string>
 
 
 </resources>
