@@ -128,7 +128,7 @@ class LegalAddressFragment : Fragment() {
                 else ->
                     Toast.makeText(
                         requireContext(),
-                        resources.getString(R.string.error_go_to_mobileFragment),
+                        resources.getString(R.string.errors_go_to_click_next),
                         Toast.LENGTH_SHORT
                     ).show()
             }

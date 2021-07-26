@@ -47,8 +47,6 @@ class MobilePhoneNumberFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-
-
         sharedViewModel.countryIndexLiveData.observe(viewLifecycleOwner, {
             val slots = PhoneNumberUnderscoreSlotsParser().parseSlots(nameSlotsTypeArray[it])
             val formatWatcher = MaskFormatWatcher(MaskImpl.createTerminated(slots))
@@ -94,7 +92,7 @@ class MobilePhoneNumberFragment : Fragment() {
                     .navigate(R.id.action_go_to_legalAddressFragment)
             } else   Toast.makeText(
                 requireContext(),
-                resources.getString(R.string.error_go_to_mobileFragment),
+                resources.getString(R.string.errors_go_to_click_next),
                 Toast.LENGTH_SHORT
             ).show()
         }

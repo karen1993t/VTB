@@ -197,8 +197,8 @@
         android:layout_marginHorizontal="15dp"
         android:layout_marginTop="14.5dp"
         android:hint="@string/et_hint_text_citizenship"
-        app:endIconMode="custom"
         android:textColorHint="@color/black"
+        app:endIconMode="custom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_input_layout_country">
@@ -235,7 +235,6 @@
         <AutoCompleteTextView
             android:id="@+id/edit_user_gender"
             style="@style/country_style"
-            android:textColorHint="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/white"
@@ -244,6 +243,7 @@
             android:inputType="none"
             android:lineSpacingExtra="4sp"
             android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:textFontWeight="400"
             android:textSize="15sp"
             android:textStyle="normal"

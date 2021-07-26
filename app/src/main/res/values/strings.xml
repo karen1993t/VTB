@@ -259,8 +259,8 @@
         <item>Tumanyan</item>
         <item>Tsaghkadzor</item>
     </string-array>
-    <string name="error_editText">Not Contains your input name</string>
-    <string name="error_go_to_mobileFragment">Empty Tag! pleas Input full text</string>
+    <string name="error_editText"> "Pleas create text or not contains in base"</string>
+    <string name="errors_go_to_click_next">Empty Text!Pleas create text</string>
     <string name="title_communication">Communication</string>
     <string name="text_info_communication">Please choose a convenient way to receive a statement and contact the bank</string>
     <string name="et_hint_obtaining_the_statement">Obtaining the statement</string>
