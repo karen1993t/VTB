@@ -14,6 +14,7 @@ import com.vtb.vtb_project.databinding.FragmentEnterEmailBinding
 
 class EnterEmailFragment : Fragment() {
     private val closeBtn: ViewModelSignIn by activityViewModels()
+    private  var checkerEmail:Boolean = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -61,6 +62,7 @@ class EnterEmailFragment : Fragment() {
                         }
                         else -> {
                             bindingEnterEmailFragment.editEmail.error = null
+                            checkerEmail = true
                         }
                     }
                 }
@@ -68,12 +70,15 @@ class EnterEmailFragment : Fragment() {
         )
 
         bindingEnterEmailFragment.buttonLogIn.setOnClickListener {
-            if (bindingEnterEmailFragment.editEmail.editText!!.text.isEmpty()) {
-                bindingEnterEmailFragment.editEmail.error =
-                    getString(R.string.enter_email)
-            } else {
-                Navigation.findNavController(view)
-                    .navigate(R.id.action_enterEmailFragment_to_enterPasswordFragment)
+            when {
+                bindingEnterEmailFragment.editEmail.editText!!.text.isEmpty() -> {
+                    bindingEnterEmailFragment.editEmail.error =
+                        getString(R.string.enter_email)
+                }
+                checkerEmail -> {
+                    Navigation.findNavController(view)
+                        .navigate(R.id.action_enterEmailFragment_to_enterPasswordFragment)
+                }
             }
         }
     }
