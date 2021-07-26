@@ -91,6 +91,11 @@
     <string name="text_et_street_name">Street name</string>
     <string name="ed_hint_text_house_number">House number</string>
     <string name="ed_hint_text_apartment">Apartment</string>
+    <string name="enter_password">enter password</string>
+    <string name="min_length">min length is 6</string>
+    <string name="repeat_password">repeat password</string>
+    <string name="password_not_match">password do not match</string>
+    <string name="enter_email">enter email</string>
     <string name="title_passport">Passport</string>
     <string name="text_info_passport">Please tell us your nationality and place of birth</string>
     <string name="hint_expiry_date">Expiry date</string>
@@ -206,61 +211,4 @@
         <item>Yevrey (autonomous oblast)</item>
         <item>Zabaykalye (kray)</item>
     </string-array>
-    <string-array name="city_of_armenia">
-        <item>Yerevan</item>
-        <item>Gyumri</item>
-        <item>Vanadzor</item>
-        <item>Vagharshapat</item>
-        <item>Abovyan</item>
-        <item>Kapan</item>
-        <item>Hrazdan</item>
-        <item>Armavir</item>
-        <item>Artashat</item>
-        <item>Ijevan</item>
-        <item>Gavar</item>
-        <item>Goris</item>
-        <item>Charentsavan</item>
-        <item>Ararat</item>
-        <item>Masis</item>
-        <item>Artik</item>
-        <item>Sevan</item>
-        <item>Ashtarak</item>
-        <item>Dilijan</item>
-        <item>Sisian</item>
-        <item>Alaverdi</item>
-        <item>Stepanavan</item>
-        <item>Martuni</item>
-        <item>Spitak</item>
-        <item>Vardenis</item>
-        <item>Yeghvard</item>
-        <item>Vedi</item>
-        <item>Byureghavan</item>
-        <item>Nor Hachn</item>
-        <item>Metsamor</item>
-        <item>Berd</item>
-        <item>Yeghegnadzor</item>
-        <item>Tashir</item>
-        <item>Kajaran</item>
-        <item>Aparan</item>
-        <item>Vayk</item>
-        <item>Chambarak</item>
-        <item>Maralik</item>
-        <item>Noyemberyan</item>
-        <item>Talin</item>
-        <item>Jermuk</item>ւկ)
-        <item>Meghri</item>
-        <item>Ayrum</item>
-        <item>Akhtala</item>
-        <item>Tumanyan</item>
-        <item>Tsaghkadzor</item>
-    </string-array>
-    <string name="error_editText">Not Contains your input name</string>
-    <string name="error_go_to_mobileFragment">Empty Tag! pleas Input full text</string>
-    <string name="title_communication">Communication</string>
-    <string name="text_info_communication">Please choose a convenient way to receive a statement and contact the bank</string>
-    <string name="et_hint_obtaining_the_statement">Obtaining the statement</string>
-    <string name="et_hint_communication_with_the_bank">Communication with the bank</string>
-    <string name="text_privacy_policy">Agree with Privacy Policy and Terms of Use</string>
-
-
 </resources>
