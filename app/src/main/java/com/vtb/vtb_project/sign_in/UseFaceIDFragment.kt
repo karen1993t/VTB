@@ -8,10 +8,7 @@ import androidx.fragment.app.Fragment
 import com.vtb.vtb_project.R
 import com.vtb.vtb_project.databinding.FragmentUseFaceIDBinding
 
-
-
 class UseFaceIDFragment : Fragment() {
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,7 +20,5 @@ class UseFaceIDFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val bindingUseFaceIDFragment = FragmentUseFaceIDBinding.bind(view)
-
-
     }
 }

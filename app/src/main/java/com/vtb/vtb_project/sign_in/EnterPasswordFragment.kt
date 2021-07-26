@@ -17,7 +17,6 @@ class EnterPasswordFragment : Fragment() {
     private lateinit var pin1: String
     val viewModel: ViewModelSignIn by activityViewModels()
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,6 +28,7 @@ class EnterPasswordFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val bindingEnterPasswordFragment = FragmentEnterPasswordBinding.bind(view)
+
         bindingEnterPasswordFragment.iconClose.setOnClickListener {
             Navigation.findNavController(view)
                 .navigate(R.id.action_enterPasswordFragment_to_enterEmailFragment)

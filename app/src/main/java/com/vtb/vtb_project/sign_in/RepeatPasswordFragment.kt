@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.InputType
 import android.text.TextWatcher
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,7 +37,6 @@ class RepeatPasswordFragment : Fragment() {
             pin1 = it
         })
 
-
         val requestFocus = bindingRepeatPasswordFragment.editTextRep.requestFocus()
         bindingRepeatPasswordFragment.editTextRep.inputType = InputType.TYPE_CLASS_NUMBER
         bindingRepeatPasswordFragment.editTextRep.isFocusableInTouchMode
@@ -50,15 +48,10 @@ class RepeatPasswordFragment : Fragment() {
                     count: Int,
                     after: Int
                 ) {
-
-
                 }
 
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-
                     pin2 = s.toString()
-
-
                 }
 
                 override fun afterTextChanged(s: Editable?) {
@@ -89,15 +82,8 @@ class RepeatPasswordFragment : Fragment() {
                             Toast.LENGTH_SHORT
                         ).show()
                     }
-
-
                 }
-
             }
         )
-
-
     }
-
-
 }
