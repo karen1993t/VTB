@@ -124,10 +124,10 @@
     <string-array name="city_of_russia">
         <item>Adygeya (republic)</item>
         <item>Altay</item>
-        <item>Altay</item>
+        <item>Altay (republic)</item>
         <item>Amur (oblast)</item>
         <item>Arkhangelsk (oblast)</item>
-        <item>Astrakhan(oblast)</item>
+        <item>Astrakhan (oblast)</item>
         <item>Bashkortostan (republic)</item>
         <item>Belgorod (oblast)</item>
         <item>Bryansk (oblast)</item>
@@ -253,9 +253,7 @@
         <item>Akhtala</item>
         <item>Tumanyan</item>
         <item>Tsaghkadzor</item>
-
     </string-array>
-
     <string name="error_editText">Not Contains your input name</string>
     <string name="error_go_to_mobileFragment">Empty Tag! pleas Input full text</string>
     <string name="title_communication">Communication</string>
