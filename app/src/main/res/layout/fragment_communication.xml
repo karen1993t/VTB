@@ -92,6 +92,7 @@
             tools:targetApi="p" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/text_input_layout_communication_with_the_bank"
         android:layout_width="345dp"
@@ -126,31 +127,40 @@
             tools:targetApi="p" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
     <CheckBox
         android:id="@+id/checkBox_privacy_policy"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="15dp"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="25dp"
-        app:layout_constraintBottom_toTopOf="@id/btn_go_to_legal_address_fragment"/>
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginBottom="13dp"
+        android:button="@drawable/check_box_selector"
+        android:drawablePadding="12dp"
+        android:fontFamily="@font/gotham_pro"
+        android:gravity="center_horizontal|center_vertical"
+        android:padding="12dp"
+        android:theme="@style/MyCheckBox"
+        app:layout_constraintBottom_toTopOf="@id/btn_go_to_legal_address_fragment"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
+        android:id="@+id/text_privacy_policy"
         android:layout_width="0dp"
         android:layout_height="14dp"
-        android:layout_marginBottom="27dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="71dp"
-        android:textStyle="normal"
+        android:layout_marginBottom="27dp"
+        android:fontFamily="@font/gotham_pro"
+        android:gravity="center_vertical"
         android:lineHeight="14.4dp"
         android:lineSpacingExtra="3sp"
-        android:gravity="center_vertical"
-        android:fontFamily="@font/gotham_pro"
-        android:textFontWeight="400"
         android:text="@string/text_privacy_policy"
+        android:textFontWeight="400"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@id/checkBox_privacy_policy"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textStyle="normal"
         app:layout_constraintBottom_toTopOf="@id/btn_go_to_legal_address_fragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/checkBox_privacy_policy"
         tools:targetApi="p" />
 
     <androidx.appcompat.widget.AppCompatButton

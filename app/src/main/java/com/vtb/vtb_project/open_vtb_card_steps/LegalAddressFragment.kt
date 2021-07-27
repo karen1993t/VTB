@@ -3,7 +3,6 @@ package com.vtb.vtb_project.open_vtb_card_steps
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -128,7 +127,7 @@ class LegalAddressFragment : Fragment() {
                 else ->
                     Toast.makeText(
                         requireContext(),
-                        resources.getString(R.string.error_go_to_mobileFragment),
+                        resources.getString(R.string.errors_go_to_click_next),
                         Toast.LENGTH_SHORT
                     ).show()
             }

@@ -17,5 +17,7 @@
     <color name="transparency">#1AFFFFFF</color>
     <color name="grey">#808080</color>
     <color name="text_user_email">#80000000</color>
+    <color name="color_red_card_steps">#8E2126</color>
+
 
 </resources>
