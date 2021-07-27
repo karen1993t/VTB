@@ -104,11 +104,11 @@
     <string name="hint_social_card_number">Social Card Number</string>
     <string-array name="country_name">
         <item>Armenia</item>
-<!--        <item>Belarus</item>-->
+        <!--        <item>Belarus</item>-->
         <item>"Russia"</item>
-<!--        <item>Tajikistan</item>-->
-<!--        <item>Ukraine</item>-->
-<!--        <item>USA</item>-->
+        <!--        <item>Tajikistan</item>-->
+        <!--        <item>Ukraine</item>-->
+        <!--        <item>USA</item>-->
     </string-array>
     <string-array name="citizen_ship">
         <item>Armenian Federation</item>
@@ -120,11 +120,11 @@
     </string-array>
     <string-array name="slots_type">
         <item>+374(__)___-___</item>
-<!--     <item>+375(___)____-___</item>-->
+        <!--     <item>+375(___)____-___</item>-->
         <item>+7(___)___-__-__</item>
-<!--        <item>+992(__)___-___"</item>-->
-<!--        <item>+380(___)___-__-__</item>-->
-<!--        <item>+1(___)___-__-__</item>-->
+        <!--        <item>+992(__)___-___"</item>-->
+        <!--        <item>+380(___)___-__-__</item>-->
+        <!--        <item>+1(___)___-__-__</item>-->
     </string-array>
     <string-array name="city_of_russia">
         <item>Adygeya (republic)</item>
@@ -270,6 +270,13 @@
     <string name="enter_gmail_com">enter @gmail.com</string>
     <string name="enter_correct_email">enter correct email</string>
     <string name="repeat_5_digest_code">Repeat 5 digest-code</string>
+    <string name="image">image</string>
+    <string name="personal_area_vtb">Personal area VTB</string>
+    <string name="logo_group">logo_group</string>
+    <string name="balance">Balance</string>
+    <string name="_25_252_54_rub">25 252,54 RUB</string>
+    <string name="replenish">Replenish</string>
+    <string name="pay">Pay</string>
 
 
 </resources>

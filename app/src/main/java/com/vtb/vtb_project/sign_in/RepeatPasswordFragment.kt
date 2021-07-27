@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.Navigation
 import com.vtb.vtb_project.R
 import com.vtb.vtb_project.databinding.FragmentRepeatPasswordBinding
 
@@ -41,18 +42,13 @@ class RepeatPasswordFragment : Fragment() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 pin2 = s.toString()
-//                if (bindingRepeatPasswordFragment.pinView1.editableText.toString().length == 5) {
-//                    viewModel.setPin1(pin1)
-//                    Navigation.findNavController(view)
-//                        .navigate(R.id.action_repeatPasswordFragment_to_enterEmailFragment)
-//                }
             }
 
             override fun afterTextChanged(s: Editable?) {
                 when {
                     bindingRepeatPasswordFragment.pinView1.editableText.toString().length == 5 && pin1 == pin2 -> {
-            //                    Navigation.findNavController(view)
-            //                        .navigate(R.id.action_repeatPasswordFragment_to_useFaceIDFragment)
+                                Navigation.findNavController(view)
+                                    .navigate(R.id.action_repeatPasswordFragment_to_personalAreaFragment)
                     }
                     bindingRepeatPasswordFragment.pinView1.editableText.toString().length == 5 && pin1 != pin2 -> {
                         Toast.makeText(
