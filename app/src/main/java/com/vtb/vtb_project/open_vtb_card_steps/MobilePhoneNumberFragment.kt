@@ -6,15 +6,13 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import com.vtb.vtb_project.R
 import com.vtb.vtb_project.databinding.FragmentMobilePhoneNumberBinding
-import ru.tinkoff.decoro.MaskImpl
-import ru.tinkoff.decoro.parser.PhoneNumberUnderscoreSlotsParser
-import ru.tinkoff.decoro.watchers.MaskFormatWatcher
+import com.vtb.vtb_project.tools.ToolsForEditText
+
 
 class MobilePhoneNumberFragment : Fragment() {
     private val sharedViewModel: SharedViewModel by activityViewModels()
@@ -35,7 +33,7 @@ class MobilePhoneNumberFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         showBinding = FragmentMobilePhoneNumberBinding.bind(view)
-        nameSlotsTypeArray = resources.getStringArray(R.array.slots_type)
+        nameSlotsTypeArray = resources.getStringArray(R.array.slots_type_phone_number)
 
         showBinding.btnClose.setOnClickListener {
             Navigation.findNavController(view)
@@ -47,15 +45,17 @@ class MobilePhoneNumberFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         sharedViewModel.countryIndexLiveData.observe(viewLifecycleOwner, {
-            val slots = PhoneNumberUnderscoreSlotsParser().parseSlots(nameSlotsTypeArray[it])
-            val formatWatcher = MaskFormatWatcher(MaskImpl.createTerminated(slots))
-            formatWatcher.installOn(showBinding.editUserMobileNumber)
+            ToolsForEditText.createMaskEdit(
+                it,
+                nameSlotsTypeArray,
+                showBinding.editUserMobileNumber
+            )
             when (it) {
                 0 -> minCountSymbol = 15
                 1 -> minCountSymbol = 16
             }
         })
-
+        //region checked phone number
         showBinding.editUserMobileNumber.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
             }
@@ -72,7 +72,7 @@ class MobilePhoneNumberFragment : Fragment() {
                         showBinding.textInputLayoutMobileNumber.isCounterEnabled = true
                         showBinding.textInputLayoutMobileNumber.counterMaxLength = minCountSymbol
                         showBinding.textInputLayoutMobileNumber.error =
-                            "minimum number:$minCountSymbol"
+                            "${resources.getString(R.string.error_minimum_number)}:$minCountSymbol"
 
                     } else {
                         showBinding.textInputLayoutMobileNumber.isCounterEnabled = false
@@ -80,20 +80,23 @@ class MobilePhoneNumberFragment : Fragment() {
                         isCheckNumberPhone = true
                     }
             }
+
             override fun afterTextChanged(p0: Editable?) {
             }
 
         })
+        //endregion
 
         showBinding.btnGoToLegalAddressFragment.setOnClickListener {
             if (isCheckNumberPhone) {
                 Navigation.findNavController(showBinding.root)
                     .navigate(R.id.action_go_to_legalAddressFragment)
-            } else   Toast.makeText(
-                requireContext(),
-                resources.getString(R.string.errors_go_to_click_next),
-                Toast.LENGTH_SHORT
-            ).show()
+            } else {
+                if (showBinding.editUserMobileNumber.text.isNullOrEmpty()) {
+                    showBinding.textInputLayoutMobileNumber.error =
+                        resources.getString(R.string.errors_go_to_click_next)
+                }
+            }
         }
     }
 }

@@ -118,7 +118,7 @@
         <item>Male</item>
         <item>Female</item>
     </string-array>
-    <string-array name="slots_type">
+    <string-array name="slots_type_phone_number">
         <item>+374(__)___-___</item>
 <!--     <item>+375(___)____-___</item>-->
         <item>+7(___)___-__-__</item>
@@ -261,11 +261,20 @@
     </string-array>
     <string name="error_editText"> "Pleas create text or not contains in base"</string>
     <string name="errors_go_to_click_next">Empty Text!Pleas create text</string>
+    <string name="error_minimum_number">minimum symbol</string>
     <string name="title_communication">Communication</string>
     <string name="text_info_communication">Please choose a convenient way to receive a statement and contact the bank</string>
     <string name="et_hint_obtaining_the_statement">Obtaining the statement</string>
     <string name="et_hint_communication_with_the_bank">Communication with the bank</string>
     <string name="text_privacy_policy">Agree with Privacy Policy and Terms of Use</string>
+    <string-array name="slots_type_passport_number">
+        <item>___ ____</item>
+        <item>____ ______</item>
+    </string-array>
+    <string-array name="slots_type_social_card">
+        <item>_____ _____</item>
+        <item>____ ______</item>
+    </string-array>
 
 
 </resources>
