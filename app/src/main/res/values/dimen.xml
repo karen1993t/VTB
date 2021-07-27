@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="top_margin" >255dp</dimen>
-    <dimen name="start_margin_fragments" >150dp</dimen>
+    <dimen name="start_margin_fragments" >100dp</dimen>
 </resources>

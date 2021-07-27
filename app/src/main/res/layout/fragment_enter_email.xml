@@ -34,10 +34,10 @@
         android:layout_marginEnd="19.69dp"
         android:background="#00000000"
         android:clickable="true"
+        android:contentDescription="@string/icon_close"
         android:src="@drawable/icon_close_auth"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/icon_close" />
+        app:layout_constraintTop_toTopOf="parent" />
     <ImageView
         android:id="@+id/logo_vtb_auth"
         android:layout_width="150dp"

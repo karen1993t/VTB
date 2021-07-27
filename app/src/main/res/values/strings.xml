@@ -78,7 +78,7 @@
     <string name="ed_hint_text_gender">Gender</string>
     <string name="et_hint_text_citizenship">Citizenship</string>
     <string name="sign_in_title">Create a 5 digest-code</string>
-    <string name="circle1">circle1</string>
+    <string name="circle1">circle 1</string>
     <string name="title_face_id">Allow app to use Face ID?</string>
     <string name="title_face_">Not now</string>
     <string name="title_face_1">Allow</string>
@@ -266,6 +266,10 @@
     <string name="et_hint_obtaining_the_statement">Obtaining the statement</string>
     <string name="et_hint_communication_with_the_bank">Communication with the bank</string>
     <string name="text_privacy_policy">Agree with Privacy Policy and Terms of Use</string>
+    <string name="gmail_com">\@gmail.com</string>
+    <string name="enter_gmail_com">enter @gmail.com</string>
+    <string name="enter_correct_email">enter correct email</string>
+    <string name="repeat_5_digest_code">Repeat 5 digest-code</string>
 
 
 </resources>

@@ -11,7 +11,6 @@ import com.vtb.vtb_project.databinding.FragmentSendEmailAuthorizationBinding
 
 class AuthorizationFragmentSendEmail : Fragment() {
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -25,10 +24,5 @@ class AuthorizationFragmentSendEmail : Fragment() {
         bindingSendEmail.iconCloseFragment.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_authorizationFragmentSendEmail_to_authorizationFirstFragment)
         }
-
-
     }
-
-
-
 }

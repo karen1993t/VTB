@@ -42,15 +42,6 @@
             app:destination="@id/enterEmailFragment"
             app:enterAnim="@android:anim/slide_in_left"
             app:exitAnim="@android:anim/slide_out_right" />
-        <action
-            android:id="@+id/action_repeatPasswordFragment_to_useFaceIDFragment"
-            app:destination="@id/useFaceIDFragment"
-            app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@android:anim/slide_out_right" />
     </fragment>
-    <fragment
-        android:id="@+id/useFaceIDFragment"
-        android:name="com.vtb.vtb_project.sign_in.UseFaceIDFragment"
-        android:label="fragment_use_face_i_d"
-        tools:layout="@layout/fragment_use_face_i_d" />
+
 </navigation>
