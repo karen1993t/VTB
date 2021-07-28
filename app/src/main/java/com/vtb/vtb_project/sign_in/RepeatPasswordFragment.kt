@@ -1,5 +1,6 @@
 package com.vtb.vtb_project.sign_in
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -12,6 +13,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import com.vtb.vtb_project.R
 import com.vtb.vtb_project.databinding.FragmentRepeatPasswordBinding
+import com.vtb.vtb_project.personal_area.PersonalAreaActivity
 
 class RepeatPasswordFragment : Fragment() {
     var pin2 = ""
@@ -47,8 +49,7 @@ class RepeatPasswordFragment : Fragment() {
             override fun afterTextChanged(s: Editable?) {
                 when {
                     bindingRepeatPasswordFragment.pinView1.editableText.toString().length == 5 && pin1 == pin2 -> {
-                                Navigation.findNavController(view)
-                                    .navigate(R.id.action_repeatPasswordFragment_to_personalAreaFragment)
+                               startActivity(Intent(requireContext(),PersonalAreaActivity::class.java))
                     }
                     bindingRepeatPasswordFragment.pinView1.editableText.toString().length == 5 && pin1 != pin2 -> {
                         Toast.makeText(
@@ -61,5 +62,6 @@ class RepeatPasswordFragment : Fragment() {
             }
         }
         )
+
     }
 }

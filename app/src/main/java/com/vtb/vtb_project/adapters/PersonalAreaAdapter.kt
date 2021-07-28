@@ -1,7 +1,6 @@
 package com.vtb.vtb_project.adapters
 
 import android.content.Context
-import android.preference.PreferenceActivity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.vtb.vtb_project.R
-import com.vtb.vtb_project.sign_in.ModelPersonalArea
+import com.vtb.vtb_project.personal_area.ModelPersonalArea
 
 class PersonalAreaAdapter(val context: Context, val listPersonalArea: List<ModelPersonalArea>) :
     Adapter<PersonalAreaAdapter.ViewHolderPersonalArea>() {
