@@ -78,7 +78,7 @@
     <string name="ed_hint_text_gender">Gender</string>
     <string name="et_hint_text_citizenship">Citizenship</string>
     <string name="sign_in_title">Create a 5 digest-code</string>
-    <string name="circle1">circle 1</string>
+    <string name="circle1">circle1</string>
     <string name="title_face_id">Allow app to use Face ID?</string>
     <string name="title_face_">Not now</string>
     <string name="title_face_1">Allow</string>
@@ -104,11 +104,11 @@
     <string name="hint_social_card_number">Social Card Number</string>
     <string-array name="country_name">
         <item>Armenia</item>
-        <!--        <item>Belarus</item>-->
+<!--        <item>Belarus</item>-->
         <item>"Russia"</item>
-        <!--        <item>Tajikistan</item>-->
-        <!--        <item>Ukraine</item>-->
-        <!--        <item>USA</item>-->
+<!--        <item>Tajikistan</item>-->
+<!--        <item>Ukraine</item>-->
+<!--        <item>USA</item>-->
     </string-array>
     <string-array name="citizen_ship">
         <item>Armenian Federation</item>
@@ -118,13 +118,13 @@
         <item>Male</item>
         <item>Female</item>
     </string-array>
-    <string-array name="slots_type">
+    <string-array name="slots_type_phone_number">
         <item>+374(__)___-___</item>
-        <!--     <item>+375(___)____-___</item>-->
+<!--     <item>+375(___)____-___</item>-->
         <item>+7(___)___-__-__</item>
-        <!--        <item>+992(__)___-___"</item>-->
-        <!--        <item>+380(___)___-__-__</item>-->
-        <!--        <item>+1(___)___-__-__</item>-->
+<!--        <item>+992(__)___-___"</item>-->
+<!--        <item>+380(___)___-__-__</item>-->
+<!--        <item>+1(___)___-__-__</item>-->
     </string-array>
     <string-array name="city_of_russia">
         <item>Adygeya (republic)</item>
@@ -261,6 +261,7 @@
     </string-array>
     <string name="error_editText"> "Pleas create text or not contains in base"</string>
     <string name="errors_go_to_click_next">Empty Text!Pleas create text</string>
+    <string name="error_minimum_number">minimum symbol</string>
     <string name="title_communication">Communication</string>
     <string name="text_info_communication">Please choose a convenient way to receive a statement and contact the bank</string>
     <string name="et_hint_obtaining_the_statement">Obtaining the statement</string>
@@ -277,6 +278,14 @@
     <string name="_25_252_54_rub">25 252,54 RUB</string>
     <string name="replenish">Replenish</string>
     <string name="pay">Pay</string>
+    <string-array name="slots_type_passport_number">
+        <item>___ ____</item>
+        <item>____ ______</item>
+    </string-array>
+    <string-array name="slots_type_social_card">
+        <item>_____ _____</item>
+        <item>____ ______</item>
+    </string-array>
 
 
 </resources>

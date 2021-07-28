@@ -1,7 +1,7 @@
 package com.vtb.vtb_project.open_vtb_card_steps
 
 
-import android.app.DatePickerDialog
+
 
 import android.os.Bundle
 import android.text.Editable
@@ -15,14 +15,12 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import com.vtb.vtb_project.R
 import com.vtb.vtb_project.databinding.FragmentPersonalInformationBinding
-import java.text.SimpleDateFormat
-import java.util.*
+import com.vtb.vtb_project.tools.ToolsForEditText
+
 
 
 class PersonalInformationFragment : Fragment() {
     private lateinit var showBinding: FragmentPersonalInformationBinding
-    private lateinit var calendar: Calendar
-    private lateinit var formatDate: String
     private lateinit var country: Array<String>
     private lateinit var citizenShip: Array<String>
     private lateinit var arrayAdapterGender: ArrayAdapter<String>
@@ -73,7 +71,7 @@ class PersonalInformationFragment : Fragment() {
         })
         //endregion
         //region checked surName
-        showBinding.editUserSurname.addTextChangedListener(object:TextWatcher{
+        showBinding.editUserSurname.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
             }
@@ -92,7 +90,7 @@ class PersonalInformationFragment : Fragment() {
         })
         //endregion
         //region checked dateOfBirth
-        showBinding.editUserDateOfBirth.addTextChangedListener(object:TextWatcher{
+        showBinding.editUserDateOfBirth.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
             }
@@ -112,7 +110,11 @@ class PersonalInformationFragment : Fragment() {
         //endregion
 
         showBinding.editUserDateOfBirth.setOnClickListener {
-            createDateDialog()
+            ToolsForEditText.createDateDialog(
+                requireContext(),
+                "dd.MM.yyyy",
+                showBinding.editUserDateOfBirth
+            )
         }
         //region create Country
         country = resources.getStringArray(R.array.country_name)
@@ -183,9 +185,9 @@ class PersonalInformationFragment : Fragment() {
         arrayAdapterGender =
             ArrayAdapter(requireContext(), R.layout.drop_down_item_country, gender)
         showBinding.editUserGender.setAdapter(arrayAdapterGender)
-       //endregion
+        //endregion
         //region checked gender
-        showBinding.editUserGender.addTextChangedListener(object :TextWatcher{
+        showBinding.editUserGender.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
             }
@@ -203,7 +205,6 @@ class PersonalInformationFragment : Fragment() {
 
         })
         //endregion
-
         showBinding.btnGoToMobilePhoneNumberFragment.setOnClickListener {
             sendData()
             when {
@@ -234,31 +235,6 @@ class PersonalInformationFragment : Fragment() {
                 }
             }
         }
-    }
-
-    private fun updateDateInView() {
-        val myFormat = "dd.MM.yyyy"
-        val simpleDateFormat = SimpleDateFormat(myFormat, Locale.US)
-        formatDate = simpleDateFormat.format(calendar.time)
-        showBinding.editUserDateOfBirth.setText(formatDate)
-    }
-
-    private fun createDateDialog() {
-        calendar = Calendar.getInstance()
-        val dateSetListener =
-            DatePickerDialog.OnDateSetListener { _, year, monthOfYear, dayOfMonth ->
-                calendar.set(Calendar.YEAR, year)
-                calendar.set(Calendar.MONTH, monthOfYear)
-                calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
-                updateDateInView()
-            }
-        val dialog = DatePickerDialog(
-            requireContext(), dateSetListener,
-            calendar.get(Calendar.YEAR),
-            calendar.get(Calendar.MONTH),
-            calendar.get(Calendar.DAY_OF_MONTH)
-        )
-        dialog.show()
     }
 
     private fun sendData() {
