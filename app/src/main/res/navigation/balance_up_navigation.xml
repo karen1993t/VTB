@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/balance_up"
+    app:startDestination="@id/personalAreaFragment">
+
+    <fragment
+        android:id="@+id/balanceUpFragment"
+        android:name="com.vtb.vtb_project.personal_area.BalanceUpFragment"
+        android:label="fragment_balance_up"
+        tools:layout="@layout/fragment_balance_up" >
+        <action
+            android:id="@+id/action_balanceUpFragment_to_addCardFragment"
+            app:destination="@id/addCardFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/personalAreaFragment"
+        android:name="com.vtb.vtb_project.personal_area.PersonalAreaFragment"
+        android:label="fragment_personal_area"
+        tools:layout="@layout/fragment_personal_area" >
+        <action
+            android:id="@+id/action_personalAreaFragment_to_balanceUpFragment"
+            app:destination="@id/balanceUpFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCardFragment"
+        android:name="com.vtb.vtb_project.personal_area.AddCardFragment"
+        android:label="fragment_add_card"
+        tools:layout="@layout/fragment_add_card" />
+</navigation>

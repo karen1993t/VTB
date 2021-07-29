@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".personal_area.PersonalAreaFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/balance"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/background_personal_area"
+        android:elevation="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/title_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12.5dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/s_f_pro"
+            android:lineHeight="30dp"
+            android:lineSpacingExtra="0sp"
+            android:text="@string/_25_252_54_rub"
+            android:textColor="@color/black"
+            android:textFontWeight="700"
+            android:textSize="25sp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="p" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/replenish"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginVertical="10dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/background_button_replenish"
+            android:fontFamily="@font/gotham_pro"
+            android:text="@string/replenish"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/pay"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/pay"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginVertical="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/background_button_pay"
+            android:fontFamily="@font/gotham_pro"
+            android:text="@string/pay"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/replenish" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/title_money_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/gotham_pro"
+        android:lineHeight="24dp"
+        android:layout_marginEnd="15dp"
+        android:lineSpacingExtra="5sp"
+        android:text="@string/_650_353"
+        android:textColor="#8E2126"
+        android:textFontWeight="700"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/balance"
+        tools:targetApi="p" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/background_recycler_personal_area"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hotel_price" />
+
+    <ImageView
+        android:id="@+id/avia_price"
+        android:layout_width="100dp"
+        android:layout_height="21dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="15dp"
+        app:layout_constraintTop_toBottomOf="@id/balance"
+        android:layout_marginTop="189dp"
+        android:src="@drawable/icon_avia_price"/>
+
+    <ImageView
+        android:id="@+id/hotel_price"
+        android:layout_width="110dp"
+        android:layout_height="21dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="15dp"
+        app:layout_constraintTop_toBottomOf="@id/avia_price"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/icon_hotel_price"/>
+    <ImageView
+        android:id="@+id/resturant_price"
+        android:layout_width="146dp"
+        android:layout_height="21dp"
+        app:layout_constraintStart_toEndOf="@id/avia_price"
+        android:layout_marginStart="4dp"
+        app:layout_constraintTop_toTopOf="@id/avia_price"
+        android:src="@drawable/icon_resturant_price"/>
+    <ImageView
+        android:id="@+id/alcohol_price"
+        android:layout_width="121dp"
+        android:layout_height="21dp"
+        app:layout_constraintStart_toEndOf="@id/hotel_price"
+        android:layout_marginStart="4dp"
+        app:layout_constraintTop_toTopOf="@id/hotel_price"
+        android:src="@drawable/icon_alcohol_price"/>
+    <ImageView
+        android:id="@+id/other_price"
+        android:layout_width="104dp"
+        android:layout_height="21dp"
+        app:layout_constraintStart_toEndOf="@id/alcohol_price"
+        android:layout_marginStart="4dp"
+        app:layout_constraintTop_toTopOf="@id/hotel_price"
+        android:src="@drawable/icon_other_price"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

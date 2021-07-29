@@ -279,6 +279,7 @@
     <string name="replenish">Replenish</string>
     <string name="pay">Pay</string>
     <string name="_650_353">650 353 ₽</string>
+    <string name="back">Back</string>
     <string-array name="slots_type_passport_number">
         <item>___ ____</item>
         <item>____ ______</item>
