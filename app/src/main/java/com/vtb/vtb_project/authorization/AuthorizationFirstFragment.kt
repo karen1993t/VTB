@@ -49,7 +49,7 @@ class AuthorizationFirstFragment : Fragment() {
 
                 override fun afterTextChanged(s: Editable?) {
                     when {
-                        bindingAuthFirst.editPass.editText!!.text.isEmpty() -> {
+                        bindingAuthFirst.editPass.editText!!.text.isNullOrEmpty() -> {
                             bindingAuthFirst.editPass.error = getString(R.string.enter_password)
                         }
                         bindingAuthFirst.editPass.editText!!.text.length < 6 -> {
@@ -122,7 +122,8 @@ class AuthorizationFirstFragment : Fragment() {
                             bindingAuthFirst.editEmail.error = getString(R.string.enter_email)
                         }
                         bindingAuthFirst.editEmail.editText!!.text.length <= 12 -> {
-                            bindingAuthFirst.editEmail.error = getString(R.string.enter_correct_email)
+                            bindingAuthFirst.editEmail.error =
+                                getString(R.string.enter_correct_email)
                         }
                         else -> {
                             bindingAuthFirst.editEmail.error = null
@@ -146,7 +147,7 @@ class AuthorizationFirstFragment : Fragment() {
                 !checkerEnterPassword -> {
                     bindingAuthFirst.editPass.error = getString(R.string.enter_password)
                 }
-                !checkerRepeatPassword ->{
+                !checkerRepeatPassword -> {
                     bindingAuthFirst.repPass.error = getString(R.string.repeat_password)
                 }
             }

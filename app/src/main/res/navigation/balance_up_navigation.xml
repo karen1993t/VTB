@@ -35,5 +35,12 @@
         android:id="@+id/addCardFragment"
         android:name="com.vtb.vtb_project.personal_area.AddCardFragment"
         android:label="fragment_add_card"
-        tools:layout="@layout/fragment_add_card" />
+        tools:layout="@layout/fragment_add_card" >
+        <action
+            android:id="@+id/action_addCardFragment_to_balanceUpFragment"
+            app:destination="@id/balanceUpFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left" />
+    </fragment>
 </navigation>

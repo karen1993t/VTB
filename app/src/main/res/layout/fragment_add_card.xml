@@ -44,6 +44,8 @@
             android:background="@color/white"
             android:hint="Number card"
             android:inputType="number"
+
+            android:digits="0123456789 "
             android:textColorHint="#808080" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -67,6 +69,7 @@
             android:layout_height="55dp"
             android:background="@color/white"
             android:hint="Expires"
+            android:digits="0123456789/"
             android:inputType="number"
             android:textColorHint="#808080" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -78,7 +81,7 @@
         android:layout_marginEnd="15dp"
         android:layout_marginTop="5dp"
         app:boxStrokeColor="@color/black"
-        app:endIconMode="clear_text"
+        app:endIconMode="password_toggle"
         app:hintTextColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/edit_date_card_container"
@@ -90,6 +93,7 @@
             android:layout_height="55dp"
             android:background="@color/white"
             android:hint="CVC"
+            android:maxLength="3"
             android:inputType="numberPassword"
             android:textColorHint="#808080" />
     </com.google.android.material.textfield.TextInputLayout>

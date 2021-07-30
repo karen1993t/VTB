@@ -34,9 +34,7 @@ class PersonalAreaFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        val slots = UnderscoreDigitSlotsParser().parseSlots("_ ___ ___,__")
-//        val formatWatcher = MaskFormatWatcher(MaskImpl.createTerminated(slots))
-//        formatWatcher.installOn(bindingPersonalArea.titleMoney)
+
 
 
         val spannable = SpannableStringBuilder(bindingPersonalAreaFragment.titleMoney.text)
