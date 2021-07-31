@@ -12,10 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.VtbProject">
-        <activity android:name=".personal_area.PersonalAreaActivity"></activity>
+        <activity android:name=".personal_area.PersonalAreaActivity"
+            android:screenOrientation="locked"/>
         <activity
             android:name=".sign_in.SignIn"
-            android:theme="@style/themeAuth" />
+            android:theme="@style/themeAuth"
+            android:screenOrientation="locked"/>
         <activity
             android:name=".open_vtb_card_steps.OpenVtbCardStepsActivity"
             android:screenOrientation="userPortrait"
@@ -23,7 +25,8 @@
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".authorization.Authorization"
-            android:theme="@style/themeAuth" />
+            android:theme="@style/themeAuth"
+            android:screenOrientation="locked"/>
         <activity
             android:name=".on_boarding_about_fragments.OnBoardingAbout"
             android:screenOrientation="locked"
