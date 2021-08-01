@@ -18,6 +18,7 @@
     <color name="grey">#808080</color>
     <color name="text_user_email">#80000000</color>
     <color name="color_red_card_steps">#8E2126</color>
+    <color name="background_biometry_submitted">#F2F0F0</color>
 
 
 </resources>

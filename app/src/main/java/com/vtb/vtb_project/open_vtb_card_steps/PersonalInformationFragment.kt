@@ -1,8 +1,6 @@
 package com.vtb.vtb_project.open_vtb_card_steps
 
 
-
-
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -18,7 +16,6 @@ import com.vtb.vtb_project.databinding.FragmentPersonalInformationBinding
 import com.vtb.vtb_project.tools.ToolsForEditText
 
 
-
 class PersonalInformationFragment : Fragment() {
     private lateinit var showBinding: FragmentPersonalInformationBinding
     private lateinit var country: Array<String>
@@ -31,12 +28,13 @@ class PersonalInformationFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_personal_information, container, false)
+    ): View {
+        showBinding = FragmentPersonalInformationBinding.inflate(inflater)
+        return showBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        showBinding = FragmentPersonalInformationBinding.bind(view)
+
         super.onViewCreated(view, savedInstanceState)
         showBinding.btnClose.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_goToHomeFragment)
@@ -185,6 +183,10 @@ class PersonalInformationFragment : Fragment() {
         arrayAdapterGender =
             ArrayAdapter(requireContext(), R.layout.drop_down_item_country, gender)
         showBinding.editUserGender.setAdapter(arrayAdapterGender)
+
+        showBinding.editUserGender.setOnClickListener {
+            showBinding.editUserGender.showDropDown()
+        }
         //endregion
         //region checked gender
         showBinding.editUserGender.addTextChangedListener(object : TextWatcher {

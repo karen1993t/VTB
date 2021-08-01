@@ -25,14 +25,15 @@ class MobilePhoneNumberFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_mobile_phone_number, container, false)
+    ): View {
+        showBinding = FragmentMobilePhoneNumberBinding.inflate(inflater)
+        return showBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        showBinding = FragmentMobilePhoneNumberBinding.bind(view)
+
         nameSlotsTypeArray = resources.getStringArray(R.array.slots_type_phone_number)
 
         showBinding.btnClose.setOnClickListener {
