@@ -6,7 +6,9 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import com.vtb.vtb_project.R
 import com.vtb.vtb_project.databinding.FragmentAddCardBinding
@@ -17,6 +19,8 @@ class AddCardFragment : Fragment() {
     private var checkerNumberCard: Boolean = false
     private var checkerCvcCard: Boolean = false
     private var checkerDateCard: Boolean = false
+    private val liveDataBtnDone: ViewModelPersonalArea by activityViewModels()
+    private val liveDataGetNumberCard: ViewModelPersonalArea by activityViewModels()
 
 
     override fun onCreateView(
@@ -36,9 +40,11 @@ class AddCardFragment : Fragment() {
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
             }
 
             override fun afterTextChanged(p0: Editable?) {
+                liveDataGetNumberCard.setNumberCard(p0.toString())
                 when {
                     bindingAddCardFragment.editNumberCard.text.isNullOrEmpty() -> {
                         bindingAddCardFragment.editNumberCardContainer.error =
@@ -108,8 +114,13 @@ class AddCardFragment : Fragment() {
         })
 
         bindingAddCardFragment.buttonDone.setOnClickListener {
+
+
             when {
                 (checkerNumberCard && checkerCvcCard && checkerDateCard) -> {
+                    liveDataBtnDone.selectDoneBtn(true)
+                    Toast.makeText(requireContext(), "Card added successfully", Toast.LENGTH_SHORT)
+                        .show()
                     Navigation.findNavController(view)
                         .navigate(R.id.action_addCardFragment_to_balanceUpFragment)
 

@@ -17,6 +17,13 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_balanceUpFragment_to_addedCardsFragment"
+            app:destination="@id/addedCardsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/personalAreaFragment"
@@ -43,4 +50,9 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left" />
     </fragment>
+    <fragment
+        android:id="@+id/addedCardsFragment"
+        android:name="com.vtb.vtb_project.personal_area.AddedCardsFragment"
+        android:label="fragment_added_cards"
+        tools:layout="@layout/fragment_added_cards" />
 </navigation>

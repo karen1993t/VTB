@@ -1,9 +1,13 @@
 package com.vtb.vtb_project.personal_area
 
+import android.content.Context
 import android.os.Bundle
+import android.util.AttributeSet
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import com.vtb.vtb_project.R
 import com.vtb.vtb_project.databinding.ActivityPersonalAreaBinding
 
@@ -21,6 +25,8 @@ class PersonalAreaActivity : AppCompatActivity() {
             setDisplayShowHomeEnabled(true)
         }
 
+        val liveDataPersonalArea = ViewModelProvider(this).get(ViewModelPersonalArea::class.java)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -37,5 +43,6 @@ class PersonalAreaActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
 }
 
