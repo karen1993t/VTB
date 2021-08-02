@@ -21,12 +21,13 @@ class AddCardFragment : Fragment() {
     private var checkerDateCard: Boolean = false
     private val liveDataBtnDone: ViewModelPersonalArea by activityViewModels()
     private val liveDataGetNumberCard: ViewModelPersonalArea by activityViewModels()
+    private val liveDataGetNameCard: ViewModelPersonalArea by activityViewModels()
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         bindingAddCardFragment = FragmentAddCardBinding.inflate(inflater)
         return bindingAddCardFragment.root
     }
@@ -35,33 +36,46 @@ class AddCardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        bindingAddCardFragment.editNumberCard.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-            }
+        bindingAddCardFragment.editNumberCardContainer.editText?.addTextChangedListener(
+            object : TextWatcher {
+                override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                }
 
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
-            }
 
-            override fun afterTextChanged(p0: Editable?) {
-                liveDataGetNumberCard.setNumberCard(p0.toString())
-                when {
-                    bindingAddCardFragment.editNumberCard.text.isNullOrEmpty() -> {
-                        bindingAddCardFragment.editNumberCardContainer.error =
-                            getString(R.string.enter_number_card)
+                }
+
+                override fun afterTextChanged(p0: Editable?) {
+                    liveDataGetNumberCard.setNumberCard(bindingAddCardFragment.editNumberCard.text.toString())
+                    when(bindingAddCardFragment.editNumberCard.text?.toString()?.get(0)){
+                        '5'->liveDataGetNameCard.setNameCard("MasterCard").toString()
+                        '3'->liveDataGetNameCard.setNameCard("American Express").toString()
+                        '4'->liveDataGetNameCard.setNameCard("Visa Card").toString()
+                        else->{
+                            bindingAddCardFragment.editNumberCardContainer.error = getString(R.string.enter_correct_number_card)
+                        }
                     }
-                    bindingAddCardFragment.editNumberCard.text?.length!! < 19 -> {
-                        bindingAddCardFragment.editNumberCardContainer.error =
-                            getString(R.string.enter_correct_number_card)
-                    }
-                    else -> {
-                        bindingAddCardFragment.editNumberCardContainer.error = null
-                        checkerNumberCard = true
+
+                    when {
+                        bindingAddCardFragment.editNumberCardContainer.editText?.text.isNullOrEmpty() -> {
+                            bindingAddCardFragment.editNumberCardContainer.error =
+                                getString(R.string.enter_number_card)
+                        }
+                        bindingAddCardFragment.editNumberCard.text?.length!! < 19 -> {
+                            bindingAddCardFragment.editNumberCardContainer.error =
+                                getString(R.string.enter_correct_number_card)
+                        }
+                        else -> {
+                            bindingAddCardFragment.editNumberCardContainer.error = null
+                            checkerNumberCard = true
+                        }
                     }
                 }
-            }
 
-        })
+            })
+
+
 
         bindingAddCardFragment.editCvcCard.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -87,6 +101,8 @@ class AddCardFragment : Fragment() {
                 }
             }
         })
+
+
 
         bindingAddCardFragment.editDateCard.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
