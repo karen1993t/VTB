@@ -5,25 +5,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
-import com.vtb.vtb_project.R
-import com.vtb.vtb_project.databinding.FragmentAnswerBinding
+import com.vtb.vtb_project.databinding.FragmentContractBinding
 
-class AnswerFragment : Fragment() {
-    lateinit var showBinding: FragmentAnswerBinding
+class ContractFragment : Fragment() {
+    lateinit var showBinding: FragmentContractBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        showBinding = FragmentAnswerBinding.inflate(inflater)
+        showBinding = FragmentContractBinding.inflate(inflater)
         return showBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        showBinding.btnProceedToProfile.setOnClickListener{
-            Navigation.findNavController(showBinding.root).navigate(R.id.action_go_to_contractFragment)
+        showBinding.btnAccept.setOnClickListener {
+
         }
     }
 }

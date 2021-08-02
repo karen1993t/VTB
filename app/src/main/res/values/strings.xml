@@ -311,6 +311,10 @@
     <string name="text_answer">You have successfully passed the verification.</string>
     <string name="text_button_proceed_to_profile">Proceed to Profile</string>
     <string name="icon_vtb_brand_card">icon_vtb_brand_card</string>
+    <string name="title_contract">Id vel lectus id mauris dui \nloreum iliduas</string>
+    <string name="text_contract">Phasellus aliquet sapien lorem, non rutrum odio pellentesque at. Sed malesuada ipsum ligula, vitae egestas sapien luctus sit amet. Vivamus ultricies quam vel justo dapibus convallis. Integer congue efficitur odio eget.\n\nVivamus ultricies quam vel justo dapibus convallis. Integer congue efficitur odio eget ultricies. Phasellus aliquet sapien lorem, non rutrum odio pellentesque at. Sed malesuada ipsum ligula, vitae egestas sapien luctus sit amet. Vivamus ultricies quam vel justo dapibus convallis. Integer congue efficitur odio eget.\nVivamus ultricies quam vel justo dapibus convallis. Integer congue efficitur odio eget ultricies. \nVivamus ultricies quam vel justo dapibus convallis. Integer congue efficitur odio eget ultricies. \n\nPhasellus aliquet sapien lorem, non rutrum odio pellentesque at. Sed malesuada ipsum ligula, vitae egestas sapien luctus sit amet. </string>
+    <string name="text_button_decline">Decline</string>
+    <string name="text_button_accept">Accept</string>
     <string-array name="slots_type_passport_number">
         <item>___ ____</item>
         <item>____ ______</item>
