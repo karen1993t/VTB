@@ -34,9 +34,6 @@ class PersonalAreaFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-
-
-
         val spannable = SpannableStringBuilder(bindingPersonalAreaFragment.titleMoney.text)
         spannable.setSpan(
             ForegroundColorSpan(Color.GRAY), 6, 13,
@@ -48,7 +45,8 @@ class PersonalAreaFragment : Fragment() {
 //            Navigation.findNavController(view).navigate(R.id.action_personalAreaFragment_to_payFragment)
 //        }
         bindingPersonalAreaFragment.replenish.setOnClickListener {
-           Navigation.findNavController(view).navigate(R.id.action_personalAreaFragment_to_balanceUpFragment)
+            Navigation.findNavController(view)
+                .navigate(R.id.action_personalAreaFragment_to_balanceUpFragment)
         }
 
 

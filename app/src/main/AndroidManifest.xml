@@ -16,6 +16,8 @@
         <activity
             android:name=".sign_in.SignIn"
             android:theme="@style/themeAuth" />
+        <activity android:name=".personal_area.PersonalAreaActivity"
+            android:screenOrientation="locked"/>
         <activity
             android:name=".open_vtb_card_steps.OpenVtbCardStepsActivity"
             android:screenOrientation="userPortrait"

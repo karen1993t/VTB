@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -49,6 +50,7 @@ class RepeatPasswordFragment : Fragment() {
             override fun afterTextChanged(s: Editable?) {
                 when {
                     bindingRepeatPasswordFragment.pinView1.editableText.toString().length == 5 && pin1 == pin2 -> {
+                        Log.d("logs","after start activity")
                                startActivity(Intent(requireContext(),PersonalAreaActivity::class.java))
                     }
                     bindingRepeatPasswordFragment.pinView1.editableText.toString().length == 5 && pin1 != pin2 -> {

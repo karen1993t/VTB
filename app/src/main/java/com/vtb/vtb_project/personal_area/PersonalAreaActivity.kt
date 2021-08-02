@@ -3,6 +3,7 @@ package com.vtb.vtb_project.personal_area
 import android.content.Context
 import android.os.Bundle
 import android.util.AttributeSet
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -24,6 +25,7 @@ class PersonalAreaActivity : AppCompatActivity() {
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
         }
+        Log.d("logs","cretted")
 
         val liveDataPersonalArea = ViewModelProvider(this).get(ViewModelPersonalArea::class.java)
 
