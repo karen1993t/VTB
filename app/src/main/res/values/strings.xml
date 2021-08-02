@@ -104,11 +104,11 @@
     <string name="hint_social_card_number">Social Card Number</string>
     <string-array name="country_name">
         <item>Armenia</item>
-        <!--        <item>Belarus</item>-->
+<!--        <item>Belarus</item>-->
         <item>"Russia"</item>
-        <!--        <item>Tajikistan</item>-->
-        <!--        <item>Ukraine</item>-->
-        <!--        <item>USA</item>-->
+<!--        <item>Tajikistan</item>-->
+<!--        <item>Ukraine</item>-->
+<!--        <item>USA</item>-->
     </string-array>
     <string-array name="citizen_ship">
         <item>Armenian Federation</item>
@@ -120,11 +120,11 @@
     </string-array>
     <string-array name="slots_type_phone_number">
         <item>+374(__)___-___</item>
-        <!--     <item>+375(___)____-___</item>-->
+<!--     <item>+375(___)____-___</item>-->
         <item>+7(___)___-__-__</item>
-        <!--        <item>+992(__)___-___"</item>-->
-        <!--        <item>+380(___)___-__-__</item>-->
-        <!--        <item>+1(___)___-__-__</item>-->
+<!--        <item>+992(__)___-___"</item>-->
+<!--        <item>+380(___)___-__-__</item>-->
+<!--        <item>+1(___)___-__-__</item>-->
     </string-array>
     <string-array name="city_of_russia">
         <item>Adygeya (republic)</item>
@@ -278,6 +278,43 @@
     <string name="_25_252_54_rub">25 252,54 RUB</string>
     <string name="replenish">Replenish</string>
     <string name="pay">Pay</string>
+    <string name="title_bank_auth_success">The questionnaire has been successfully completed.</string>
+    <string name="icon_bank_auth_success">icon_bank_auth_success</string>
+    <string name="text_biometrics">Next step: Biometrics</string>
+    <string name="icon_bank_auth_invalid">icon_bank_auth_invalid</string>
+    <string name="text_biometrics_invalid">You entered the incorrect details</string>
+    <string name="icon_bank_auth_reject">icon_bank_auth_reject</string>
+    <string name="title_bank_auth_reject">Unfortunately,\nthe bank has rejected your application</string>
+    <string name="text_info_reject">Refusal rules</string>
+    <string name="text_support_button">Support</string>
+    <string name="text_home">Home</string>
+    <string name="title_biometry">Biometry</string>
+    <string name="icon_biometry">icon_biometry</string>
+    <string name="text_biometry">Making biometrics videos</string>
+    <string name="info_text_biometry">Find a lighted spot</string>
+    <string name="text_go_to_biometrics">Go to biometrics</string>
+    <string name="title_biometry_submitted">Biometry Submitted.</string>
+    <string name="text_next_step_passport_photo">Next step:Passport Photo</string>
+    <string name="title_failure_biometry">You are hard to see</string>
+    <string name="text_failure_biometry">Failed to shoot biometrics video</string>
+    <string name="text_later_button">Later</string>
+    <string name="text_repeat_button">Repeat</string>
+    <string name="icon_prepare_passport">icon_prepare_passport</string>
+    <string name="text_passport_photo">Prepare your passport</string>
+    <string name="text_info_passport_photo">Take a photo of 2–3 pages of your passport</string>
+    <string name="title_passport_photo">Passport Photo</string>
+    <string name="icon_passport_photo_success">icon_passport_photo_success</string>
+    <string name="title_passport_photo_success">Thank you for your submission!</string>
+    <string name="text_passport_photo_success">It is being processed. We will get back you.</string>
+    <string name="text_button_done">Done</string>
+    <string name="title_answer">Tank You</string>
+    <string name="text_answer">You have successfully passed the verification.</string>
+    <string name="text_button_proceed_to_profile">Proceed to Profile</string>
+    <string name="icon_vtb_brand_card">icon_vtb_brand_card</string>
+    <string name="title_contract">Id vel lectus id mauris dui \nloreum iliduas</string>
+    <string name="text_contract">Phasellus aliquet sapien lorem, non rutrum odio pellentesque at. Sed malesuada ipsum ligula, vitae egestas sapien luctus sit amet. Vivamus ultricies quam vel justo dapibus convallis. Integer congue efficitur odio eget.\n\nVivamus ultricies quam vel justo dapibus convallis. Integer congue efficitur odio eget ultricies. Phasellus aliquet sapien lorem, non rutrum odio pellentesque at. Sed malesuada ipsum ligula, vitae egestas sapien luctus sit amet. Vivamus ultricies quam vel justo dapibus convallis. Integer congue efficitur odio eget.\nVivamus ultricies quam vel justo dapibus convallis. Integer congue efficitur odio eget ultricies. \nVivamus ultricies quam vel justo dapibus convallis. Integer congue efficitur odio eget ultricies. \n\nPhasellus aliquet sapien lorem, non rutrum odio pellentesque at. Sed malesuada ipsum ligula, vitae egestas sapien luctus sit amet. </string>
+    <string name="text_button_decline">Decline</string>
+    <string name="text_button_accept">Accept</string>
     <string name="_650_353">650 353 ₽</string>
     <string name="back">Back</string>
     <string name="enter_number_card">enter number card</string>
@@ -291,6 +328,16 @@
     <string-array name="slots_type_social_card">
         <item>_____ _____</item>
         <item>____ ______</item>
+    </string-array>
+    <string-array name="communication_type_statement">
+        <item>Postal service</item>
+        <item>Email</item>
+    </string-array>
+
+    <string-array name="communication_type_obtaining_with_the_bank">
+        <item>Messanger</item>
+        <item>Email</item>
+        <item>Postal service</item>
     </string-array>
 
 

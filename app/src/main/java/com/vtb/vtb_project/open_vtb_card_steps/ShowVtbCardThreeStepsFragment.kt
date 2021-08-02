@@ -11,28 +11,36 @@ import com.vtb.vtb_project.R
 import com.vtb.vtb_project.databinding.FragmentOpenVtbCardThreeStepsBinding
 
 class ShowVtbCardThreeStepsFragment : Fragment() {
-    private val sharedViewModel:SharedViewModel by activityViewModels()
-    private lateinit var bindingShow: FragmentOpenVtbCardThreeStepsBinding
+    private val sharedViewModel: SharedViewModel by activityViewModels()
+    private lateinit var showBinding: FragmentOpenVtbCardThreeStepsBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_open_vtb_card_three_steps, container, false)
+    ): View {
+        showBinding = FragmentOpenVtbCardThreeStepsBinding.inflate(layoutInflater)
+        return showBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        bindingShow = FragmentOpenVtbCardThreeStepsBinding.bind(view)
-        bindingShow.btnGetStarted.setOnClickListener {
+
+        showBinding.btnGetStarted.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_goToPersonal_information)
 
         }
-        bindingShow.step1.setOnClickListener {
+        showBinding.step1.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_goToPersonal_information)
         }
-        bindingShow.btnClose.setOnClickListener {
+        showBinding.btnClose.setOnClickListener {
             sharedViewModel.closeActivity(true)
+        }
+        showBinding.step2.setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_go_to_biometryFragment)
+        }
+        showBinding.step3.setOnClickListener {
+            Navigation.findNavController(view)
+                .navigate(R.id.action_showVtbCardThreeStepsFragment_to_passportPhotoFragment)
         }
     }
 }

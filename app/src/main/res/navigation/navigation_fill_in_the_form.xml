@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/personalInformationFragment"
         android:name="com.vtb.vtb_project.open_vtb_card_steps.PersonalInformationFragment"
-        android:label="PersonalInformationFragment" >
+        android:label="PersonalInformationFragment">
         <action
             android:id="@+id/action_goToHomeFragment"
             app:destination="@id/showVtbCardThreeStepsFragment"
@@ -35,11 +35,25 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_go_to_biometryFragment"
+            app:destination="@id/biometryFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_showVtbCardThreeStepsFragment_to_passportPhotoFragment"
+            app:destination="@id/passportPhotoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/showMobilePhoneNumberFragment"
         android:name="com.vtb.vtb_project.open_vtb_card_steps.MobilePhoneNumberFragment"
-        android:label="ShowMobilePhoneNumberFragment" >
+        android:label="ShowMobilePhoneNumberFragment">
         <action
             android:id="@+id/action_showMobilePhoneNumberFragment_to_home"
             app:destination="@id/showVtbCardThreeStepsFragment"
@@ -53,12 +67,12 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/legalAddressFragment"
         android:name="com.vtb.vtb_project.open_vtb_card_steps.LegalAddressFragment"
-        android:label="LegalAddressFragment" >
+        android:label="LegalAddressFragment">
         <action
             android:id="@+id/action_legalAddressFragment_go_to_home"
             app:destination="@id/showVtbCardThreeStepsFragment"
@@ -77,7 +91,7 @@
     <fragment
         android:id="@+id/passportFragment"
         android:name="com.vtb.vtb_project.open_vtb_card_steps.PassportFragment"
-        android:label="PassportFragment" >
+        android:label="PassportFragment">
         <action
             android:id="@+id/action_passportFragment_go_to_home"
             app:destination="@id/showVtbCardThreeStepsFragment"
@@ -91,18 +105,177 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/communicationFragment"
         android:name="com.vtb.vtb_project.open_vtb_card_steps.CommunicationFragment"
-        android:label="CommunicationFragment" >
+        android:label="CommunicationFragment">
         <action
             android:id="@+id/action_communicationFragment_to_showVtbCardThreeStepsFragment"
             app:destination="@id/showVtbCardThreeStepsFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_go_to_bankAuthorizationSuccessFragment"
+            app:destination="@id/bankAuthorizationSuccessFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_go_to_bankAuthorizationInvalidFragment"
+            app:destination="@id/bankAuthorizationInvalidFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_go_to_bankAuthorizationRejectFragment"
+            app:destination="@id/bankAuthorizationRejectFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
+    <fragment
+        android:id="@+id/bankAuthorizationInvalidFragment"
+        android:name="com.vtb.vtb_project.open_vtb_card_steps.BankAuthorizationInvalidFragment"
+        android:label="BankAuthorizationInvalidFragment" />
+    <fragment
+        android:id="@+id/bankAuthorizationRejectFragment"
+        android:name="com.vtb.vtb_project.open_vtb_card_steps.BankAuthorizationRejectFragment"
+        android:label="BankAuthorizationRejectFragment"
+        app:startDestination="@id/action_bankAuthorizationRejectFragment_go_to_home">
+        <action
+            android:id="@+id/action_bankAuthorizationRejectFragment_go_to_home"
+            app:destination="@id/showVtbCardThreeStepsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/bankAuthorizationSuccessFragment"
+        android:name="com.vtb.vtb_project.open_vtb_card_steps.BankAuthorizationSuccessFragment"
+        android:label="BankAuthorizationSuccessFragment">
+        <action
+            android:id="@+id/action_go_to_biometryFragment"
+            app:destination="@id/biometryFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/biometryFragment"
+        android:name="com.vtb.vtb_project.open_vtb_card_steps.BiometryFragment"
+        android:label="BiometryFragment">
+        <action
+            android:id="@+id/action_go_to_biometryVideoFragment"
+            app:destination="@id/biometryVideoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/biometryVideoFragment"
+        android:name="com.vtb.vtb_project.open_vtb_card_steps.BiometryVideoFragment"
+        android:label="BiometryVideoFragment">
+        <action
+            android:id="@+id/action_go_to_biometrySuccessFragment"
+            app:destination="@id/biometrySuccessFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_go_to_failureBiometryFragment"
+            app:destination="@id/failureBiometryFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/biometrySuccessFragment"
+        android:name="com.vtb.vtb_project.open_vtb_card_steps.BiometrySuccessFragment"
+        android:label="BiometrySuccessFragment">
+        <action
+            android:id="@+id/action_go_to_passportPhotoFragment"
+            app:destination="@id/passportPhotoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/failureBiometryFragment"
+        android:name="com.vtb.vtb_project.open_vtb_card_steps.FailureBiometryFragment"
+        android:label="FailureBiometryFragment">
+        <action
+            android:id="@+id/action_go_to_biometryVideoFragment"
+            app:destination="@id/biometryVideoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/passportPhotoFragment"
+        android:name="com.vtb.vtb_project.open_vtb_card_steps.PassportPhotoFragment"
+        android:label="PassportPhotoFragment">
+        <action
+            android:id="@+id/action_passportPhotoFragment_to_home"
+            app:destination="@id/showVtbCardThreeStepsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_go_to_passportPhotoSuccessFragment"
+            app:destination="@id/passportPhotoSuccessFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_go_to_bankAuthorizationRejectFragment"
+            app:destination="@id/bankAuthorizationRejectFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/passportPhotoSuccessFragment"
+        android:name="com.vtb.vtb_project.open_vtb_card_steps.PassportPhotoSuccessFragment"
+        android:label="PassportPhotoSuccessFragment">
+        <action
+            android:id="@+id/action_go_to_answerFragment"
+            app:destination="@id/answerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/answerFragment"
+        android:name="com.vtb.vtb_project.open_vtb_card_steps.AnswerFragment"
+        android:label="AnswerFragment">
+        <action
+            android:id="@+id/action_go_to_contractFragment"
+            app:destination="@id/contractFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/contractFragment"
+        android:name="com.vtb.vtb_project.open_vtb_card_steps.ContractFragment"
+        android:label="ContractFragment" />
 </navigation>
