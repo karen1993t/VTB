@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.vtb.vtb_project.create_account_and_visa_card.ShowAuthorizationCardHolderFragment
+import com.vtb.vtb_project.ui.create_account_and_visa_card.ShowAuthorizationCardHolderFragment
 
 
 class AuthorizationViewPagerAdapter(

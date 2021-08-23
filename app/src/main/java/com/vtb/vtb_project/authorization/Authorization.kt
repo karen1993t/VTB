@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.vtb.vtb_project.create_account_and_visa_card.ShowAuthorizationActivity
+import com.vtb.vtb_project.ui.create_account_and_visa_card.ShowAuthorizationActivity
 import com.vtb.vtb_project.databinding.ActivityAuthorizationBinding
 
 class Authorization : AppCompatActivity() {

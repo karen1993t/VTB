@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".open_vtb_card_steps.OpenVtbCardStepsActivity">
+    tools:context=".ui.open_vtb_card_steps.OpenVtbCardStepsActivity">
 
 
     <androidx.fragment.app.FragmentContainerView

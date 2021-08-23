@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import com.vtb.vtb_project.create_account_and_visa_card.ShowAuthorizationActivity
+import com.vtb.vtb_project.ui.create_account_and_visa_card.ShowAuthorizationActivity
 import com.vtb.vtb_project.databinding.ActivityMainBinding
 import com.vtb.vtb_project.sign_in.SignIn
 

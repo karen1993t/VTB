@@ -1,4 +1,4 @@
-package com.vtb.vtb_project.open_vtb_card_steps
+package com.vtb.vtb_project.ui.open_vtb_card_steps
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,13 +9,18 @@ import com.vtb.vtb_project.databinding.FragmentBankAuthInvalidBinding
 
 
 class BankAuthorizationInvalidFragment : Fragment() {
-    private lateinit var showBinding: FragmentBankAuthInvalidBinding
+    var showBinding: FragmentBankAuthInvalidBinding? = null
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         showBinding = FragmentBankAuthInvalidBinding.inflate(inflater)
-        return showBinding.root
+        return showBinding?.root
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        showBinding = null
     }
 }

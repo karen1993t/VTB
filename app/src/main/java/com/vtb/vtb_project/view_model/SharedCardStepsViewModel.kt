@@ -1,10 +1,10 @@
-package com.vtb.vtb_project.open_vtb_card_steps
+package com.vtb.vtb_project.view_model
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class SharedViewModel : ViewModel() {
+class SharedCardStepsViewModel : ViewModel() {
 
     private val _userFirstNameLiveData = MutableLiveData<String>()
     val userFirstNameLiveData: LiveData<String> = _userFirstNameLiveData

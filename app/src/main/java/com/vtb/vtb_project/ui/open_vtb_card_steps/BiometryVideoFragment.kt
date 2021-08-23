@@ -1,4 +1,4 @@
-package com.vtb.vtb_project.open_vtb_card_steps
+package com.vtb.vtb_project.ui.open_vtb_card_steps
 
 
 import android.Manifest
@@ -24,16 +24,16 @@ import java.util.*
 class BiometryVideoFragment : Fragment() {
     private lateinit var currentVideoPath: String
     private lateinit var uri: Uri                                        // video biometry
-    private lateinit var showBinding: FragmentBiometryVideoBinding
+    var showBinding: FragmentBiometryVideoBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         uri = Uri.parse("")
         showBinding = FragmentBiometryVideoBinding.inflate(inflater)
-        return showBinding.root
+        return showBinding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -43,10 +43,14 @@ class BiometryVideoFragment : Fragment() {
             registerForActivityResult(ActivityResultContracts.CaptureVideo()) { successFull ->
                 if (successFull) {
 
-                    Navigation.findNavController(showBinding.root)
-                        .navigate(R.id.action_go_to_biometrySuccessFragment)
-                } else Navigation.findNavController(showBinding.root)
-                    .navigate(R.id.action_go_to_failureBiometryFragment)
+                    showBinding?.root?.let { view ->
+                        Navigation.findNavController(view)
+                            .navigate(R.id.action_go_to_biometrySuccessFragment)
+                    }
+                } else showBinding?.root?.let { view ->
+                    Navigation.findNavController(view)
+                        .navigate(R.id.action_go_to_failureBiometryFragment)
+                }
 
             }
         val requestPermission =
@@ -60,7 +64,7 @@ class BiometryVideoFragment : Fragment() {
                     videoLauncher.launch(uri)
                 }
             }
-        showBinding.btnGoToBiometricsScanner.setOnClickListener {
+        showBinding?.btnGoToBiometricsScanner?.setOnClickListener {
             requestPermission.launch(Manifest.permission.CAMERA)
         }
     }
@@ -78,4 +82,8 @@ class BiometryVideoFragment : Fragment() {
         }
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        showBinding = null
+    }
 }

@@ -1,4 +1,4 @@
-package com.vtb.vtb_project.create_account_and_visa_card
+package com.vtb.vtb_project.ui.create_account_and_visa_card
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -11,7 +11,7 @@ import androidx.constraintlayout.widget.ConstraintSet
 import androidx.fragment.app.Fragment
 import com.vtb.vtb_project.R
 import com.vtb.vtb_project.databinding.FragmentShowAuthorizationCardHolderBinding
-import com.vtb.vtb_project.open_vtb_card_steps.OpenVtbCardStepsActivity
+import com.vtb.vtb_project.ui.open_vtb_card_steps.OpenVtbCardStepsActivity
 
 class ShowAuthorizationCardHolderFragment : Fragment() {
     private lateinit var bindingShow: FragmentShowAuthorizationCardHolderBinding

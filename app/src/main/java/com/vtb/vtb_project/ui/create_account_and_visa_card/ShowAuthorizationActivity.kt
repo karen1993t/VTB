@@ -1,4 +1,4 @@
-package com.vtb.vtb_project.create_account_and_visa_card
+package com.vtb.vtb_project.ui.create_account_and_visa_card
 
 
 import androidx.appcompat.app.AppCompatActivity

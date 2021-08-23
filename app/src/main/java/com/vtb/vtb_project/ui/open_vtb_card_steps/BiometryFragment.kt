@@ -1,6 +1,4 @@
-package com.vtb.vtb_project.open_vtb_card_steps
-
-import android.content.Intent
+package com.vtb.vtb_project.ui.open_vtb_card_steps
 
 import android.os.Bundle
 
@@ -17,21 +15,31 @@ import com.vtb.vtb_project.databinding.FragmentBiometryBinding
 
 class BiometryFragment : Fragment() {
 
-    lateinit var showBinding: FragmentBiometryBinding
+    var showBinding: FragmentBiometryBinding? = null
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         showBinding = FragmentBiometryBinding.inflate(inflater)
-        return showBinding.root
+        return showBinding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        showBinding.btnGoToBiometricsScanner.setOnClickListener{
-         Navigation.findNavController(showBinding.root).navigate(R.id.action_go_to_biometryVideoFragment)
+        showBinding?.btnGoToBiometricsScanner?.setOnClickListener {
+            showBinding?.root?.let { view ->
+                Navigation.findNavController(view).navigate(R.id.action_go_to_biometryVideoFragment)
+            }
         }
+        showBinding?.btnClose?.setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_biometryFragment_to_showVtbCardThreeStepsFragment)
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        showBinding = null
     }
 }
 

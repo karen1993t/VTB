@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_container"
-    tools:context=".create_account_and_visa_card.ShowAuthorizationActivity">
+    tools:context=".ui.create_account_and_visa_card.ShowAuthorizationActivity">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout

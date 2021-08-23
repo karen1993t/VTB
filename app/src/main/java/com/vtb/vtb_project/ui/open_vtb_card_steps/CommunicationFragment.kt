@@ -1,4 +1,4 @@
-package com.vtb.vtb_project.open_vtb_card_steps
+package com.vtb.vtb_project.ui.open_vtb_card_steps
 
 
 import android.os.Bundle
@@ -18,15 +18,15 @@ import com.vtb.vtb_project.R
 import com.vtb.vtb_project.databinding.FragmentCommunicationBinding
 
 class CommunicationFragment : Fragment() {
-    private lateinit var showBinding: FragmentCommunicationBinding
+    var showBinding: FragmentCommunicationBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         showBinding = FragmentCommunicationBinding.inflate(inflater)
-        return showBinding.root
+        return showBinding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -41,38 +41,40 @@ class CommunicationFragment : Fragment() {
             requireContext(), R.layout.drop_down_item_country,
             communicationStatementArray
         )
-        showBinding.editObtainingTheStatement.setAdapter(arrayAdapterStatement)
+        showBinding?.editObtainingTheStatement?.setAdapter(arrayAdapterStatement)
 
         val arrayAdapterWithTheBank = ArrayAdapter(
             requireContext(), R.layout.drop_down_item_country,
             communicationWithTheBankArray
         )
-        showBinding.editCommunicationWithTheBank.setAdapter(arrayAdapterWithTheBank)
+        showBinding?.editCommunicationWithTheBank?.setAdapter(arrayAdapterWithTheBank)
 
-        showBinding.btnClose.setOnClickListener {
-            Navigation.findNavController(showBinding.root)
-                .navigate(R.id.action_communicationFragment_to_showVtbCardThreeStepsFragment)
+        showBinding?.btnClose?.setOnClickListener {
+            showBinding?.root?.let { view ->
+                Navigation.findNavController(view)
+                    .navigate(R.id.action_communicationFragment_to_showVtbCardThreeStepsFragment)
+            }
         }
 
     }
 
     override fun onResume() {
         super.onResume()
-        showBinding.editObtainingTheStatement.setOnClickListener {
-            showBinding.editObtainingTheStatement.showDropDown()
+        showBinding?.editObtainingTheStatement?.setOnClickListener {
+            showBinding?.editObtainingTheStatement?.showDropDown()
         }
 
-        showBinding.editCommunicationWithTheBank.setOnClickListener {
-            showBinding.editCommunicationWithTheBank.showDropDown()
+        showBinding?.editCommunicationWithTheBank?.setOnClickListener {
+            showBinding?.editCommunicationWithTheBank?.showDropDown()
         }
-        showBinding.editObtainingTheStatement.addTextChangedListener(object : TextWatcher {
+        showBinding?.editObtainingTheStatement?.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                if (!showBinding.editObtainingTheStatement.text.isNullOrEmpty()) {
-                    showBinding.textInputLayoutObtainingTheStatement.error = null
+                if (!showBinding?.editObtainingTheStatement?.text.isNullOrEmpty()) {
+                    showBinding?.textInputLayoutObtainingTheStatement?.error = null
                 }
             }
 
@@ -81,36 +83,38 @@ class CommunicationFragment : Fragment() {
             }
 
         })
-        showBinding.editCommunicationWithTheBank.addTextChangedListener(object : TextWatcher {
+        showBinding?.editCommunicationWithTheBank?.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                if (!showBinding.editCommunicationWithTheBank.text.isNullOrEmpty()) {
-                    showBinding.textInputLayoutCommunicationWithTheBank.error = null
+                if (!showBinding?.editCommunicationWithTheBank?.text.isNullOrEmpty()) {
+                    showBinding?.textInputLayoutCommunicationWithTheBank?.error = null
                 }
             }
 
             override fun afterTextChanged(p0: Editable?) {
             }
         })
-        showBinding.btnGoToCheckedPersonalInformation.setOnClickListener {
+        showBinding?.btnGoToCheckedPersonalInformation?.setOnClickListener {
             when {
-                showBinding.checkBoxPrivacyPolicy.isChecked &&
-                        !showBinding.editObtainingTheStatement.text.isNullOrEmpty() &&
-                        !showBinding.editCommunicationWithTheBank.text.isNullOrEmpty() -> {
-                    Navigation.findNavController(showBinding.root)
-                        .navigate(R.id.action_go_to_bankAuthorizationSuccessFragment)
+                showBinding?.checkBoxPrivacyPolicy?.isChecked == true &&
+                        !showBinding?.editObtainingTheStatement?.text.isNullOrEmpty() &&
+                        !showBinding?.editCommunicationWithTheBank?.text.isNullOrEmpty() -> {
+                    showBinding?.root?.let { view ->
+                        Navigation.findNavController(view)
+                            .navigate(R.id.action_go_to_bankAuthorizationSuccessFragment)
+                    }
                 }
                 else -> {
                     when {
-                        showBinding.editObtainingTheStatement.text.isNullOrEmpty() ->
-                            showBinding.textInputLayoutObtainingTheStatement.error =
+                        showBinding?.editObtainingTheStatement?.text.isNullOrEmpty() ->
+                            showBinding?.textInputLayoutObtainingTheStatement?.error =
                                 resources.getString(R.string.errors_go_to_click_next)
-                        showBinding.editCommunicationWithTheBank.text.isNullOrEmpty() ->
-                            showBinding.textInputLayoutCommunicationWithTheBank.error =
+                        showBinding?.editCommunicationWithTheBank?.text.isNullOrEmpty() ->
+                            showBinding?.textInputLayoutCommunicationWithTheBank?.error =
                                 resources.getString(R.string.errors_go_to_click_next)
-                        !showBinding.checkBoxPrivacyPolicy.isChecked ->
+                        showBinding?.checkBoxPrivacyPolicy?.isChecked == false ->
                             Toast.makeText(
                                 requireContext(),
                                 "Pleas check Privacy Policy",
@@ -120,13 +124,11 @@ class CommunicationFragment : Fragment() {
                 }
             }
         }
-
-
     }
 
 
     private fun redactorTextPrivacyPolicy() {
-        val spannable = SpannableStringBuilder(showBinding.textPrivacyPolicy.text).apply {
+        val spannable = SpannableStringBuilder(showBinding?.textPrivacyPolicy?.text).apply {
             setSpan(
                 ForegroundColorSpan(resources.getColor(R.color.color_red_card_steps, null)),
                 11,
@@ -140,7 +142,12 @@ class CommunicationFragment : Fragment() {
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
             )
         }
-        showBinding.textPrivacyPolicy.text = spannable
+        showBinding?.textPrivacyPolicy?.text = spannable
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        showBinding = null
     }
 }

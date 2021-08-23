@@ -1,4 +1,4 @@
-package com.vtb.vtb_project.open_vtb_card_steps
+package com.vtb.vtb_project.ui.open_vtb_card_steps
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -20,32 +20,38 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class PassportPhotoFragment : Fragment() {
-    lateinit var showBinding: FragmentPassportPhotoBinding
+    var showBinding: FragmentPassportPhotoBinding? = null
     private lateinit var currentPhotoPath: String
     private lateinit var uriPhotoPassport: Uri
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         uriPhotoPassport = Uri.parse("")
         showBinding = FragmentPassportPhotoBinding.inflate(inflater)
-        return showBinding.root
+        return showBinding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        showBinding.btnClose.setOnClickListener {
-            Navigation.findNavController(showBinding.root)
-                .navigate(R.id.action_passportPhotoFragment_to_home)
+        showBinding?.btnClose?.setOnClickListener {
+            showBinding?.root?.let { view ->
+                Navigation.findNavController(view)
+                    .navigate(R.id.action_passportPhotoFragment_to_home)
+            }
         }
 
         val capturePhotoPassport =
             registerForActivityResult(ActivityResultContracts.TakePicture()) { successFull ->
-                if (successFull) Navigation.findNavController(showBinding.root)
-                    .navigate(R.id.action_go_to_passportPhotoSuccessFragment)
-                else Navigation.findNavController(showBinding.root)
-                    .navigate(R.id.action_go_to_bankAuthorizationRejectFragment)
+                if (successFull) showBinding?.root?.let {
+                    Navigation.findNavController(it)
+                        .navigate(R.id.action_go_to_passportPhotoSuccessFragment)
+                }
+                else showBinding?.root?.let {
+                    Navigation.findNavController(it)
+                        .navigate(R.id.action_go_to_bankAuthorizationRejectFragment)
+                }
             }
         val requestPermissionPicture =
             registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
@@ -59,7 +65,7 @@ class PassportPhotoFragment : Fragment() {
                 }
             }
 
-        showBinding.btnGoToCapturePassportPhoto.setOnClickListener {
+        showBinding?.btnGoToCapturePassportPhoto?.setOnClickListener {
             requestPermissionPicture.launch(Manifest.permission.CAMERA)
         }
     }
@@ -75,5 +81,10 @@ class PassportPhotoFragment : Fragment() {
         ).apply {
             currentPhotoPath = absolutePath
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        showBinding = null
     }
 }

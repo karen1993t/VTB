@@ -3,6 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/HRAZDAN-5/Desktop/VtbProject/app/src/main/res/layout/activity_authorization.xml" value="0.18691983122362868" />
+        <entry key="..\:/Users/HRAZDAN-5/Desktop/VtbProject/app/src/main/res/layout/fragment_about_five.xml" value="0.18691983122362868" />
+        <entry key="..\:/Users/HRAZDAN-5/Desktop/VtbProject/app/src/main/res/layout/fragment_add_card.xml" value="0.1893162393162393" />
+        <entry key="..\:/Users/HRAZDAN-5/Desktop/VtbProject/app/src/main/res/layout/fragment_added_cards.xml" value="0.1893162393162393" />
+        <entry key="..\:/Users/HRAZDAN-5/Desktop/VtbProject/app/src/main/res/layout/fragment_authorization_.xml" value="0.25" />
+        <entry key="..\:/Users/HRAZDAN-5/Desktop/VtbProject/app/src/main/res/layout/fragment_balance_up.xml" value="0.14102564102564102" />
+        <entry key="..\:/Users/HRAZDAN-5/Desktop/VtbProject/app/src/main/res/layout/fragment_bank_auth_invalid.xml" value="0.14102564102564102" />
+        <entry key="..\:/Users/HRAZDAN-5/Desktop/VtbProject/app/src/main/res/layout/fragment_bank_auth_success.xml" value="0.14102564102564102" />
+        <entry key="..\:/Users/HRAZDAN-5/Desktop/VtbProject/app/src/main/res/layout/fragment_biometry.xml" value="0.18691983122362868" />
+        <entry key="..\:/Users/HRAZDAN-5/Desktop/VtbProject/app/src/main/res/layout/fragment_contract.xml" value="0.25569620253164554" />
+        <entry key="..\:/Users/HRAZDAN-5/Desktop/VtbProject/app/src/main/res/layout/fragment_enter_email.xml" value="0.14102564102564102" />
+        <entry key="..\:/Users/HRAZDAN-5/Desktop/VtbProject/app/src/main/res/layout/fragment_enter_password.xml" value="0.14102564102564102" />
+        <entry key="..\:/Users/HRAZDAN-5/Desktop/VtbProject/app/src/main/res/layout/fragment_open_vtb_card_three_steps.xml" value="0.1893162393162393" />
+        <entry key="..\:/Users/HRAZDAN-5/Desktop/VtbProject/app/src/main/res/layout/fragment_passport.xml" value="0.14102564102564102" />
+        <entry key="..\:/Users/HRAZDAN-5/Desktop/VtbProject/app/src/main/res/layout/fragment_passport_photo.xml" value="0.14102564102564102" />
+        <entry key="..\:/Users/HRAZDAN-5/Desktop/VtbProject/app/src/main/res/layout/fragment_repeat_password.xml" value="0.14102564102564102" />
+        <entry key="..\:/Users/HRAZDAN-5/Desktop/VtbProject/app/src/main/res/layout/fragment_show_authorization_card_holder.xml" value="0.18691983122362868" />
+        <entry key="..\:/Users/HRAZDAN-5/Desktop/VtbProject/app/src/main/res/layout/fragment_show_authorized_no_card.xml" value="0.14102564102564102" />
+        <entry key="..\:/Users/HRAZDAN-5/Desktop/VtbProject/app/src/main/res/layout/frament_failure_biometry.xml" value="0.14102564102564102" />
+        <entry key="..\:/Users/HRAZDAN-5/Desktop/VtbProject/app/src/main/res/layout/recycler_balance_up.xml" value="0.14102564102564102" />
         <entry key="..\:/Users/armen/Desktop/VTB/app/src/main/res/layout/fragment_add_card.xml" value="0.18518518518518517" />
         <entry key="..\:/Users/armen/Desktop/VTB/app/src/main/res/layout/fragment_added_cards.xml" value="0.16927083333333334" />
         <entry key="..\:/Users/armen/Desktop/VTB/app/src/main/res/layout/fragment_aded_cards.xml" value="0.16927083333333334" />

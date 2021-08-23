@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
      android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".create_account_and_visa_card.ShowAuthorizationActivity">
+    tools:context=".ui.create_account_and_visa_card.ShowAuthorizationActivity">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
