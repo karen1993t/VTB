@@ -18,4 +18,10 @@ class ViewModelPersonalArea : ViewModel() {
         _getNumberLiveData.postValue(string)
     }
 
+    private val _getNameLiveData = MutableLiveData<String>()
+    val getNameLiveData:LiveData<String> = _getNameLiveData
+    fun setNameCard(string:String){
+        _getNameLiveData.postValue(string)
+    }
+
 }
