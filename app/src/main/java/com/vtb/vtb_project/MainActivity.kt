@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setHomeButtonEnabled(true)
 
         val intentShowAuthorization = Intent(this, ShowAuthorizationActivity::class.java)
-        bindingMain.headLineEmail.setOnClickListener() {
+        bindingMain.headLineEmail.setOnClickListener{
             startActivity(intentShowAuthorization)
         }
 
