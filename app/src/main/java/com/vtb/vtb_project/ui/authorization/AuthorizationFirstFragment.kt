@@ -1,4 +1,4 @@
-package com.vtb.vtb_project.authorization
+package com.vtb.vtb_project.ui.authorization
 
 import android.os.Bundle
 import android.text.Editable
@@ -11,6 +11,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import com.vtb.vtb_project.R
 import com.vtb.vtb_project.databinding.FragmentAuthorizationBinding
+import com.vtb.vtb_project.view_model.ViewModelAuthorization
 
 class AuthorizationFirstFragment : Fragment() {
     private lateinit var password1: String

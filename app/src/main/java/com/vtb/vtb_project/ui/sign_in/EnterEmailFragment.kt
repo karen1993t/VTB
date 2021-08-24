@@ -1,4 +1,4 @@
-package com.vtb.vtb_project.sign_in
+package com.vtb.vtb_project.ui.sign_in
 
 import android.os.Bundle
 import android.text.Editable
@@ -11,10 +11,15 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import com.vtb.vtb_project.R
 import com.vtb.vtb_project.databinding.FragmentEnterEmailBinding
+import com.vtb.vtb_project.ui.personal_area.PersonalAreaActivity
+import com.vtb.vtb_project.view_model.ViewModelSignIn
 
 class EnterEmailFragment : Fragment() {
     private val closeBtn: ViewModelSignIn by activityViewModels()
     private  var checkerEmail:Boolean = false
+    private lateinit var email:String
+    val viewModelEmail :ViewModelSignIn by activityViewModels()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,6 +47,9 @@ class EnterEmailFragment : Fragment() {
                 }
 
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    email= s.toString()
+                    viewModelEmail.emailLiveData(email)
+
                 }
 
                 override fun afterTextChanged(s: Editable?) {
@@ -81,5 +89,8 @@ class EnterEmailFragment : Fragment() {
                 }
             }
         }
+
+
+
     }
 }

@@ -12,7 +12,7 @@ import androidx.constraintlayout.widget.ConstraintSet
 import androidx.fragment.app.Fragment
 import com.vtb.vtb_project.R
 import com.vtb.vtb_project.databinding.FragmentShowAuthorizedNoCardBinding
-import com.vtb.vtb_project.on_boarding_about_fragments.OnBoardingAbout
+import com.vtb.vtb_project.ui.on_boarding_about_fragments.OnBoardingAbout
 
 class ShowAuthorizationNoCardFragment : Fragment() {
     private lateinit var bindingShow: FragmentShowAuthorizedNoCardBinding

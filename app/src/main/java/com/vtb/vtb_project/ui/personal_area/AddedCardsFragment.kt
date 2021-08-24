@@ -1,4 +1,4 @@
-package com.vtb.vtb_project.personal_area
+package com.vtb.vtb_project.ui.personal_area
 
 import android.os.Bundle
 import android.util.Log
@@ -7,11 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.vtb.vtb_project.R
 import com.vtb.vtb_project.adapters.AddCardsAdapter
 import com.vtb.vtb_project.databinding.FragmentAddedCardsBinding
+import com.vtb.vtb_project.view_model.ViewModelPersonalArea
 
 class AddedCardsFragment : Fragment() {
     private lateinit var bindingAddedCardsFragment: FragmentAddedCardsBinding

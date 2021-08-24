@@ -1,4 +1,4 @@
-package com.vtb.vtb_project.personal_area
+package com.vtb.vtb_project.ui.personal_area
 
 import android.os.Bundle
 import android.text.Editable
@@ -13,6 +13,7 @@ import androidx.navigation.Navigation
 import com.vtb.vtb_project.R
 import com.vtb.vtb_project.databinding.FragmentAddCardBinding
 import com.vtb.vtb_project.tools.ToolsForEditText
+import com.vtb.vtb_project.view_model.ViewModelPersonalArea
 
 class AddCardFragment : Fragment() {
     private lateinit var bindingAddCardFragment: FragmentAddCardBinding

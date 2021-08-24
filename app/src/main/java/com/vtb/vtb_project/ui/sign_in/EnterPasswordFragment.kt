@@ -1,4 +1,4 @@
-package com.vtb.vtb_project.sign_in
+package com.vtb.vtb_project.ui.sign_in
 
 import android.os.Bundle
 import android.text.Editable
@@ -11,6 +11,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import com.vtb.vtb_project.R
 import com.vtb.vtb_project.databinding.FragmentEnterPasswordBinding
+import com.vtb.vtb_project.view_model.ViewModelSignIn
 
 class EnterPasswordFragment : Fragment() {
     private lateinit var pin1: String

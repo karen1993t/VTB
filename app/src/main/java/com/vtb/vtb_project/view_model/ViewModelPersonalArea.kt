@@ -1,4 +1,4 @@
-package com.vtb.vtb_project.personal_area
+package com.vtb.vtb_project.view_model
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -1,4 +1,4 @@
-package com.vtb.vtb_project.personal_area
+package com.vtb.vtb_project.ui.personal_area
 
 import android.graphics.Color
 import android.os.Bundle
@@ -7,25 +7,97 @@ import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.biometric.BiometricManager
+import androidx.biometric.BiometricPrompt
+import androidx.core.content.ContextCompat
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.vtb.vtb_project.R
 import com.vtb.vtb_project.adapters.PersonalAreaAdapter
-import com.vtb.vtb_project.databinding.FragmentCommunicationBinding
 import com.vtb.vtb_project.databinding.FragmentPersonalAreaBinding
-import ru.tinkoff.decoro.parser.UnderscoreDigitSlotsParser
+import java.util.concurrent.Executor
 
 class PersonalAreaFragment : Fragment() {
     private lateinit var bindingPersonalAreaFragment: FragmentPersonalAreaBinding
 
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val executor = ContextCompat.getMainExecutor(requireContext())
+        val biometricManager = BiometricManager.from(requireContext())
+
+        fun authUser(executor: Executor) {
+
+            val promptInfo = BiometricPrompt.PromptInfo.Builder()
+
+                .setTitle("Authentication Required!")
+                .setSubtitle("Important authentication")
+                .setDescription("Please authenticate to be able to view your account information ")
+                .setDeviceCredentialAllowed(true)
+                .build()
+
+            val biometricPrompt = BiometricPrompt(this, executor,
+                object : BiometricPrompt.AuthenticationCallback() {
+
+                    override fun onAuthenticationSucceeded(
+                        result: BiometricPrompt.AuthenticationResult
+                    ) {
+//                        super.onAuthenticationSucceeded(result)
+//                        fragment_fingerprint.visibility = View.VISIBLE
+                    }
+
+
+                    override fun onAuthenticationError(
+                        errorCode: Int, errString: CharSequence
+                    ) {
+                        super.onAuthenticationError(errorCode, errString)
+                        Toast.makeText(
+                            requireContext(),
+                            "error",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+
+                })
+
+
+            biometricPrompt.authenticate(promptInfo)
+
+        }
+
+        when (biometricManager.canAuthenticate()) {
+            BiometricManager.BIOMETRIC_SUCCESS ->
+                authUser(executor)
+            BiometricManager.BIOMETRIC_ERROR_NO_HARDWARE ->
+                Toast.makeText(
+                    requireContext(),
+                    "BIOMETRIC_ERROR_NO_HARDWARE",
+                    Toast.LENGTH_LONG
+                ).show()
+            BiometricManager.BIOMETRIC_ERROR_HW_UNAVAILABLE ->
+                Toast.makeText(
+                    requireContext(),
+                    "BIOMETRIC_ERROR_HW_UNAVAILABLE",
+                    Toast.LENGTH_LONG
+                ).show()
+            BiometricManager.BIOMETRIC_ERROR_NONE_ENROLLED ->
+                Toast.makeText(
+                    requireContext(),
+                    "BIOMETRIC_ERROR_NONE_ENROLLED",
+                    Toast.LENGTH_LONG
+                ).show()
+        }
+    }
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         bindingPersonalAreaFragment = FragmentPersonalAreaBinding.inflate(inflater)
         return bindingPersonalAreaFragment.root
     }
@@ -48,6 +120,7 @@ class PersonalAreaFragment : Fragment() {
             Navigation.findNavController(view)
                 .navigate(R.id.action_personalAreaFragment_to_balanceUpFragment)
         }
+
 
 
         val recycler = view.findViewById<RecyclerView>(R.id.recycler_view)

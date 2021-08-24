@@ -1,4 +1,4 @@
-package com.vtb.vtb_project.on_boarding_about_fragments
+package com.vtb.vtb_project.ui.on_boarding_about_fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,8 +10,9 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.vtb.vtb_project.R
 import com.vtb.vtb_project.adapters.ViewPagerAdapter
-import com.vtb.vtb_project.authorization.Authorization
+import com.vtb.vtb_project.ui.authorization.Authorization
 import com.vtb.vtb_project.databinding.ActivityOnboardingAboutBinding
+import com.vtb.vtb_project.view_model.ViewModelOnBoarding
 
 class OnBoardingAbout : AppCompatActivity() {
     private lateinit var viewPager2: ViewPager2

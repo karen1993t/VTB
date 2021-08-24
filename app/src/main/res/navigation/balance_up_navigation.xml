@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/balanceUpFragment"
-        android:name="com.vtb.vtb_project.personal_area.BalanceUpFragment"
+        android:name="com.vtb.vtb_project.ui.personal_area.BalanceUpFragment"
         android:label="fragment_balance_up"
         tools:layout="@layout/fragment_balance_up" >
         <action
@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/personalAreaFragment"
-        android:name="com.vtb.vtb_project.personal_area.PersonalAreaFragment"
+        android:name="com.vtb.vtb_project.ui.personal_area.PersonalAreaFragment"
         android:label="fragment_personal_area"
         tools:layout="@layout/fragment_personal_area" >
         <action
@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/addCardFragment"
-        android:name="com.vtb.vtb_project.personal_area.AddCardFragment"
+        android:name="com.vtb.vtb_project.ui.personal_area.AddCardFragment"
         android:label="fragment_add_card"
         tools:layout="@layout/fragment_add_card" >
         <action
@@ -52,7 +52,7 @@
     </fragment>
     <fragment
         android:id="@+id/addedCardsFragment"
-        android:name="com.vtb.vtb_project.personal_area.AddedCardsFragment"
+        android:name="com.vtb.vtb_project.ui.personal_area.AddedCardsFragment"
         android:label="fragment_added_cards"
         tools:layout="@layout/fragment_added_cards" />
 </navigation>

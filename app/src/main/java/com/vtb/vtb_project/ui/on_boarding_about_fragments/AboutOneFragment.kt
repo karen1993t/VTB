@@ -1,13 +1,13 @@
-package com.vtb.vtb_project.on_boarding_about_fragments
+package com.vtb.vtb_project.ui.on_boarding_about_fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.vtb.vtb_project.R
+import com.vtb.vtb_project.view_model.ViewModelOnBoarding
 
 class AboutOneFragment : Fragment() {
     private val viewModelClose: ViewModelOnBoarding by activityViewModels()

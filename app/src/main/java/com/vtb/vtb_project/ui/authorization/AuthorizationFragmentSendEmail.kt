@@ -1,4 +1,4 @@
-package com.vtb.vtb_project.authorization
+package com.vtb.vtb_project.ui.authorization
 
 import android.os.Bundle
 import android.view.LayoutInflater

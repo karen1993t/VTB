@@ -1,4 +1,4 @@
-package com.vtb.vtb_project.sign_in
+package com.vtb.vtb_project.ui.sign_in
 
 import android.content.Intent
 import android.os.Bundle
@@ -14,7 +14,8 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import com.vtb.vtb_project.R
 import com.vtb.vtb_project.databinding.FragmentRepeatPasswordBinding
-import com.vtb.vtb_project.personal_area.PersonalAreaActivity
+import com.vtb.vtb_project.ui.personal_area.PersonalAreaActivity
+import com.vtb.vtb_project.view_model.ViewModelSignIn
 
 class RepeatPasswordFragment : Fragment() {
     var pin2 = ""
@@ -51,7 +52,8 @@ class RepeatPasswordFragment : Fragment() {
                 when {
                     bindingRepeatPasswordFragment.pinView1.editableText.toString().length == 5 && pin1 == pin2 -> {
                         Log.d("logs","after start activity")
-                               startActivity(Intent(requireContext(),PersonalAreaActivity::class.java))
+                              startActivity(Intent(requireContext(),PersonalAreaActivity::class.java))
+
                     }
                     bindingRepeatPasswordFragment.pinView1.editableText.toString().length == 5 && pin1 != pin2 -> {
                         Toast.makeText(

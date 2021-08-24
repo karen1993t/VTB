@@ -1,4 +1,4 @@
-package com.vtb.vtb_project.on_boarding_about_fragments
+package com.vtb.vtb_project.view_model
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

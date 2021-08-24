@@ -1,16 +1,14 @@
-package com.vtb.vtb_project.personal_area
+package com.vtb.vtb_project.ui.personal_area
 
-import android.content.Context
 import android.os.Bundle
-import android.util.AttributeSet
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.vtb.vtb_project.R
 import com.vtb.vtb_project.databinding.ActivityPersonalAreaBinding
+import com.vtb.vtb_project.view_model.ViewModelPersonalArea
 
 
 class PersonalAreaActivity : AppCompatActivity() {

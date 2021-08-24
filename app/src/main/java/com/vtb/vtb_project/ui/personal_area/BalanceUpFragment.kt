@@ -1,4 +1,4 @@
-package com.vtb.vtb_project.personal_area
+package com.vtb.vtb_project.ui.personal_area
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

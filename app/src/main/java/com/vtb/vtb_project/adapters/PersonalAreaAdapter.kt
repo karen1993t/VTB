@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.vtb.vtb_project.R
-import com.vtb.vtb_project.personal_area.ModelPersonalArea
+import com.vtb.vtb_project.ui.personal_area.ModelPersonalArea
 
 class PersonalAreaAdapter(val context: Context, val listPersonalArea: List<ModelPersonalArea>) :
     Adapter<PersonalAreaAdapter.ViewHolderPersonalArea>() {
