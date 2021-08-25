@@ -113,9 +113,9 @@ class PersonalAreaFragment : Fragment() {
         )
         bindingPersonalAreaFragment.titleMoney.text = spannable
 
-//        bindingPersonalAreaFragment.pay.setOnClickListener {
-//            Navigation.findNavController(view).navigate(R.id.action_personalAreaFragment_to_payFragment)
-//        }
+        bindingPersonalAreaFragment.pay.setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_personalAreaFragment_to_payFragment)
+        }
         bindingPersonalAreaFragment.replenish.setOnClickListener {
             Navigation.findNavController(view)
                 .navigate(R.id.action_personalAreaFragment_to_balanceUpFragment)

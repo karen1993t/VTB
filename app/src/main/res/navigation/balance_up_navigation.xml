@@ -37,6 +37,9 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_personalAreaFragment_to_payFragment"
+            app:destination="@id/payFragment" />
     </fragment>
     <fragment
         android:id="@+id/addCardFragment"
@@ -55,4 +58,9 @@
         android:name="com.vtb.vtb_project.ui.personal_area.AddedCardsFragment"
         android:label="fragment_added_cards"
         tools:layout="@layout/fragment_added_cards" />
+    <fragment
+        android:id="@+id/payFragment"
+        android:name="com.vtb.vtb_project.ui.personal_area.PayFragment"
+        android:label="fragment_pay"
+        tools:layout="@layout/fragment_pay" />
 </navigation>

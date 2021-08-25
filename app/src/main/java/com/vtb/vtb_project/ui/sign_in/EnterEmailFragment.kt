@@ -3,6 +3,7 @@ package com.vtb.vtb_project.ui.sign_in
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -49,6 +50,7 @@ class EnterEmailFragment : Fragment() {
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                     email= s.toString()
                     viewModelEmail.emailLiveData(email)
+                    Log.d("log","send email $email")
 
                 }
 
