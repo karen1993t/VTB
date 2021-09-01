@@ -13,12 +13,15 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import com.vtb.vtb_project.R
 import com.vtb.vtb_project.databinding.FragmentCommunicationBinding
+import com.vtb.vtb_project.view_model.SharedCardStepsViewModel
 
 class CommunicationFragment : Fragment() {
     var showBinding: FragmentCommunicationBinding? = null
+    private val shareCardStepsViewModel: SharedCardStepsViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -101,6 +104,7 @@ class CommunicationFragment : Fragment() {
                 showBinding?.checkBoxPrivacyPolicy?.isChecked == true &&
                         !showBinding?.editObtainingTheStatement?.text.isNullOrEmpty() &&
                         !showBinding?.editCommunicationWithTheBank?.text.isNullOrEmpty() -> {
+                    sendDataCommunication()
                     showBinding?.root?.let { view ->
                         Navigation.findNavController(view)
                             .navigate(R.id.action_go_to_bankAuthorizationSuccessFragment)
@@ -144,6 +148,11 @@ class CommunicationFragment : Fragment() {
         }
         showBinding?.textPrivacyPolicy?.text = spannable
 
+    }
+
+    private fun sendDataCommunication() {
+        shareCardStepsViewModel.setTypeObtainingStatement(showBinding?.editObtainingTheStatement?.text.toString())
+        shareCardStepsViewModel.setCommunicationWithTheBank(showBinding?.editCommunicationWithTheBank?.text.toString())
     }
 
     override fun onDestroy() {

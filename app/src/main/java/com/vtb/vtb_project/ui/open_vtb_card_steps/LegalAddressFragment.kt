@@ -180,6 +180,7 @@ class LegalAddressFragment : Fragment() {
                         !showBinding?.autoCompleteUserStreet?.text.isNullOrEmpty() &&
                         !showBinding?.editUserHouseNumber?.text.isNullOrEmpty() &&
                         !showBinding?.editUserApartment?.text.isNullOrEmpty() -> {
+                    sendDataLegalAddress()
                     showBinding?.root?.let { view ->
                         Navigation.findNavController(view)
                             .navigate(R.id.action_go_to_passportFragment)
@@ -201,6 +202,15 @@ class LegalAddressFragment : Fragment() {
                 }
             }
         }
+    }
+
+    private fun sendDataLegalAddress() {
+        shareCardStepsViewModel.setCountry(showBinding?.autoCompleteUserCountry?.text.toString())
+        shareCardStepsViewModel.setCityName(showBinding?.autoCompleteUserCity?.text.toString())
+        shareCardStepsViewModel.setStreetName(showBinding?.autoCompleteUserStreet?.text.toString())
+        shareCardStepsViewModel.setHouseNumber(showBinding?.editUserHouseNumber?.text.toString())
+        shareCardStepsViewModel.setApartment(showBinding?.editUserApartment?.text.toString())
+
     }
 
     override fun onDestroy() {

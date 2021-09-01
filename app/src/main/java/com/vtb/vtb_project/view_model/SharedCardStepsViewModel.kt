@@ -28,16 +28,57 @@ class SharedCardStepsViewModel : ViewModel() {
     private val _isCloseActivityLiveData = MutableLiveData<Boolean>()
     val isCloseActivityLiveData: LiveData<Boolean> = _isCloseActivityLiveData
 
+    // fragment mobilePhone
+    private val _mobileNumberLiveData = MutableLiveData<String>()
+    val mobileNumberLiveData: LiveData<String> = _mobileNumberLiveData
 
-    fun inputUserFirstName(firstName: String) {
+    //fragment legalAddress
+    private val _countryName = MutableLiveData<String>()
+    val countryName: LiveData<String> = _countryName
+
+    private val _cityName = MutableLiveData<String>()
+    val cityName: LiveData<String> = _cityName
+
+    private val _streetName = MutableLiveData<String>()
+    val streetName: LiveData<String> = _streetName
+
+    private val _houseNumber = MutableLiveData<String>()
+    val houseNumber: LiveData<String> = _houseNumber
+
+    private val _apartmentNumber = MutableLiveData<String>()
+    val apartmentNumber: LiveData<String> = _apartmentNumber
+
+    // fragment passport
+    private val _passportNumber = MutableLiveData<String>()
+    val passportNumber: LiveData<String> = _passportNumber
+
+    private val _dateOfIssue = MutableLiveData<String>()
+    val dateOfIssue: LiveData<String> = _dateOfIssue
+
+    private val _dateOExpiry = MutableLiveData<String>()
+    val dateOExpiry: LiveData<String> = _dateOExpiry
+
+    private val _socialCardNumber = MutableLiveData<String>()
+    val socialCardNumber: LiveData<String> = _socialCardNumber
+
+    //fragment Communication
+
+    private val _obtainingTheStatement = MutableLiveData<String>()
+    val obtainingTheStatement: LiveData<String> = _obtainingTheStatement
+
+    private val _communicationWithTheBank = MutableLiveData<String>()
+    val communicationWithTheBank: LiveData<String> = _communicationWithTheBank
+
+
+    fun setUserFirstName(firstName: String) {
         _userFirstNameLiveData.postValue(firstName)
     }
 
-    fun inputUserSurName(surName: String) {
+    fun setUserSurName(surName: String) {
         _userSurNameLiveData.postValue(surName)
     }
 
-    fun inputDateBirthName(dateBirth: String) {
+    fun setDateBirthName(dateBirth: String) {
         _userDateBirthLiveData.postValue(dateBirth)
     }
 
@@ -52,7 +93,57 @@ class SharedCardStepsViewModel : ViewModel() {
     fun closeActivity(inputArgumentForCloseActivity: Boolean) {
         _isCloseActivityLiveData.postValue(inputArgumentForCloseActivity)
     }
-    fun setGenderName(gender:String){
+
+    fun setGenderName(gender: String) {
         _userGenderLiveData.postValue(gender)
+    }
+
+    fun setMobileNumber(mobileNumber: String) {
+        _mobileNumberLiveData.postValue(mobileNumber)
+    }
+
+    fun setCountry(country: String) {
+        _countryName.postValue(country)
+    }
+
+    fun setCityName(city: String) {
+        _cityName.postValue(city)
+    }
+
+    fun setStreetName(street: String) {
+        _streetName.postValue(street)
+    }
+
+    fun setHouseNumber(house: String) {
+        _houseNumber.postValue(house)
+    }
+
+    fun setApartment(apartment: String) {
+        _apartmentNumber.postValue(apartment)
+    }
+
+    fun setPassportNumber(passport: String) {
+        _passportNumber.postValue(passport)
+    }
+
+    fun setDateOfIssue(dateOfIssue: String) {
+        _dateOfIssue.postValue(dateOfIssue)
+    }
+
+    fun setDateExpiry(dateExpiry: String) {
+        _dateOExpiry.postValue(dateExpiry)
+    }
+
+    fun setSocialCardNumber(socialCardNumber: String) {
+        _socialCardNumber.postValue(socialCardNumber)
+    }
+
+    fun setTypeObtainingStatement(statement: String) {
+        _obtainingTheStatement.postValue(statement)
+
+    }
+
+    fun setCommunicationWithTheBank(typeCommunicationTheBank: String) {
+        _communicationWithTheBank.postValue(typeCommunicationTheBank)
     }
 }

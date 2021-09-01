@@ -211,19 +211,8 @@
         android:label="BiometryVideoFragment"
         tools:layout="@layout/fragment_biometry_video">
         <action
-            android:id="@+id/action_go_to_biometrySuccessFragment"
-            app:destination="@id/biometrySuccessFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
-        <action
-            android:id="@+id/action_go_to_failureBiometryFragment"
-            app:destination="@id/failureBiometryFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
+            android:id="@+id/action_go_to_faceDetectCamera"
+            app:destination="@id/faceDetectCamera" />
     </fragment>
     <fragment
         android:id="@+id/biometrySuccessFragment"
@@ -309,4 +298,16 @@
         android:name="com.vtb.vtb_project.ui.open_vtb_card_steps.ContractFragment"
         android:label="ContractFragment"
         tools:layout="@layout/fragment_contract"/>
+    <fragment
+        android:id="@+id/faceDetectCamera"
+        android:name="com.vtb.vtb_project.ui.open_vtb_card_steps.FaceDetectVideoFragment"
+        android:label="FaceDetectCamera"
+        tools:layout="@layout/fragment_face_detect_video">
+        <action
+            android:id="@+id/action_faceDetectCamera_to_biometrySuccessFragment"
+            app:destination="@id/biometrySuccessFragment" />
+        <action
+            android:id="@+id/action_faceDetectCamera_to_failureBiometryFragment"
+            app:destination="@id/failureBiometryFragment" />
+    </fragment>
 </navigation>

@@ -22,8 +22,7 @@ import java.util.*
 
 
 class BiometryVideoFragment : Fragment() {
-    private lateinit var currentVideoPath: String
-    private lateinit var uri: Uri                                        // video biometry
+
     var showBinding: FragmentBiometryVideoBinding? = null
 
     override fun onCreateView(
@@ -31,7 +30,7 @@ class BiometryVideoFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        uri = Uri.parse("")
+
         showBinding = FragmentBiometryVideoBinding.inflate(inflater)
         return showBinding?.root
     }
@@ -39,51 +38,9 @@ class BiometryVideoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val videoLauncher =
-            registerForActivityResult(ActivityResultContracts.CaptureVideo()) { successFull ->
-                if (successFull) {
-
-                    showBinding?.root?.let { view ->
-                        Navigation.findNavController(view)
-                            .navigate(R.id.action_go_to_biometrySuccessFragment)
-                    }
-                } else showBinding?.root?.let { view ->
-                    Navigation.findNavController(view)
-                        .navigate(R.id.action_go_to_failureBiometryFragment)
-                }
-
-            }
-        val requestPermission =
-            registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
-                if (isGranted) {
-                    uri = FileProvider.getUriForFile(
-                        requireContext(),
-                        BuildConfig.APPLICATION_ID + ".provider",
-                        createVideoFile()
-                    )
-                    videoLauncher.launch(uri)
-                }
-            }
         showBinding?.btnGoToBiometricsScanner?.setOnClickListener {
-            requestPermission.launch(Manifest.permission.CAMERA)
+            Navigation.findNavController(view)
+                        .navigate(R.id.action_go_to_faceDetectCamera)
         }
-    }
-
-    @SuppressLint("SimpleDateFormat")
-    private fun createVideoFile(): File {
-        val timeStamp: String = SimpleDateFormat("yyyyMMdd_HH mm ss").format(Date())
-        val storageDir: File? = activity?.getExternalFilesDir(Environment.DIRECTORY_DCIM)
-        return File.createTempFile(
-            "Biometric_${timeStamp}",
-            ".mp4",
-            storageDir
-        ).apply {
-            currentVideoPath = absolutePath
-        }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        showBinding = null
     }
 }

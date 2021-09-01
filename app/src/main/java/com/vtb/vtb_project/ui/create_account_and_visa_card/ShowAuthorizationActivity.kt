@@ -13,33 +13,38 @@ import com.vtb.vtb_project.databinding.ActivityShowAuthorizationBinding
 
 
 class ShowAuthorizationActivity : AppCompatActivity() {
-    private lateinit var bindingShow: ActivityShowAuthorizationBinding
+    var showAuthorization: ActivityShowAuthorizationBinding? = null
     private lateinit var showTabViewPager: ViewPager2
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        bindingShow = ActivityShowAuthorizationBinding.inflate(layoutInflater)
+        showAuthorization = ActivityShowAuthorizationBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        setContentView(bindingShow.root)
+        setContentView(showAuthorization?.root)
 
-        val tabName: Array<String> = arrayOf(
-            "Me", "Booking", "Favorites"
-        )
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
 
-        showTabViewPager = bindingShow.pager
+
+        val tabName: Array<String> =
+            resources.getStringArray(R.array.tab_view_pager_array)   //get virtual cars tab names
+
+
+        showAuthorization?.pager?.let {
+            showTabViewPager = it
+        }
         val adapterViewPager = AuthorizationViewPagerAdapter(
             ShowAuthorizationNoCardFragment(),
             supportFragmentManager, lifecycle
         )
         showTabViewPager.adapter = adapterViewPager
 
-        val tableLayout = bindingShow.tabLayout
-        TabLayoutMediator(tableLayout, showTabViewPager) { tab, position ->
-            tab.text = tabName[position]
+        showAuthorization?.tabLayout?.let {
+            TabLayoutMediator(it, showTabViewPager) { tab, position ->
+                tab.text = tabName[position]
 
-        }.attach()
+            }.attach()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -57,6 +62,8 @@ class ShowAuthorizationActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    //  return super.onOptionsItemSelected(item)
-    // }
+    override fun onDestroy() {
+        super.onDestroy()
+        showAuthorization = null
+    }
 }

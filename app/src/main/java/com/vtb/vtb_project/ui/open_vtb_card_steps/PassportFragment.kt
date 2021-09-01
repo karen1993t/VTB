@@ -57,12 +57,12 @@ class PassportFragment : Fragment() {
             indexCitizenShip = it
             showBinding?.editUserPassportNumber?.let { inputEdit ->
                 ToolsForEditText.createMaskEdit(
-                    it,
+                    indexCitizenShip,
                     passportInputTypSlotsArray,
                     inputEdit
                 )
             }
-            when (it) {
+            when (indexCitizenShip) {
                 0 -> {
                     minCountSymbol = 8
                     minCountSymbolSocialCard = 11
@@ -226,6 +226,7 @@ class PassportFragment : Fragment() {
                         !showBinding?.editUserDateOfIssue?.text.isNullOrEmpty() &&
                         !showBinding?.autoCompleteExpiryDate?.text.isNullOrEmpty() &&
                         isCheckedSocialCardNumber -> {
+                    sendDataPassport()
                     showBinding?.root?.let { view ->
                         Navigation.findNavController(view)
                             .navigate(R.id.action_passportFragment_to_communicationFragment)
@@ -249,6 +250,13 @@ class PassportFragment : Fragment() {
                 }
             }
         }
+    }
+
+    private fun sendDataPassport() {
+        sharedCardStepsViewModel.setPassportNumber(showBinding?.editUserPassportNumber?.text.toString())
+        sharedCardStepsViewModel.setDateOfIssue(showBinding?.editUserDateOfIssue?.text.toString())
+        sharedCardStepsViewModel.setDateExpiry(showBinding?.autoCompleteExpiryDate?.text.toString())
+        sharedCardStepsViewModel.setSocialCardNumber(showBinding?.editSocialCardNumber?.text.toString())
     }
 
     override fun onDestroy() {

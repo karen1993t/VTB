@@ -28,6 +28,11 @@
     <string name="user_name">Anastasia Mos</string>
     <string name="user_email">anmos@gmail.com</string>
     <string name="user_avatar">user_avatar</string>
+    <string-array name="tab_view_pager_array">
+        <item>Me</item>
+        <item>Booking</item>
+        <item>Favorites</item>
+    </string-array>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="amd_usd_eur">(AMD, USD, EUR, RUR) with preferential conversion rate</string>
     <string name="subhead">Multi-currency debit account</string>

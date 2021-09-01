@@ -90,6 +90,7 @@ class MobilePhoneNumberFragment : Fragment() {
         showBinding?.btnGoToLegalAddressFragment?.setOnClickListener {
             if (isCheckNumberPhone) {
                 showBinding?.root?.let { view ->
+                    sendData()
                     Navigation.findNavController(view)
                         .navigate(R.id.action_go_to_legalAddressFragment)
                 }
@@ -100,6 +101,10 @@ class MobilePhoneNumberFragment : Fragment() {
                 }
             }
         }
+    }
+
+    private fun sendData() {     //mask address exp:  +374(__)___-___
+    sharedCardStepsViewModel.setMobileNumber(showBinding?.editUserMobileNumber?.text.toString())
     }
 
     override fun onDestroy() {

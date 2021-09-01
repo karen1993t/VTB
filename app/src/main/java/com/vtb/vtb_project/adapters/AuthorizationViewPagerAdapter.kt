@@ -8,7 +8,7 @@ import com.vtb.vtb_project.ui.create_account_and_visa_card.ShowAuthorizationCard
 
 
 class AuthorizationViewPagerAdapter(
-    fragment: Fragment,   // add to fragment lists
+    fragment: Fragment,                             // add to fragment lists
     fragmentManager: FragmentManager,
     lifecycle: Lifecycle
 ) :
@@ -21,7 +21,7 @@ class AuthorizationViewPagerAdapter(
     override fun createFragment(position: Int): Fragment {
         return when (position) {
             0 -> fragmentImpute
-            1 -> ShowAuthorizationCardHolderFragment() // deleting
+            1 -> ShowAuthorizationCardHolderFragment()       // deleting
 
             else -> Fragment()
         }

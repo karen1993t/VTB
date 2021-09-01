@@ -73,6 +73,7 @@ class PersonalInformationFragment : Fragment() {
         showBinding?.editUserSurname?.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
             }
+
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 if (!showBinding?.editUserSurname?.text.isNullOrEmpty()) {
                     showBinding?.textInputLayoutSurname?.isErrorEnabled = false
@@ -208,7 +209,7 @@ class PersonalInformationFragment : Fragment() {
         })
         //endregion
         showBinding?.btnGoToMobilePhoneNumberFragment?.setOnClickListener {
-            sendData()
+
             when {
                 isCheckedCitizenship && isCheckedCountry &&
                         !showBinding?.editUserFirstName?.text.isNullOrEmpty() &&
@@ -216,6 +217,7 @@ class PersonalInformationFragment : Fragment() {
                         !showBinding?.editUserDateOfBirth?.text.isNullOrEmpty() &&
                         !showBinding?.editUserGender?.text.isNullOrEmpty() -> {
 
+                    sendData()
                     showBinding?.root?.let { view ->
                         Navigation.findNavController(view)
                             .navigate(R.id.action_go_to_mobile_phone_number)
@@ -258,9 +260,9 @@ class PersonalInformationFragment : Fragment() {
         )
 
         shareCardStepsViewModel.setGenderName(showBinding?.editUserGender?.text.toString())
-        shareCardStepsViewModel.inputUserFirstName(showBinding?.editUserFirstName?.text.toString())
-        shareCardStepsViewModel.inputUserSurName(showBinding?.editUserSurname?.text.toString())
-        shareCardStepsViewModel.inputDateBirthName(showBinding?.editUserDateOfBirth?.text.toString())
+        shareCardStepsViewModel.setUserFirstName(showBinding?.editUserFirstName?.text.toString())
+        shareCardStepsViewModel.setUserSurName(showBinding?.editUserSurname?.text.toString())
+        shareCardStepsViewModel.setDateBirthName(showBinding?.editUserDateOfBirth?.text.toString())
     }
 
     override fun onDestroy() {
