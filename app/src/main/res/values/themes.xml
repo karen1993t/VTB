@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Theme.VtbProject" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
@@ -55,7 +55,7 @@
         <item name="selectableItemBackgroundBorderless">@color/white</item>
         <item name="boxStrokeColor">@color/background_mail</item>
         <item name="fontFamily">@font/gotham_pro</item>
-        <item name="endIconDrawable">@drawable/icon_next_gray</item>
+        <item name="endIconDrawable">@drawable/ic_next_grey</item>
     </style>
 
     <style name="themeAuth" parent="Theme.MaterialComponents.Light.NoActionBar">

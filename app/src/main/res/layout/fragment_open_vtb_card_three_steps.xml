@@ -8,12 +8,12 @@
 
     <ImageView
         android:id="@+id/btn_close"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="73dp"
+        android:layout_width="10.34dp"
+        android:layout_height="10.34dp"
+        android:layout_marginEnd="23.34dp"
+        android:layout_marginBottom="91.34dp"
         android:contentDescription="@string/icon_close"
-        android:src="@drawable/icon_close_vtb_card_steps"
+        android:src="@drawable/ic_close_vtb_card_steps"
         app:layout_constraintBottom_toTopOf="@id/text_open_vtb"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -94,13 +94,13 @@
             tools:targetApi="p" />
 
         <ImageView
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
             android:layout_marginVertical="19dp"
             android:layout_marginStart="17dp"
             android:layout_marginBottom="15sp"
             android:contentDescription="@string/icon_steps"
-            android:src="@drawable/icons_steps"
+            android:src="@drawable/ic_icons_steps"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -162,12 +162,12 @@
             tools:targetApi="p" />
 
         <ImageView
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
             android:layout_marginVertical="19dp"
             android:layout_marginStart="17dp"
             android:contentDescription="@string/icon_steps_biometric"
-            android:src="@drawable/icons_steps_biometric"
+            android:src="@drawable/ic_icons_steps_biometric"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -230,12 +230,12 @@
             tools:targetApi="p" />
 
         <ImageView
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
             android:layout_marginVertical="19dp"
             android:layout_marginStart="17dp"
             android:contentDescription="@string/icon_steps_photo_passport"
-            android:src="@drawable/icons_steps_photo_passport"
+            android:src="@drawable/ic_icons_steps_photo_passport"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

@@ -11,24 +11,29 @@ import com.vtb.vtb_project.sign_in.SignIn
 
 
 class MainActivity : AppCompatActivity() {
+    private var bindingMain: ActivityMainBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        val bindingMain = ActivityMainBinding.inflate(layoutInflater)
+        bindingMain = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        setContentView(bindingMain.root)
+        setContentView(bindingMain?.root)
 
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setHomeButtonEnabled(true)
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            setHomeButtonEnabled(true)
+            setHomeAsUpIndicator(R.drawable.ic_back)
+        }
+
 
         val intentShowAuthorization = Intent(this, ShowAuthorizationActivity::class.java)
-        bindingMain.headLineEmail.setOnClickListener{
+        bindingMain?.headLineEmail?.setOnClickListener {
             startActivity(intentShowAuthorization)
         }
 
 
         //Enter Sign in ......temporary
-        bindingMain.singInApple.setOnClickListener {
-            startActivity(Intent(this,SignIn::class.java))
+        bindingMain?.singInApple?.setOnClickListener {
+            startActivity(Intent(this, SignIn::class.java))
         }
 
     }
@@ -37,14 +42,19 @@ class MainActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.menu_action_bar, menu)
         return true
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
+        when (item.itemId) {
             android.R.id.home -> {
                 onBackPressed()
-                return  true
+                return true
             }
         }
         return super.onOptionsItemSelected(item)
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        bindingMain = null
+    }
 }

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container_layout_user"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/container_layout_user"
     android:background="@color/background_container">
-
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -28,7 +27,7 @@
             android:layout_marginStart="51.49dp"
             android:layout_marginBottom="19.08dp"
             android:contentDescription="@string/icon_armenian_guide"
-            android:src="@drawable/icon_armenia_guide"
+            android:src="@drawable/ic_armenia_guide"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -39,7 +38,7 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
             android:contentDescription="@string/master_logo"
-            android:src="@drawable/master_logo"
+            android:src="@drawable/ic_master"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -49,7 +48,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginEnd="15dp"
             android:contentDescription="@string/logo_vtb"
-            android:src="@drawable/logo_vtb"
+            android:src="@drawable/ic_logo_vtb"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -83,17 +82,16 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:layout_width="2dp"
-                android:layout_height="11dp"
-                android:layout_marginVertical="15dp"
+                android:layout_width="10dp"
+                android:layout_height="5.5dp"
                 android:layout_marginStart="18dp"
                 android:layout_marginEnd="13.5dp"
                 android:contentDescription="@string/icon_next"
-                android:src="@drawable/icon_arrow"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:src="@drawable/ic_next"
+                app:layout_constraintBottom_toBottomOf="@id/text_get_virtual_card"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/text_get_virtual_card"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="@id/text_get_virtual_card" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ImageView
@@ -102,7 +100,7 @@
             android:layout_marginStart="19.46dp"
             android:layout_marginBottom="15.82dp"
             android:contentDescription="@string/icon_logo_white"
-            android:src="@drawable/icon_logo_white"
+            android:src="@drawable/ic_white_logo"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -124,7 +122,6 @@
             android:layout_height="25dp"
             android:layout_marginBottom="43dp"
             android:background="@drawable/background_component"
-
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -150,7 +147,7 @@
             android:layout_marginEnd="223dp"
             android:clickable="true"
             android:contentDescription="@string/icon_facebook"
-            android:src="@drawable/icon_fb_red"
+            android:src="@drawable/ic_red_fb"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -163,7 +160,7 @@
             android:layout_marginTop="126.27dp"
             android:clickable="true"
             android:contentDescription="@string/twitter_icon"
-            android:src="@drawable/icon_tw"
+            android:src="@drawable/ic_tw"
             app:layout_constraintStart_toEndOf="@id/facebook_icon"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -175,7 +172,7 @@
             android:layout_marginEnd="134dp"
             android:clickable="true"
             android:contentDescription="@string/instagram_icon"
-            android:src="@drawable/icon_insta"
+            android:src="@drawable/ic_insta"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/twitter_icon"
             app:layout_constraintTop_toTopOf="parent" />
@@ -202,7 +199,7 @@
             android:layout_marginBottom="18dp"
             android:clickable="true"
             android:contentDescription="@string/icon_airplane"
-            android:src="@drawable/icon_airplane"
+            android:src="@drawable/ic_path"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -216,7 +213,7 @@
             android:layout_marginBottom="20dp"
             android:clickable="true"
             android:contentDescription="@string/icon_hotel"
-            android:src="@drawable/icon_hotel"
+            android:src="@drawable/ic_union"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/icon_airplane"
             app:layout_constraintTop_toTopOf="parent" />
@@ -230,7 +227,7 @@
             android:layout_marginBottom="5dp"
             android:clickable="true"
             android:contentDescription="@string/icon_rest"
-            android:src="@drawable/icon_rest"
+            android:src="@drawable/ic_rest"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/icon_hotel"
             app:layout_constraintTop_toTopOf="parent" />
@@ -245,7 +242,7 @@
             android:layout_marginBottom="16dp"
             android:clickable="true"
             android:contentDescription="@string/icon_logo"
-            android:src="@drawable/icon_logo"
+            android:src="@drawable/ic_logo"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/icon_rest"
@@ -311,14 +308,14 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:layout_width="11.9dp"
-            android:layout_height="11.9dp"
+            android:layout_width="9.9dp"
+            android:layout_height="9.9dp"
             android:layout_marginStart="312dp"
             android:layout_marginTop="33dp"
             android:layout_marginEnd="19dp"
             android:layout_marginBottom="31dp"
             android:contentDescription="@string/icon_next"
-            android:src="@drawable/icon_next_gray"
+            android:src="@drawable/ic_next_grey"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

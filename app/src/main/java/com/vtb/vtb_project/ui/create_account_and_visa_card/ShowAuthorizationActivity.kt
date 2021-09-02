@@ -13,7 +13,7 @@ import com.vtb.vtb_project.databinding.ActivityShowAuthorizationBinding
 
 
 class ShowAuthorizationActivity : AppCompatActivity() {
-    var showAuthorization: ActivityShowAuthorizationBinding? = null
+    private var showAuthorization: ActivityShowAuthorizationBinding? = null
     private lateinit var showTabViewPager: ViewPager2
 
 
@@ -22,8 +22,11 @@ class ShowAuthorizationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(showAuthorization?.root)
 
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setHomeButtonEnabled(true)
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            setHomeButtonEnabled(true)
+            setHomeAsUpIndicator(R.drawable.ic_back)
+        }
 
 
         val tabName: Array<String> =

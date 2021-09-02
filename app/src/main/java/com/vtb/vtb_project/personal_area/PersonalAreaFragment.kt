@@ -52,28 +52,28 @@ class PersonalAreaFragment : Fragment() {
 
         val recycler = view.findViewById<RecyclerView>(R.id.recycler_view)
         val listData = listOf(
-            ModelPersonalArea(R.drawable.avia, "Moscow→Paris", "21:30", "-296 288 ₽"),
-            ModelPersonalArea(R.drawable.hotel, "Hilton Hotel", "20:30", "-196 435 ₽"),
+            ModelPersonalArea(R.drawable.ic_path, "Moscow→Paris", "21:30", "-296 288 ₽"),
+            ModelPersonalArea(R.drawable.ic_union, "Hilton Hotel", "20:30", "-196 435 ₽"),
             ModelPersonalArea(R.drawable.wine, "Chateau Bordeaux", "12:30", "-10 288 ₽"),
             ModelPersonalArea(R.drawable.sales, "Income", "21:30", "+2 241 288 ₽"),
-            ModelPersonalArea(R.drawable.hotel, "Hilton Hotel", "20:30", "-196 435 ₽"),
+            ModelPersonalArea(R.drawable.ic_union, "Hilton Hotel", "20:30", "-196 435 ₽"),
             ModelPersonalArea(R.drawable.wine, "Chateau Bordeaux", "12:30", "-10 288 ₽"),
-            ModelPersonalArea(R.drawable.avia, "Moscow→Paris", "10:00", "-1 296 288 ₽"),
+            ModelPersonalArea(R.drawable.ic_path, "Moscow→Paris", "10:00", "-1 296 288 ₽"),
 
-            ModelPersonalArea(R.drawable.avia, "Moscow→Paris", "21:30", "-296 288 ₽"),
-            ModelPersonalArea(R.drawable.hotel, "Hilton Hotel", "20:30", "-196 435 ₽"),
+            ModelPersonalArea(R.drawable.ic_path, "Moscow→Paris", "21:30", "-296 288 ₽"),
+            ModelPersonalArea(R.drawable.ic_union, "Hilton Hotel", "20:30", "-196 435 ₽"),
             ModelPersonalArea(R.drawable.wine, "Chateau Bordeaux", "12:30", "-10 288 ₽"),
             ModelPersonalArea(R.drawable.sales, "Income", "21:30", "+2 241 288 ₽"),
-            ModelPersonalArea(R.drawable.hotel, "Hilton Hotel", "20:30", "-196 435 ₽"),
+            ModelPersonalArea(R.drawable.ic_union, "Hilton Hotel", "20:30", "-196 435 ₽"),
             ModelPersonalArea(R.drawable.wine, "Chateau Bordeaux", "12:30", "-10 288 ₽"),
-            ModelPersonalArea(R.drawable.avia, "Moscow→Paris", "10:00", "-1 296 288 ₽"),
-            ModelPersonalArea(R.drawable.avia, "Moscow→Paris", "21:30", "-296 288 ₽"),
-            ModelPersonalArea(R.drawable.hotel, "Hilton Hotel", "20:30", "-196 435 ₽"),
+            ModelPersonalArea(R.drawable.ic_path, "Moscow→Paris", "10:00", "-1 296 288 ₽"),
+            ModelPersonalArea(R.drawable.ic_path, "Moscow→Paris", "21:30", "-296 288 ₽"),
+            ModelPersonalArea(R.drawable.ic_union, "Hilton Hotel", "20:30", "-196 435 ₽"),
             ModelPersonalArea(R.drawable.wine, "Chateau Bordeaux", "12:30", "-10 288 ₽"),
             ModelPersonalArea(R.drawable.sales, "Income", "21:30", "+2 241 288 ₽"),
-            ModelPersonalArea(R.drawable.hotel, "Hilton Hotel", "20:30", "-196 435 ₽"),
+            ModelPersonalArea(R.drawable.ic_union, "Hilton Hotel", "20:30", "-196 435 ₽"),
             ModelPersonalArea(R.drawable.wine, "Chateau Bordeaux", "12:30", "-10 288 ₽"),
-            ModelPersonalArea(R.drawable.avia, "Moscow→Paris", "10:00", "-1 296 288 ₽"),
+            ModelPersonalArea(R.drawable.ic_path, "Moscow→Paris", "10:00", "-1 296 288 ₽"),
         )
         val customAdapter = PersonalAreaAdapter(requireContext(), listData)
         recycler.adapter = customAdapter

@@ -21,7 +21,7 @@ class PersonalAreaActivity : AppCompatActivity() {
 
         supportActionBar?.apply {
             title = resources.getString(R.string.personal_area_vtb)
-            setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24)
+            setHomeAsUpIndicator(R.drawable.ic_back)
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
         }
