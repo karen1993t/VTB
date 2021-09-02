@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/authorizationFirstFragment"
-        android:name="com.vtb.vtb_project.authorization.AuthorizationFirstFragment"
+        android:name="com.vtb.vtb_project.ui.authorization.AuthorizationFirstFragment"
         android:label="fragment_authorization_"
         tools:layout="@layout/fragment_authorization_" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/authorizationFragmentSendEmail"
-        android:name="com.vtb.vtb_project.authorization.AuthorizationFragmentSendEmail"
+        android:name="com.vtb.vtb_project.ui.authorization.AuthorizationFragmentSendEmail"
         android:label="fragment_send_email_authorization"
         tools:layout="@layout/fragment_send_email_authorization" >
         <action

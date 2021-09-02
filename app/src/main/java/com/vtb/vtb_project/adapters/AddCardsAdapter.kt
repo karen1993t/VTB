@@ -8,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.vtb.vtb_project.R
-import com.vtb.vtb_project.personal_area.ModelBalanceUp
+import com.vtb.vtb_project.ui.personal_area.ModelBalanceUp
 
 class AddCardsAdapter(val context: Context, private val listCards:MutableList<ModelBalanceUp>): RecyclerView.Adapter<AddCardsAdapter.ViewHolderAddedCards>() {
 

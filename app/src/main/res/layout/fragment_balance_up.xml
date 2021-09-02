@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".personal_area.BalanceUpFragment">
+    tools:context=".ui.personal_area.BalanceUpFragment">
 
     <TextView
         android:id="@+id/debit_card"

@@ -10,6 +10,7 @@
         android:required="false" />
 
     <application
+        android:name=".MyApplication"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -17,9 +18,9 @@
         android:theme="@style/Theme.VtbProject"
         android:allowBackup="false">
         <activity
-            android:name=".sign_in.SignIn"
+            android:name="com.vtb.vtb_project.ui.sign_in.SignIn"
             android:theme="@style/themeAuth" />
-        <activity android:name=".personal_area.PersonalAreaActivity"
+        <activity android:name="com.vtb.vtb_project.ui.personal_area.PersonalAreaActivity"
             android:screenOrientation="locked"/>
         <activity
             android:name="com.vtb.vtb_project.ui.open_vtb_card_steps.OpenVtbCardStepsActivity"
@@ -27,10 +28,10 @@
             android:theme="@style/action_bar_white"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name="com.vtb.vtb_project.authorization.Authorization"
+            android:name="com.vtb.vtb_project.ui.authorization.Authorization"
             android:theme="@style/themeAuth" />
         <activity
-            android:name=".on_boarding_about_fragments.OnBoardingAbout"
+            android:name="com.vtb.vtb_project.ui.on_boarding_about_fragments.OnBoardingAbout"
             android:screenOrientation="locked"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name="com.vtb.vtb_project.ui.create_account_and_visa_card.ShowAuthorizationActivity" />
