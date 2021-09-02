@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.vtb.vtb_project.databinding.ActivityMainBinding
 import com.vtb.vtb_project.ui.create_account_and_visa_card.ShowAuthorizationActivity
-import com.vtb.vtb_project.ui.personal_area.PersonalAreaActivity
+
 import com.vtb.vtb_project.ui.sign_in.SignIn
 import com.vtb.vtb_project.view_model.ViewModelSignIn
 
@@ -34,14 +34,14 @@ class MainActivity : AppCompatActivity() {
             startActivity(intentShowAuthorization)
         }
 
-val someViewModel = ViewModelProvider(this).get(ViewModelSignIn::class.java)
+        val someViewModel = ViewModelProvider(this).get(ViewModelSignIn::class.java)
         //Enter Sign in ......temporary
         bindingMain?.singInApple?.setOnClickListener {
             startActivity(Intent(this, SignIn::class.java))
-        bindingMain.singInApple.setOnClickListener {
+            bindingMain?.singInApple?.setOnClickListener {
 
-            startActivity(Intent(this, SignIn::class.java))
-            Log.d("log", "1")
+                startActivity(Intent(this, SignIn::class.java))
+                Log.d("log", "1")
 
 //            someViewModel.checkEmailLiveData.observe(this, {
 //                if (it) {
@@ -52,19 +52,21 @@ val someViewModel = ViewModelProvider(this).get(ViewModelSignIn::class.java)
 //                }
 //            })
 
-        }
+            }
 
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_action_bar, menu)
         return true
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
+        when (item.itemId) {
             android.R.id.home -> {
                 onBackPressed()
-                return  true
+                return true
             }
         }
         return super.onOptionsItemSelected(item)
