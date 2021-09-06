@@ -191,13 +191,6 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
         <action
-            android:id="@+id/action_biometryFragment_to_communicationFragment"
-            app:destination="@id/communicationFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
-        <action
             android:id="@+id/action_biometryFragment_to_showVtbCardThreeStepsFragment"
             app:destination="@id/showVtbCardThreeStepsFragment"
             app:enterAnim="@anim/slide_in_right"
@@ -304,10 +297,52 @@
         android:label="FaceDetectCamera"
         tools:layout="@layout/fragment_face_detect_video">
         <action
-            android:id="@+id/action_faceDetectCamera_to_biometrySuccessFragment"
-            app:destination="@id/biometrySuccessFragment" />
+            android:id="@+id/action_go_to_failureBiometryFragment"
+            app:destination="@id/failureBiometryFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
-            android:id="@+id/action_faceDetectCamera_to_failureBiometryFragment"
-            app:destination="@id/failureBiometryFragment" />
+            android:id="@+id/action_go_to_detectVideoSubmitFragment"
+            app:destination="@id/detectVideoSubmitFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_go_to_biometryVideoFragment"
+            app:destination="@id/biometryVideoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_go_to_biometryFragment"
+            app:destination="@id/biometryFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/detectVideoSubmitFragment"
+        android:name="com.vtb.vtb_project.ui.open_vtb_card_steps.DetectVideoSubmitFragment"
+        android:label="DetectVideoSubmitFragment"
+        tools:layout="@layout/fragment_detect_video_submit">
+        <action
+            android:id="@+id/action_go_to_biometrySuccessFragment"
+            app:destination="@id/biometrySuccessFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_go_to_faceDetectCamera"
+            app:destination="@id/faceDetectCamera"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
 </navigation>
