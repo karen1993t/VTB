@@ -10,31 +10,32 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.vtb.vtb_project.R
 import com.vtb.vtb_project.adapters.ViewPagerAdapter
-import com.vtb.vtb_project.ui.authorization.Authorization
 import com.vtb.vtb_project.databinding.ActivityOnboardingAboutBinding
+import com.vtb.vtb_project.ui.authorization.Authorization
 import com.vtb.vtb_project.view_model.ViewModelOnBoarding
 
 class OnBoardingAbout : AppCompatActivity() {
     private lateinit var viewPager2: ViewPager2
     private lateinit var tabLayout: TabLayout
+    private var bindingAbout: ActivityOnboardingAboutBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val bindingAbout = ActivityOnboardingAboutBinding.inflate(layoutInflater)
-        setContentView(bindingAbout.root)
+        bindingAbout = ActivityOnboardingAboutBinding.inflate(layoutInflater)
+        setContentView(bindingAbout?.root)
 
-        viewPager2 = bindingAbout.viewPager2
-        tabLayout = bindingAbout.tabLayout
+        viewPager2 = bindingAbout?.viewPager2!!
+        tabLayout = bindingAbout?.tabLayout!!
 
         val adapter = ViewPagerAdapter(supportFragmentManager, lifecycle)
-        bindingAbout.viewPager2.adapter = adapter
+        bindingAbout?.viewPager2?.adapter = adapter
 
-        TabLayoutMediator(bindingAbout.tabLayout, bindingAbout.viewPager2) { tab, position ->
+        TabLayoutMediator(tabLayout, viewPager2) { tab, position ->
         }.attach()
 
         viewPager2.setPageTransformer(MarginPageTransformer(resources.getDimensionPixelSize(R.dimen.start_margin_fragments)))
 
-        bindingAbout.bgButtonNext.setOnClickListener {
+        bindingAbout?.bgButtonNext?.setOnClickListener {
             viewPager2.currentItem += 1
         }
 
@@ -42,7 +43,7 @@ class OnBoardingAbout : AppCompatActivity() {
 
         liveDataGetStarted.closeButtonLiveData.observe(this, {
             if (it) {
-                bindingAbout.ellipse.setOnClickListener {
+                bindingAbout?.ellipse?.setOnClickListener {
                     startActivity(Intent(this, Authorization::class.java))
                     finish()
                 }
@@ -51,13 +52,13 @@ class OnBoardingAbout : AppCompatActivity() {
 
         liveDataGetStarted.getStartedLiveData.observe(this, {
             if (it) {
-                bindingAbout.headline.text = resources.getString(R.string.get_started)
-                bindingAbout.bgButtonNext.setOnClickListener {
+                bindingAbout?.headline?.text = resources.getString(R.string.get_started)
+                bindingAbout?.bgButtonNext?.setOnClickListener {
                     startActivity(Intent(this, Authorization::class.java))
                     finish()
                 }
             } else {
-                bindingAbout.headline.text = resources.getString(R.string.next)
+                bindingAbout?.headline?.text = resources.getString(R.string.next)
             }
         })
     }
@@ -68,5 +69,10 @@ class OnBoardingAbout : AppCompatActivity() {
         } else {
             viewPager2.currentItem = viewPager2.currentItem - 1
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        bindingAbout = null
     }
 }

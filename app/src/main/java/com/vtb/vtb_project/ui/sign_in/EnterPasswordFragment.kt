@@ -16,30 +16,31 @@ import com.vtb.vtb_project.view_model.ViewModelSignIn
 class EnterPasswordFragment : Fragment() {
     private lateinit var pin1: String
     val viewModel: ViewModelSignIn by activityViewModels()
+    private var bindingEnterPasswordFragment : FragmentEnterPasswordBinding?= null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_enter_password, container, false)
+        bindingEnterPasswordFragment= FragmentEnterPasswordBinding.inflate(inflater)
+        return bindingEnterPasswordFragment?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val bindingEnterPasswordFragment = FragmentEnterPasswordBinding.bind(view)
 
-        bindingEnterPasswordFragment.iconClose.setOnClickListener {
+        bindingEnterPasswordFragment?.iconClose?.setOnClickListener {
             viewModel.closeSignIn(true)
         }
 
-        bindingEnterPasswordFragment.pinView.addTextChangedListener(object : TextWatcher {
+        bindingEnterPasswordFragment?.pinView?.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 pin1 = s.toString()
 
-                if (bindingEnterPasswordFragment.pinView.editableText.toString().length == 5) {
+                if (bindingEnterPasswordFragment?.pinView?.editableText.toString().length == 5) {
                     viewModel.setPin1(pin1)
                     Navigation.findNavController(view)
                         .navigate(R.id.action_enterPasswordFragment_to_repeatPasswordFragment)
@@ -49,6 +50,11 @@ class EnterPasswordFragment : Fragment() {
             override fun afterTextChanged(s: Editable?) {
             }
         })
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        bindingEnterPasswordFragment=null
     }
 }
 

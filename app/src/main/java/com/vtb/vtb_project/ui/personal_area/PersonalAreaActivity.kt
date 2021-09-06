@@ -12,10 +12,11 @@ import com.vtb.vtb_project.view_model.ViewModelPersonalArea
 
 
 class PersonalAreaActivity : AppCompatActivity() {
+    private var bindingPersonalArea: ActivityPersonalAreaBinding?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val bindingPersonalArea = ActivityPersonalAreaBinding.inflate(layoutInflater)
-        setContentView(bindingPersonalArea.root)
+        bindingPersonalArea = ActivityPersonalAreaBinding.inflate(layoutInflater)
+        setContentView(bindingPersonalArea?.root)
 
         supportActionBar?.apply {
             title = resources.getString(R.string.personal_area_vtb)
@@ -42,6 +43,11 @@ class PersonalAreaActivity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        bindingPersonalArea=null
     }
 
 }

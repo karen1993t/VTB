@@ -11,27 +11,32 @@ import com.vtb.vtb_project.databinding.FragmentBalanceUpBinding
 import com.vtb.vtb_project.tools.ToolsForEditText
 
 class BalanceUpFragment : Fragment() {
- private lateinit var bindingBalanceUpFragment:FragmentBalanceUpBinding
+ private var bindingBalanceUpFragment:FragmentBalanceUpBinding?= null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         bindingBalanceUpFragment = FragmentBalanceUpBinding.inflate(inflater)
-        return bindingBalanceUpFragment.root
+        return bindingBalanceUpFragment?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        bindingBalanceUpFragment.addCard.setOnClickListener {
+        bindingBalanceUpFragment?.addCard?.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_balanceUpFragment_to_addCardFragment)
         }
         val array = arrayOf("___ ___ ___")
-        ToolsForEditText.createMaskEdit(0,array,bindingBalanceUpFragment.editAmount)
+        ToolsForEditText.createMaskEdit(0,array,bindingBalanceUpFragment?.editAmount!!)
 
-        bindingBalanceUpFragment.addedCards.setOnClickListener {
+        bindingBalanceUpFragment?.addedCards?.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_balanceUpFragment_to_addedCardsFragment)
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        bindingBalanceUpFragment = null
     }
 
 

@@ -10,26 +10,32 @@ import com.vtb.vtb_project.view_model.ViewModelAuthorization
 
 class Authorization : AppCompatActivity() {
 
+   private var bindingAuth: ActivityAuthorizationBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val bindingAuth = ActivityAuthorizationBinding.inflate(layoutInflater)
-        setContentView(bindingAuth.root)
+        bindingAuth = ActivityAuthorizationBinding.inflate(layoutInflater)
+        setContentView(bindingAuth?.root)
 
 
-        val liveDataAuthorization= ViewModelProvider(this).get(ViewModelAuthorization::class.java)
+        val liveDataAuthorization = ViewModelProvider(this).get(ViewModelAuthorization::class.java)
 
         liveDataAuthorization.authorizationLiveData.observe(this, {
-           if (it){
-               finish()
-           }
+            if (it) {
+                finish()
+            }
         })
 
 
     }
 
     override fun onBackPressed() {
-        Intent(this,ShowAuthorizationActivity::class.java)
+        Intent(this, ShowAuthorizationActivity::class.java)
         finish()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        bindingAuth = null
     }
 }

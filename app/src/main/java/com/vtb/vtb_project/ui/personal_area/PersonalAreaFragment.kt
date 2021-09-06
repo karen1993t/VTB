@@ -22,7 +22,7 @@ import com.vtb.vtb_project.databinding.FragmentPersonalAreaBinding
 import java.util.concurrent.Executor
 
 class PersonalAreaFragment : Fragment() {
-    private lateinit var bindingPersonalAreaFragment: FragmentPersonalAreaBinding
+    private var bindingPersonalAreaFragment: FragmentPersonalAreaBinding?= null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -97,26 +97,26 @@ class PersonalAreaFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View ?{
         bindingPersonalAreaFragment = FragmentPersonalAreaBinding.inflate(inflater)
-        return bindingPersonalAreaFragment.root
+        return bindingPersonalAreaFragment?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
 
-        val spannable = SpannableStringBuilder(bindingPersonalAreaFragment.titleMoney.text)
+        val spannable = SpannableStringBuilder(bindingPersonalAreaFragment?.titleMoney?.text)
         spannable.setSpan(
             ForegroundColorSpan(Color.GRAY), 6, 13,
             Spannable.SPAN_EXCLUSIVE_INCLUSIVE
         )
-        bindingPersonalAreaFragment.titleMoney.text = spannable
+        bindingPersonalAreaFragment?.titleMoney?.text = spannable
 
-        bindingPersonalAreaFragment.pay.setOnClickListener {
+        bindingPersonalAreaFragment?.pay?.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_personalAreaFragment_to_payFragment)
         }
-        bindingPersonalAreaFragment.replenish.setOnClickListener {
+        bindingPersonalAreaFragment?.replenish?.setOnClickListener {
             Navigation.findNavController(view)
                 .navigate(R.id.action_personalAreaFragment_to_balanceUpFragment)
         }
@@ -151,5 +151,10 @@ class PersonalAreaFragment : Fragment() {
         val customAdapter = PersonalAreaAdapter(requireContext(), listData)
         recycler.adapter = customAdapter
         recycler.layoutManager = LinearLayoutManager(requireContext())
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        bindingPersonalAreaFragment=null
     }
 }

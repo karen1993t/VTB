@@ -12,10 +12,10 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import com.vtb.vtb_project.R
 import com.vtb.vtb_project.databinding.FragmentEnterEmailBinding
-import com.vtb.vtb_project.ui.personal_area.PersonalAreaActivity
 import com.vtb.vtb_project.view_model.ViewModelSignIn
 
 class EnterEmailFragment : Fragment() {
+   private var bindingEnterEmailFragment: FragmentEnterEmailBinding?= null
     private val closeBtn: ViewModelSignIn by activityViewModels()
     private  var checkerEmail:Boolean = false
     private lateinit var email:String
@@ -26,18 +26,19 @@ class EnterEmailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_enter_email, container, false)
+        bindingEnterEmailFragment = FragmentEnterEmailBinding.inflate(inflater)
+        return bindingEnterEmailFragment?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val bindingEnterEmailFragment = FragmentEnterEmailBinding.bind(view)
 
-        bindingEnterEmailFragment.iconClose.setOnClickListener {
+
+        bindingEnterEmailFragment?.iconClose?.setOnClickListener {
             closeBtn.closeSignIn(true)
         }
 
-        bindingEnterEmailFragment.editEmail.editText?.addTextChangedListener(
+        bindingEnterEmailFragment?.editEmail?.editText?.addTextChangedListener(
             object : TextWatcher {
                 override fun beforeTextChanged(
                     s: CharSequence?,
@@ -56,22 +57,22 @@ class EnterEmailFragment : Fragment() {
 
                 override fun afterTextChanged(s: Editable?) {
                     when {
-                        bindingEnterEmailFragment.editEmail.editText!!.text.isEmpty() -> {
-                            bindingEnterEmailFragment.editEmail.error =
+                        bindingEnterEmailFragment?.editEmail?.editText?.text?.isEmpty() == true -> {
+                            bindingEnterEmailFragment?.editEmail?.error =
                                 getString(R.string.enter_email)
                         }
-                        !bindingEnterEmailFragment.editEmail.editText!!.text.toString()
+                        !bindingEnterEmailFragment?.editEmail?.editText?.text.toString()
                             .endsWith(getString(R.string.gmail_com)) -> {
-                            bindingEnterEmailFragment.editEmail.error =
+                            bindingEnterEmailFragment?.editEmail?.error =
                                 getString(R.string.enter_gmail_com)
                         }
-                        bindingEnterEmailFragment.editEmail.editText!!.text.length <= 12 -> {
-                            bindingEnterEmailFragment.editEmail.error =
+                        bindingEnterEmailFragment?.editEmail?.editText?.text?.length!! <= 12 -> {
+                            bindingEnterEmailFragment?.editEmail?.error =
                                 getString(R.string.enter_correct_email)
 
                         }
                         else -> {
-                            bindingEnterEmailFragment.editEmail.error = null
+                            bindingEnterEmailFragment?.editEmail?.error = null
                             checkerEmail = true
                         }
                     }
@@ -79,10 +80,10 @@ class EnterEmailFragment : Fragment() {
             }
         )
 
-        bindingEnterEmailFragment.buttonLogIn.setOnClickListener {
+        bindingEnterEmailFragment?.buttonLogIn?.setOnClickListener {
             when {
-                bindingEnterEmailFragment.editEmail.editText!!.text.isEmpty() -> {
-                    bindingEnterEmailFragment.editEmail.error =
+                bindingEnterEmailFragment?.editEmail?.editText?.text?.isEmpty() == true -> {
+                    bindingEnterEmailFragment?.editEmail?.error =
                         getString(R.string.enter_email)
                 }
                 checkerEmail -> {
@@ -94,5 +95,10 @@ class EnterEmailFragment : Fragment() {
 
 
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        bindingEnterEmailFragment=null
     }
 }

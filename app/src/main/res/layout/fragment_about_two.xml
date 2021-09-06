@@ -43,7 +43,7 @@
         android:layout_height="21dp"
         android:layout_marginStart="20dp"
         android:layout_marginBottom="24.34dp"
-        android:src="@drawable/logo_vtb_fragment"
+        android:src="@drawable/ic_logo_vtb"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:contentDescription="@string/logo_vtb" />
@@ -52,7 +52,7 @@
         android:layout_height="37dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:src="@drawable/logo_master"
+        android:src="@drawable/ic_logo_master"
         android:layout_marginBottom="14dp"
         android:layout_marginEnd="14dp"
         android:contentDescription="@string/logo_vtb" />

@@ -14,6 +14,8 @@ import com.vtb.vtb_project.databinding.FragmentAuthorizationBinding
 import com.vtb.vtb_project.view_model.ViewModelAuthorization
 
 class AuthorizationFirstFragment : Fragment() {
+
+    private var bindingAuthFirst: FragmentAuthorizationBinding? = null
     private lateinit var password1: String
     private lateinit var password2: String
     private val viewModelClos: ViewModelAuthorization by activityViewModels()
@@ -25,23 +27,24 @@ class AuthorizationFirstFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_authorization_, container, false)
+         bindingAuthFirst = FragmentAuthorizationBinding.inflate(inflater)
+        return bindingAuthFirst?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val bindingAuthFirst = FragmentAuthorizationBinding.bind(view)
 
-        bindingAuthFirst.buttonLogIn.setOnClickListener {
+
+        bindingAuthFirst?.buttonLogIn?.setOnClickListener {
             Navigation.findNavController(view)
                 .navigate(R.id.action_authorizationFirstFragment_to_authorizationFragmentSendEmail)
         }
 
-        bindingAuthFirst.iconClose.setOnClickListener {
+        bindingAuthFirst?.iconClose?.setOnClickListener {
             viewModelClos.closeAuthorization(true)
         }
 
-        bindingAuthFirst.editPass.editText?.addTextChangedListener(
+        bindingAuthFirst?.editPass?.editText?.addTextChangedListener(
             object : TextWatcher {
 
                 override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -50,16 +53,16 @@ class AuthorizationFirstFragment : Fragment() {
 
                 override fun afterTextChanged(s: Editable?) {
                     when {
-                        bindingAuthFirst.editPass.editText!!.text.isNullOrEmpty() -> {
-                            bindingAuthFirst.editPass.error = getString(R.string.enter_password)
+                        bindingAuthFirst?.editPass?.editText?.text.isNullOrEmpty() -> {
+                            bindingAuthFirst?.editPass?.error = getString(R.string.enter_password)
                         }
-                        bindingAuthFirst.editPass.editText!!.text.length < 6 -> {
-                            bindingAuthFirst.editPass.error = getString(R.string.min_length)
+                        bindingAuthFirst?.editPass?.editText?.text?.length!! < 6 -> {
+                            bindingAuthFirst?.editPass?.error = getString(R.string.min_length)
                         }
 
 
                         else -> {
-                            bindingAuthFirst.editPass.error = null
+                            bindingAuthFirst?.editPass?.error = null
                             checkerEnterPassword = true
                         }
                     }
@@ -70,7 +73,7 @@ class AuthorizationFirstFragment : Fragment() {
             }
         )
 
-        bindingAuthFirst.repPass.editText?.addTextChangedListener(
+        bindingAuthFirst?.repPass?.editText?.addTextChangedListener(
             object : TextWatcher {
 
                 override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -79,18 +82,18 @@ class AuthorizationFirstFragment : Fragment() {
 
                 override fun afterTextChanged(s: Editable?) {
                     when {
-                        bindingAuthFirst.repPass.editText!!.text.isEmpty() -> {
-                            bindingAuthFirst.repPass.error = getString(R.string.repeat_password)
+                        bindingAuthFirst?.repPass?.editText?.text?.isEmpty() == true -> {
+                            bindingAuthFirst?.repPass?.error = getString(R.string.repeat_password)
                         }
-                        bindingAuthFirst.repPass.editText!!.text.length < 6 -> {
+                        bindingAuthFirst?.repPass?.editText?.text?.length!!< 6 -> {
 
-                            bindingAuthFirst.repPass.error = getString(R.string.min_length)
+                            bindingAuthFirst?.repPass?.error = getString(R.string.min_length)
                         }
                         password2 != password1 -> {
-                            bindingAuthFirst.repPass.error = getString(R.string.password_not_match)
+                            bindingAuthFirst?.repPass?.error = getString(R.string.password_not_match)
                         }
                         else -> {
-                            bindingAuthFirst.repPass.error = null
+                            bindingAuthFirst?.repPass?.error = null
                             checkerRepeatPassword = true
                         }
                     }
@@ -100,7 +103,7 @@ class AuthorizationFirstFragment : Fragment() {
                 }
             }
         )
-        bindingAuthFirst.editEmail.editText?.addTextChangedListener(
+        bindingAuthFirst?.editEmail?.editText?.addTextChangedListener(
             object : TextWatcher {
                 override fun beforeTextChanged(
                     s: CharSequence?,
@@ -115,19 +118,19 @@ class AuthorizationFirstFragment : Fragment() {
 
                 override fun afterTextChanged(s: Editable?) {
                     when {
-                        !bindingAuthFirst.editEmail.editText!!.text.toString()
+                        !bindingAuthFirst?.editEmail?.editText?.text.toString()
                             .endsWith(getString(R.string.gmail_com)) -> {
-                            bindingAuthFirst.editEmail.error = getString(R.string.enter_gmail_com)
+                            bindingAuthFirst?.editEmail?.error = getString(R.string.enter_gmail_com)
                         }
-                        bindingAuthFirst.editEmail.editText!!.text.isEmpty() -> {
-                            bindingAuthFirst.editEmail.error = getString(R.string.enter_email)
+                        bindingAuthFirst?.editEmail?.editText?.text?.isEmpty() == true -> {
+                            bindingAuthFirst?.editEmail?.error = getString(R.string.enter_email)
                         }
-                        bindingAuthFirst.editEmail.editText!!.text.length <= 12 -> {
-                            bindingAuthFirst.editEmail.error =
+                        bindingAuthFirst?.editEmail?.editText?.text?.length!! <= 12 -> {
+                            bindingAuthFirst?.editEmail?.error =
                                 getString(R.string.enter_correct_email)
                         }
                         else -> {
-                            bindingAuthFirst.editEmail.error = null
+                            bindingAuthFirst?.editEmail?.error = null
                             checkerEnterEmail = true
                         }
 
@@ -136,22 +139,27 @@ class AuthorizationFirstFragment : Fragment() {
 
             }
         )
-        bindingAuthFirst.buttonLogIn.setOnClickListener {
+        bindingAuthFirst?.buttonLogIn?.setOnClickListener {
             when {
                 checkerEnterPassword && checkerRepeatPassword && checkerEnterEmail -> {
                     Navigation.findNavController(view)
                         .navigate(R.id.action_authorizationFirstFragment_to_authorizationFragmentSendEmail)
                 }
                 !checkerEnterEmail -> {
-                    bindingAuthFirst.editEmail.error = getString(R.string.enter_email)
+                    bindingAuthFirst?.editEmail?.error = getString(R.string.enter_email)
                 }
                 !checkerEnterPassword -> {
-                    bindingAuthFirst.editPass.error = getString(R.string.enter_password)
+                    bindingAuthFirst?.editPass?.error = getString(R.string.enter_password)
                 }
                 !checkerRepeatPassword -> {
-                    bindingAuthFirst.repPass.error = getString(R.string.repeat_password)
+                    bindingAuthFirst?.repPass?.error = getString(R.string.repeat_password)
                 }
             }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        bindingAuthFirst= null
     }
 }

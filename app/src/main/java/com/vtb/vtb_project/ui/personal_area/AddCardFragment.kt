@@ -16,7 +16,7 @@ import com.vtb.vtb_project.tools.ToolsForEditText
 import com.vtb.vtb_project.view_model.ViewModelPersonalArea
 
 class AddCardFragment : Fragment() {
-    private lateinit var bindingAddCardFragment: FragmentAddCardBinding
+    private var bindingAddCardFragment: FragmentAddCardBinding?= null
     private var checkerNumberCard: Boolean = false
     private var checkerCvcCard: Boolean = false
     private var checkerDateCard: Boolean = false
@@ -28,16 +28,16 @@ class AddCardFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         bindingAddCardFragment = FragmentAddCardBinding.inflate(inflater)
-        return bindingAddCardFragment.root
+        return bindingAddCardFragment?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
 
-        bindingAddCardFragment.editNumberCardContainer.editText?.addTextChangedListener(
+        bindingAddCardFragment?.editNumberCardContainer?.editText?.addTextChangedListener(
             object : TextWatcher {
                 override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 }
@@ -48,27 +48,27 @@ class AddCardFragment : Fragment() {
                 }
 
                 override fun afterTextChanged(p0: Editable?) {
-                    liveDataGetNumberCard.setNumberCard(bindingAddCardFragment.editNumberCard.text.toString())
-                    when(bindingAddCardFragment.editNumberCard.text?.toString()?.get(0)){
+                    liveDataGetNumberCard.setNumberCard(bindingAddCardFragment?.editNumberCard?.text.toString())
+                    when(bindingAddCardFragment?.editNumberCard?.text?.toString()?.get(0)){
                         '5'->liveDataGetNameCard.setNameCard("MasterCard").toString()
                         '3'->liveDataGetNameCard.setNameCard("American Express").toString()
                         '4'->liveDataGetNameCard.setNameCard("Visa Card").toString()
                         else->{
-                            bindingAddCardFragment.editNumberCardContainer.error = getString(R.string.enter_correct_number_card)
+                            bindingAddCardFragment?.editNumberCardContainer?.error = getString(R.string.enter_correct_number_card)
                         }
                     }
 
                     when {
-                        bindingAddCardFragment.editNumberCardContainer.editText?.text.isNullOrEmpty() -> {
-                            bindingAddCardFragment.editNumberCardContainer.error =
+                        bindingAddCardFragment?.editNumberCardContainer?.editText?.text.isNullOrEmpty() -> {
+                            bindingAddCardFragment?.editNumberCardContainer?.error =
                                 getString(R.string.enter_number_card)
                         }
-                        bindingAddCardFragment.editNumberCard.text?.length!! < 19 -> {
-                            bindingAddCardFragment.editNumberCardContainer.error =
+                        bindingAddCardFragment?.editNumberCard?.text?.length!! < 19 -> {
+                            bindingAddCardFragment?.editNumberCardContainer?.error =
                                 getString(R.string.enter_correct_number_card)
                         }
                         else -> {
-                            bindingAddCardFragment.editNumberCardContainer.error = null
+                            bindingAddCardFragment?.editNumberCardContainer?.error = null
                             checkerNumberCard = true
                         }
                     }
@@ -78,7 +78,7 @@ class AddCardFragment : Fragment() {
 
 
 
-        bindingAddCardFragment.editCvcCard.addTextChangedListener(object : TextWatcher {
+        bindingAddCardFragment?.editCvcCard?.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
             }
 
@@ -87,16 +87,16 @@ class AddCardFragment : Fragment() {
 
             override fun afterTextChanged(p0: Editable?) {
                 when {
-                    bindingAddCardFragment.editCvcCard.text.isNullOrEmpty() -> {
-                        bindingAddCardFragment.editCvcCardContainer.error =
+                    bindingAddCardFragment?.editCvcCard?.text.isNullOrEmpty() -> {
+                        bindingAddCardFragment?.editCvcCardContainer?.error =
                             getString(R.string.enter_cvc_card)
                     }
-                    bindingAddCardFragment.editCvcCard.text?.length!! < 3 -> {
-                        bindingAddCardFragment.editCvcCardContainer.error =
+                    bindingAddCardFragment?.editCvcCard?.text?.length!! < 3 -> {
+                        bindingAddCardFragment?.editCvcCardContainer?.error =
                             getString(R.string.enter_correct_cvc_card)
                     }
                     else -> {
-                        bindingAddCardFragment.editCvcCardContainer.error = null
+                        bindingAddCardFragment?.editCvcCardContainer?.error = null
                         checkerCvcCard = true
                     }
                 }
@@ -105,7 +105,7 @@ class AddCardFragment : Fragment() {
 
 
 
-        bindingAddCardFragment.editDateCard.addTextChangedListener(object : TextWatcher {
+        bindingAddCardFragment?.editDateCard?.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
             }
@@ -116,11 +116,11 @@ class AddCardFragment : Fragment() {
 
             override fun afterTextChanged(p0: Editable?) {
                 when {
-                    bindingAddCardFragment.editDateCard.text.isNullOrEmpty() -> {
-                        bindingAddCardFragment.editCvcCardContainer.error = "enter date card"
+                    bindingAddCardFragment?.editDateCard?.text.isNullOrEmpty() -> {
+                        bindingAddCardFragment?.editCvcCardContainer?.error = "enter date card"
                     }
                     else -> {
-                        bindingAddCardFragment.editDateCardContainer.error = null
+                        bindingAddCardFragment?.editDateCardContainer?.error = null
                         checkerDateCard = true
                     }
 
@@ -130,7 +130,7 @@ class AddCardFragment : Fragment() {
 
         })
 
-        bindingAddCardFragment.buttonDone.setOnClickListener {
+        bindingAddCardFragment?.buttonDone?.setOnClickListener {
 
 
             when {
@@ -142,11 +142,11 @@ class AddCardFragment : Fragment() {
                         .navigate(R.id.action_addCardFragment_to_balanceUpFragment)
 
                 }
-                !checkerNumberCard -> bindingAddCardFragment.editNumberCardContainer.error =
+                !checkerNumberCard -> bindingAddCardFragment?.editNumberCardContainer?.error =
                     getString(R.string.enter_number_card)
-                !checkerDateCard -> bindingAddCardFragment.editDateCardContainer.error =
+                !checkerDateCard -> bindingAddCardFragment?.editDateCardContainer?.error =
                     "enter date card"
-                !checkerCvcCard -> bindingAddCardFragment.editCvcCardContainer.error =
+                !checkerCvcCard -> bindingAddCardFragment?.editCvcCardContainer?.error =
                     getString(R.string.enter_cvc_card)
 
             }
@@ -158,8 +158,8 @@ class AddCardFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         val arrayMasks = arrayOf("____ ____ ____ ____", "__/__")
-        ToolsForEditText.createMaskEdit(0, arrayMasks, bindingAddCardFragment.editNumberCard)
-        ToolsForEditText.createMaskEdit(1, arrayMasks, bindingAddCardFragment.editDateCard)
+        ToolsForEditText.createMaskEdit(0, arrayMasks, bindingAddCardFragment?.editNumberCard!!)
+        ToolsForEditText.createMaskEdit(1, arrayMasks, bindingAddCardFragment?.editDateCard!!)
 
 
 //        val slots = PhoneNumberUnderscoreSlotsParser().parseSlots("____ ____ ____ ____")
@@ -167,5 +167,10 @@ class AddCardFragment : Fragment() {
 //        formatWatcher.installOn(bindingAddCardFragment.editNumberCard)
 
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        bindingAddCardFragment= null
     }
 }

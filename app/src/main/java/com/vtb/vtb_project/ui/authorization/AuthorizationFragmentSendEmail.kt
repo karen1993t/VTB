@@ -11,18 +11,26 @@ import com.vtb.vtb_project.databinding.FragmentSendEmailAuthorizationBinding
 
 class AuthorizationFragmentSendEmail : Fragment() {
 
+  private var bindingSendEmail: FragmentSendEmailAuthorizationBinding? = null
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_send_email_authorization, container, false)
+        bindingSendEmail= FragmentSendEmailAuthorizationBinding.inflate(inflater)
+        return bindingSendEmail?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val bindingSendEmail= FragmentSendEmailAuthorizationBinding.bind(view)
-        bindingSendEmail.iconCloseFragment.setOnClickListener {
+
+        bindingSendEmail?.iconCloseFragment?.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_authorizationFragmentSendEmail_to_authorizationFirstFragment)
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        bindingSendEmail= null
     }
 }

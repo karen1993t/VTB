@@ -29,14 +29,14 @@
 
     <ImageView
         android:id="@+id/icon_close_fragment"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
         android:layout_marginTop="14.69dp"
         android:layout_marginEnd="19.69dp"
         android:background="#00000000"
         android:clickable="true"
         android:contentDescription="@string/icon_close"
-        android:src="@drawable/icon_close_auth"
+        android:src="@drawable/ic_close_auth"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,7 +45,7 @@
         android:layout_width="185dp"
         android:layout_height="50dp"
         android:contentDescription="@string/icon_envelop"
-        android:src="@drawable/icon_envelop"
+        android:src="@drawable/ic_envelop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
