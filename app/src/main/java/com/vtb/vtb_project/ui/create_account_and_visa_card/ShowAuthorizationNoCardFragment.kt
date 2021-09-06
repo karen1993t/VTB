@@ -32,21 +32,7 @@ class ShowAuthorizationNoCardFragment : Fragment() {
             val intent = Intent(context, OnBoardingAbout::class.java)
             startActivity(intent)
         }
-        bindingShow.visaCard.setOnClickListener {
-            changeToMarginTopConstraint(bindingShow.containerLayoutUser)
-            bindingShow.component.background =
-                resources.getDrawable(R.drawable.background_component_gray, null)
-        }
+
     }
 
-    private fun changeToMarginTopConstraint(constrainLayout: ConstraintLayout) {
-        val constraintSet = ConstraintSet()
-        constraintSet.clone(constrainLayout)
-        constraintSet.setMargin(
-            R.id.rectangle_1,
-            ConstraintSet.TOP,
-            resources.getDimensionPixelSize(R.dimen.top_margin)
-        )
-        constraintSet.applyTo(constrainLayout)
-    }
-}
+  }

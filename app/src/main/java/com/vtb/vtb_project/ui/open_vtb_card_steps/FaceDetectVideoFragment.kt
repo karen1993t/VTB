@@ -5,7 +5,6 @@ import android.annotation.SuppressLint
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,8 +16,12 @@ import androidx.core.content.ContextCompat
 import com.vtb.vtb_project.BuildConfig
 import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.Navigation
+import com.vtb.vtb_project.R
 import com.vtb.vtb_project.databinding.FragmentFaceDetectVideoBinding
 import com.vtb.vtb_project.ui.open_vtb_card_steps.face_detect.FaceDetectAnalyzer
+import com.vtb.vtb_project.view_model.SharedCardStepsViewModel
 import java.text.SimpleDateFormat
 import java.io.File
 import java.util.Date
@@ -29,7 +32,7 @@ import java.util.concurrent.Executors
 typealias FaceDetectListener = (isDetect: Boolean) -> Unit
 
 
-class FaceDetectVideoFragment : Fragment() {
+class FaceDetectVideoFragment : Fragment(), View.OnClickListener {
     companion object {
         private const val FILENAME_FORMAT = "yyyy-MM-dd-HH-mm-ss-SSS"
     }
@@ -37,7 +40,7 @@ class FaceDetectVideoFragment : Fragment() {
     private lateinit var currentVideoPath: String
     private lateinit var uri: Uri
     private var showBindingCamera: FragmentFaceDetectVideoBinding? = null
-
+    private val sharedViewModel: SharedCardStepsViewModel by activityViewModels()
     private var videoCapture: VideoCapture? = null
     private var imageCapture: ImageCapture? = null
     private lateinit var cameraExecutor: ExecutorService
@@ -58,6 +61,7 @@ class FaceDetectVideoFragment : Fragment() {
         return showBindingCamera?.root
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -65,6 +69,8 @@ class FaceDetectVideoFragment : Fragment() {
             registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { isGrantedMap ->
                 var isPermissionCameraGranted = false
                 var isPermissionAudioGranted = false
+                var isPermissionWriteExternalStorageGranted = false
+                var isPermissionReadExternalStorageGranted = false
                 for (entry in isGrantedMap) {
                     when (entry.key) {
                         Manifest.permission.CAMERA -> {
@@ -73,26 +79,36 @@ class FaceDetectVideoFragment : Fragment() {
                         Manifest.permission.RECORD_AUDIO -> {
                             isPermissionAudioGranted = entry.value
                         }
-                        else -> Toast.makeText(
-                            requireContext(),
-                            "Permissions not granted by the user.",
-                            Toast.LENGTH_SHORT
-                        ).show()
+
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE -> {
+                            isPermissionWriteExternalStorageGranted = entry.value
+                        }
+                        Manifest.permission.READ_EXTERNAL_STORAGE -> {
+                            isPermissionReadExternalStorageGranted = entry.value
+                        }
                     }
                 }
-                if (isPermissionCameraGranted && isPermissionAudioGranted) {   // testing
-                    startCamera()
-                }
+                if (isPermissionCameraGranted && isPermissionAudioGranted &&
+                    isPermissionReadExternalStorageGranted && isPermissionWriteExternalStorageGranted
+                ) startCamera()
+                else Toast.makeText(
+                    requireContext(), "Permissions not granted by the user.",
+                    Toast.LENGTH_SHORT
+                ).show()
+
             }
         requestPermission.launch(
             arrayOf(
                 Manifest.permission.CAMERA,
-                Manifest.permission.RECORD_AUDIO
-            )
+                Manifest.permission.RECORD_AUDIO,
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+
+                )
         )
-        showBindingCamera?.cameraCaptureButton?.setOnClickListener {
-            takeVideo()
-        }
+        showBindingCamera?.cameraCaptureButton?.setOnClickListener(this)
+        showBindingCamera?.btnBack?.setOnClickListener(this)
+        showBindingCamera?.btnClose?.setOnClickListener(this)
 
     }
 
@@ -113,7 +129,7 @@ class FaceDetectVideoFragment : Fragment() {
                 .build()
                 .also {
                     it.setAnalyzer(cameraExecutor, FaceDetectAnalyzer { isFaceDetect ->
-                        Log.d("test_1", isFaceDetect.toString())
+
                     })
                 }
             videoCapture = VideoCapture.Builder().build()
@@ -126,12 +142,12 @@ class FaceDetectVideoFragment : Fragment() {
                     this,
                     cameraSelector,
                     preview,
-                    imageAnalysis,
+
                     videoCapture                       // -> can not open camera, imageCapture -> ok!
 
                 )
             } catch (e: Exception) {
-                Log.e("PreviewUseCase", "Binding failed! :(", e)
+                Toast.makeText(requireContext(), "Filed Camera !", Toast.LENGTH_SHORT).show()
             }
         }, ContextCompat.getMainExecutor(requireContext()))
 
@@ -140,6 +156,7 @@ class FaceDetectVideoFragment : Fragment() {
 
     @SuppressLint("RestrictedApi")
     private fun takeVideo() {
+
         val videoCapture = videoCapture ?: return
         videoFile = createVideoFile()
 
@@ -149,18 +166,35 @@ class FaceDetectVideoFragment : Fragment() {
             ContextCompat.getMainExecutor(requireContext()),
             object : VideoCapture.OnVideoSavedCallback {
                 override fun onVideoSaved(outputFileResults: VideoCapture.OutputFileResults) {
-                    uri = FileProvider.getUriForFile(
-                        requireContext(),
-                        BuildConfig.APPLICATION_ID + ".provider", videoFile
-                    )
-                    val msg = "Video capture succeeded"
-                    Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
+                    try {
+                        uri = FileProvider.getUriForFile(
+                            requireContext(),
+                            BuildConfig.APPLICATION_ID + ".provider", videoFile
+                        )
+                        sharedViewModel.setUriVideoDetect(uri)
+                        showBindingCamera?.root?.let { view ->
+                            Navigation.findNavController(view)
+                                .navigate(R.id.action_go_to_detectVideoSubmitFragment)
+                        }
+
+                    } catch (e: Exception) {
+
+                    }
                 }
 
                 override fun onError(videoCaptureError: Int, message: String, cause: Throwable?) {
-                    Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+
+                    showBindingCamera?.root?.let {
+                        Navigation.findNavController(it)
+                            .navigate(R.id.action_go_to_failureBiometryFragment)
+                    }
                 }
             })
+        showBindingCamera?.cameraCaptureButton?.setOnClickListener {
+            videoCapture.stopRecording()
+
+        }
+
     }
 
 
@@ -170,15 +204,32 @@ class FaceDetectVideoFragment : Fragment() {
         val storageDir: File? = activity?.getExternalFilesDir(Environment.DIRECTORY_DCIM)
         return File.createTempFile(
             "Biometric_Video_${timeStamp}",
-            ".mp4",
+            ".3gp",
             storageDir
         ).apply {
             currentVideoPath = absolutePath
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    @SuppressLint("UseCompatLoadingForDrawables")
+    override fun onClick(view: View?) {
+        when (view) {
+            showBindingCamera?.cameraCaptureButton -> {
+                takeVideo()
+                showBindingCamera?.cameraCaptureButton?.background =
+                    resources.getDrawable(R.drawable.ic_background_stop_video_button, null)
+            }
+            showBindingCamera?.btnBack -> showBindingCamera?.root?.let {
+                Navigation.findNavController(it).navigate(R.id.action_go_to_biometryVideoFragment)
+            }
+            showBindingCamera?.btnClose -> showBindingCamera?.root?.let {
+                Navigation.findNavController(it).navigate(R.id.action_go_to_biometryFragment)
+            }
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
         showBindingCamera = null
     }
 }

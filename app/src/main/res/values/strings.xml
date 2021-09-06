@@ -326,6 +326,9 @@
     <string name="enter_cvc_card">enter cvc card</string>
     <string name="enter_correct_number_card">enter correct number card</string>
     <string name="enter_correct_cvc_card">enter correct cvc card</string>
+    <string name="text_retake_button">Retake</string>
+    <string name="text_submit_button">Submit</string>
+    <string name="icon_btn_capture_video">icon_btn_capture_video</string>
     <string-array name="slots_type_passport_number">
         <item>___ ____</item>
         <item>____ ______</item>

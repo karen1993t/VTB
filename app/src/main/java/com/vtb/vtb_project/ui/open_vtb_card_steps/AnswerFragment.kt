@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.vtb.vtb_project.R
+
 import com.vtb.vtb_project.databinding.FragmentAnswerBinding
 
 class AnswerFragment : Fragment() {
