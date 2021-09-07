@@ -17,23 +17,28 @@ import com.vtb.vtb_project.databinding.FragmentShowAuthorizationCardHolderBindin
 import com.vtb.vtb_project.ui.open_vtb_card_steps.OpenVtbCardStepsActivity
 
 class ShowAuthorizationCardHolderFragment : Fragment() {
-    private lateinit var bindingShow: FragmentShowAuthorizationCardHolderBinding
+    private  var bindingShow: FragmentShowAuthorizationCardHolderBinding? = null
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_show_authorization_card_holder, container, false)
+        bindingShow = FragmentShowAuthorizationCardHolderBinding.inflate(inflater)
+        return bindingShow?.root
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        bindingShow = FragmentShowAuthorizationCardHolderBinding.bind(view)
-        bindingShow.btnLogin.setOnClickListener {
-            val intent = Intent(context, OpenVtbCardStepsActivity::class.java)
+        bindingShow?.btnLogin?.setOnClickListener {
+            val intent = Intent(requireContext(), OpenVtbCardStepsActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        bindingShow = null
     }
 }

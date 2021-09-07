@@ -9,11 +9,12 @@
         <OnClick
             motion:clickAction="toggle"
             motion:targetId="@+id/visa_card" />
-        <OnSwipe motion:touchRegionId="@id/rectangle_1"
-            motion:dragDirection="dragDown"/>
-          </Transition>
+        <OnSwipe
+            motion:dragDirection="dragDown"
+            motion:touchRegionId="@id/rectangle_1" />
+    </Transition>
 
-    <ConstraintSet>
+    <ConstraintSet android:id="@+id/start">
         <Constraint
             android:id="@+id/rectangle_1"
             android:layout_width="0dp"
@@ -38,8 +39,5 @@
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toTopOf="parent" />
-
-
-
     </ConstraintSet>
 </MotionScene>
