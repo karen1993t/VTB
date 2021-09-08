@@ -23,6 +23,7 @@ class AddCardFragment : Fragment() {
     private val liveDataBtnDone: ViewModelPersonalArea by activityViewModels()
     private val liveDataGetNumberCard: ViewModelPersonalArea by activityViewModels()
     private val liveDataGetNameCard: ViewModelPersonalArea by activityViewModels()
+    private val liveDataSaveCard: ViewModelPersonalArea by activityViewModels()
 
 
     override fun onCreateView(
@@ -48,14 +49,15 @@ class AddCardFragment : Fragment() {
                 }
 
                 override fun afterTextChanged(p0: Editable?) {
+
                     liveDataGetNumberCard.setNumberCard(bindingAddCardFragment?.editNumberCard?.text.toString())
-                    when(bindingAddCardFragment?.editNumberCard?.text?.toString()?.get(0)){
-                        '5'->liveDataGetNameCard.setNameCard("MasterCard").toString()
-                        '3'->liveDataGetNameCard.setNameCard("American Express").toString()
-                        '4'->liveDataGetNameCard.setNameCard("Visa Card").toString()
-                        else->{
-                            bindingAddCardFragment?.editNumberCardContainer?.error = getString(R.string.enter_correct_number_card)
-                        }
+                   if(bindingAddCardFragment?.editNumberCard?.text?.startsWith('5') == true){
+                      liveDataGetNameCard.setNameCard("MasterCard").toString()
+//                        '3'->liveDataGetNameCard.setNameCard("American Express").toString()
+//                        '4'->liveDataGetNameCard.setNameCard("Visa Card").toString()
+//                        else->{
+//                            bindingAddCardFragment?.editNumberCardContainer?.error = getString(R.string.enter_correct_number_card)
+//                        }
                     }
 
                     when {
@@ -108,9 +110,11 @@ class AddCardFragment : Fragment() {
         bindingAddCardFragment?.editDateCard?.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
+
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
 
             }
 
@@ -119,6 +123,7 @@ class AddCardFragment : Fragment() {
                     bindingAddCardFragment?.editDateCard?.text.isNullOrEmpty() -> {
                         bindingAddCardFragment?.editCvcCardContainer?.error = "enter date card"
                     }
+
                     else -> {
                         bindingAddCardFragment?.editDateCardContainer?.error = null
                         checkerDateCard = true
@@ -132,12 +137,16 @@ class AddCardFragment : Fragment() {
 
         bindingAddCardFragment?.buttonDone?.setOnClickListener {
 
+           if (bindingAddCardFragment?.switchBtn?.isChecked == true){
+               liveDataSaveCard.switchChecker(true)
+               Toast.makeText(requireContext(), "Card added successfully", Toast.LENGTH_SHORT)
+                   .show()
+           }
 
             when {
-                (checkerNumberCard && checkerCvcCard && checkerDateCard) -> {
+                (checkerNumberCard && checkerCvcCard && checkerDateCard ) -> {
                     liveDataBtnDone.selectDoneBtn(true)
-                    Toast.makeText(requireContext(), "Card added successfully", Toast.LENGTH_SHORT)
-                        .show()
+
                     Navigation.findNavController(view)
                         .navigate(R.id.action_addCardFragment_to_balanceUpFragment)
 

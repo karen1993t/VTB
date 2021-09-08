@@ -345,5 +345,11 @@
         <item>Postal service</item>
     </string-array>
 
+    <string name="success_title">You successfully scanned:</string>
+    <string name="back_to_scanner">Back to scanner</string>
+    <string name="qr_code_scanner">QR Code Scanner</string>
+    <string name="rect">rect</string>
+    <string name="point_your_camera_at_the_qr_code">Point your camera  \n  at the QR code</string>
+
 
 </resources>

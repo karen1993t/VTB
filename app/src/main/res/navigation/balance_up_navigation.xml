@@ -38,8 +38,8 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
         <action
-            android:id="@+id/action_personalAreaFragment_to_payFragment"
-            app:destination="@id/payFragment" />
+            android:id="@+id/action_personalAreaFragment_to_scan_destination"
+            app:destination="@id/scan_destination" />
     </fragment>
     <fragment
         android:id="@+id/addCardFragment"
@@ -52,15 +52,50 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left" />
+        <action
+            android:id="@+id/action_addCardFragment_to_personalAreaFragment"
+            app:destination="@id/personalAreaFragment" />
     </fragment>
     <fragment
         android:id="@+id/addedCardsFragment"
         android:name="com.vtb.vtb_project.ui.personal_area.AddedCardsFragment"
         android:label="fragment_added_cards"
         tools:layout="@layout/fragment_added_cards" />
+
     <fragment
-        android:id="@+id/payFragment"
+        android:id="@+id/scan_destination"
         android:name="com.vtb.vtb_project.ui.personal_area.PayFragment"
-        android:label="fragment_pay"
-        tools:layout="@layout/fragment_pay" />
+        android:label="PayFragment"
+        tools:layout="@layout/fragment_pay">
+
+        <action
+            android:id="@+id/scan_destination_to_success_destination"
+            app:destination="@id/success_destination"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_scan_destination_to_personalAreaFragment"
+            app:destination="@id/personalAreaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/success_destination"
+        android:name="com.vtb.vtb_project.ui.personal_area.barcode.SuccessFragment"
+        android:label="PayFragment"
+        tools:layout="@layout/fragment_pay">
+
+        <argument
+            android:name="code"
+            app:argType="string"/>
+
+        <action
+            android:id="@+id/success_destination_to_scan_destination"
+            app:destination="@id/scan_destination"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
 </navigation>

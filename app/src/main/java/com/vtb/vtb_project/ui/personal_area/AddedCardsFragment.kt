@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,10 +15,11 @@ import com.vtb.vtb_project.databinding.FragmentAddedCardsBinding
 import com.vtb.vtb_project.view_model.ViewModelPersonalArea
 
 class AddedCardsFragment : Fragment() {
-    private var bindingAddedCardsFragment: FragmentAddedCardsBinding?= null
+    private var bindingAddedCardsFragment: FragmentAddedCardsBinding? = null
     private val liveDataBtnDone: ViewModelPersonalArea by activityViewModels()
     private val liveDataSetNumberCard: ViewModelPersonalArea by activityViewModels()
     private val liveDataSetNameCard: ViewModelPersonalArea by activityViewModels()
+    private val liveDataSaveCard: ViewModelPersonalArea by activityViewModels()
     private var count: Int = 0
     private var nameCard: String = ""
 
@@ -39,20 +41,26 @@ class AddedCardsFragment : Fragment() {
         })
 
 
-        val listCard = mutableListOf(
-            ModelBalanceUp(R.drawable.ic_logo_master, "MasterCard", "4555", "121 234, 94 ₽")
+        val listCard = mutableListOf<ModelBalanceUp>(
+//            ModelBalanceUp(R.drawable.ic_logo_master, "MasterCard", "4555", "121 234, 94 ₽")
         )
         val adapter = AddCardsAdapter(requireContext(), listCard)
         recyclerAddCards?.adapter = adapter
         recyclerAddCards?.layoutManager = LinearLayoutManager(requireContext())
 
-        liveDataBtnDone.addCardLiveData.observe(viewLifecycleOwner, {
-            count++
 
-            if (it) {
+        liveDataSaveCard.saveCardLiveData.observe(viewLifecycleOwner, {
+            it
+
+            liveDataBtnDone.addCardLiveData.observe(viewLifecycleOwner, {
+
+
+                it
                 liveDataSetNumberCard.getNumberLiveData.observe(viewLifecycleOwner, {
                     it
+                    Log.d("lister","first size= $count")
                     listCard.add(
+
                         count,
                         ModelBalanceUp(
                             R.drawable.ic_logo_master,
@@ -61,8 +69,15 @@ class AddedCardsFragment : Fragment() {
                             "balance"
                         )
                     )
+                    count++
+                    Log.d("lister","second size= $count")
+
+
                 })
-            }
+
+
+
+            })
 
         })
 

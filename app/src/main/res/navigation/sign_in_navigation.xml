@@ -50,14 +50,8 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
-        <action
-            android:id="@+id/action_repeatPasswordFragment_to_fingerprintFragment"
-            app:destination="@id/fingerprintFragment" />
+
     </fragment>
-    <fragment
-        android:id="@+id/fingerprintFragment"
-        android:name="com.vtb.vtb_project.ui.sign_in.FingerprintFragment"
-        android:label="fragment_fingerprint"
-        tools:layout="@layout/fragment_fingerprint" />
+
 
 </navigation>

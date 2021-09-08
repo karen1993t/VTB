@@ -32,6 +32,7 @@
         android:layout_marginTop="25dp"
         app:boxStrokeColor="@color/black"
         app:endIconMode="clear_text"
+        app:errorEnabled="true"
         app:hintTextColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -125,6 +126,7 @@
             tools:targetApi="p" />
 
         <Switch
+            android:id="@+id/switch_btn"
             android:layout_width="52dp"
             android:layout_height="32dp"
             app:layout_constraintEnd_toEndOf="parent"

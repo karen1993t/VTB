@@ -10,7 +10,7 @@ import com.google.mlkit.vision.barcode.BarcodeScanning
 import com.google.mlkit.vision.common.InputImage
 
 
-class YourImageAnalyzer : ImageAnalysis.Analyzer {
+class BarcodeAnalyzer (private val barcodeListener: BarcodeListener): ImageAnalysis.Analyzer {
 
 
     private val optionsQr = BarcodeScannerOptions.Builder()
@@ -19,6 +19,7 @@ class YourImageAnalyzer : ImageAnalysis.Analyzer {
             Barcode.FORMAT_AZTEC
         )
         .build()
+    private val scanner = BarcodeScanning.getClient()
 
 
     @SuppressLint("UnsafeOptInUsageError")
@@ -26,20 +27,23 @@ class YourImageAnalyzer : ImageAnalysis.Analyzer {
         val mediaImage = imageProxy.image
         if (mediaImage != null) {
             val image = InputImage.fromMediaImage(mediaImage, imageProxy.imageInfo.rotationDegrees)
-
-            val scanner = BarcodeScanning.getClient(optionsQr)
-
+            // Pass image to the scanner and have it do its thing
             scanner.process(image)
                 .addOnSuccessListener { barcodes ->
                     // Task completed successfully
-                    // ...
-                    Log.d("qr", "successes")
+                    for (barcode in barcodes) {
+                        barcodeListener(barcode.rawValue ?: "")
+                    }
                 }
                 .addOnFailureListener {
-                    // Task failed with an exception
-                    // ...
-                    Log.d("qr", "error code")
+                    // You should really do something about Exceptions
+                }
+                .addOnCompleteListener {
+                    // It's important to close the imageProxy
+                    imageProxy.close()
                 }
         }
     }
+
+
 }

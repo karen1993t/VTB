@@ -21,13 +21,13 @@ class RepeatPasswordFragment : Fragment() {
     var pin1 = ""
     private val viewModel: ViewModelSignIn by activityViewModels()
     private val viewModelClose: ViewModelSignIn by activityViewModels()
-    private var bindingRepeatPasswordFragment : FragmentRepeatPasswordBinding? = null
+    private var bindingRepeatPasswordFragment: FragmentRepeatPasswordBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        bindingRepeatPasswordFragment= FragmentRepeatPasswordBinding.inflate(inflater)
+        bindingRepeatPasswordFragment = FragmentRepeatPasswordBinding.inflate(inflater)
         return bindingRepeatPasswordFragment?.root
     }
 
@@ -35,7 +35,7 @@ class RepeatPasswordFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         bindingRepeatPasswordFragment?.iconClose?.setOnClickListener {
-           viewModelClose.closeSignIn(true)
+            viewModelClose.closeSignIn(true)
         }
         viewModel.pin1LiveData.observe(viewLifecycleOwner, {
             pin1 = it
@@ -52,8 +52,9 @@ class RepeatPasswordFragment : Fragment() {
             override fun afterTextChanged(s: Editable?) {
                 when {
                     bindingRepeatPasswordFragment?.pinView1?.editableText.toString().length == 5 && pin1 == pin2 -> {
-                        Log.d("logs","after start activity")
-                              startActivity(Intent(requireContext(),PersonalAreaActivity::class.java))
+                        Log.d("logs", "after start activity")
+                        startActivity(Intent(requireContext(), PersonalAreaActivity::class.java))
+
 
                     }
                     bindingRepeatPasswordFragment?.pinView1?.editableText.toString().length == 5 && pin1 != pin2 -> {
@@ -72,6 +73,6 @@ class RepeatPasswordFragment : Fragment() {
 
     override fun onDestroy() {
         super.onDestroy()
-        bindingRepeatPasswordFragment=null
+        bindingRepeatPasswordFragment = null
     }
 }

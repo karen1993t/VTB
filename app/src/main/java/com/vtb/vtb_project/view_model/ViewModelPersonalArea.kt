@@ -24,4 +24,16 @@ class ViewModelPersonalArea : ViewModel() {
         _getNameLiveData.postValue(string)
     }
 
+//    private val _statusPersonalAreaFragmentLiveData = MutableLiveData<Boolean>()
+//    val statusPersonalAreaFragmentLiveData:LiveData<Boolean> = _statusPersonalAreaFragmentLiveData
+//    fun statusChecker(boolean: Boolean){
+//        _statusPersonalAreaFragmentLiveData.postValue(boolean)
+//    }
+
+    private val _saveCardLiveData = MutableLiveData<Boolean>()
+    val saveCardLiveData:LiveData<Boolean> = _saveCardLiveData
+    fun switchChecker(boolean: Boolean){
+        _saveCardLiveData.postValue(boolean)
+    }
+
 }

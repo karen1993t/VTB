@@ -1,7 +1,7 @@
 package com.vtb.vtb_project.ui.personal_area
 
+
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +12,9 @@ import com.vtb.vtb_project.view_model.ViewModelPersonalArea
 
 
 class PersonalAreaActivity : AppCompatActivity() {
-    private var bindingPersonalArea: ActivityPersonalAreaBinding?=null
+    private var bindingPersonalArea: ActivityPersonalAreaBinding? = null
+//    var liveDataPersonalArea:ViewModelPersonalArea? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingPersonalArea = ActivityPersonalAreaBinding.inflate(layoutInflater)
@@ -24,7 +26,6 @@ class PersonalAreaActivity : AppCompatActivity() {
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
         }
-        Log.d("logs","cretted")
 
         val liveDataPersonalArea = ViewModelProvider(this).get(ViewModelPersonalArea::class.java)
 
@@ -45,10 +46,21 @@ class PersonalAreaActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+//    override fun onBackPressed() {
+//       liveDataPersonalArea?.statusPersonalAreaFragmentLiveData?.observe(this,{
+//           Log.d("backPress","Pressed")
+//           if (it){
+//               finish()
+//               startActivity(Intent(this, SignIn::class.java))
+//           }
+//       })
+//    }
+
     override fun onDestroy() {
         super.onDestroy()
-        bindingPersonalArea=null
+        bindingPersonalArea = null
     }
+
 
 }
 

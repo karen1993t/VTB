@@ -13,16 +13,19 @@ import android.widget.Toast
 import androidx.biometric.BiometricManager
 import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.vtb.vtb_project.R
 import com.vtb.vtb_project.adapters.PersonalAreaAdapter
 import com.vtb.vtb_project.databinding.FragmentPersonalAreaBinding
+import com.vtb.vtb_project.view_model.ViewModelPersonalArea
 import java.util.concurrent.Executor
 
 class PersonalAreaFragment : Fragment() {
     private var bindingPersonalAreaFragment: FragmentPersonalAreaBinding?= null
+    private val fragmentStatusViewModel:ViewModelPersonalArea by activityViewModels()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -114,12 +117,14 @@ class PersonalAreaFragment : Fragment() {
         bindingPersonalAreaFragment?.titleMoney?.text = spannable
 
         bindingPersonalAreaFragment?.pay?.setOnClickListener {
-            Navigation.findNavController(view).navigate(R.id.action_personalAreaFragment_to_payFragment)
+            Navigation.findNavController(view).navigate(R.id.action_personalAreaFragment_to_scan_destination)
         }
         bindingPersonalAreaFragment?.replenish?.setOnClickListener {
             Navigation.findNavController(view)
                 .navigate(R.id.action_personalAreaFragment_to_balanceUpFragment)
         }
+
+
 
 
 
@@ -152,6 +157,12 @@ class PersonalAreaFragment : Fragment() {
         recycler.adapter = customAdapter
         recycler.layoutManager = LinearLayoutManager(requireContext())
     }
+
+//    override fun onStart() {
+//        super.onStart()
+//        fragmentStatusViewModel.statusChecker(true)
+//    }
+
 
     override fun onDestroy() {
         super.onDestroy()
