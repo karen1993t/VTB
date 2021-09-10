@@ -70,6 +70,8 @@ class SharedCardStepsViewModel : ViewModel() {
     private val _communicationWithTheBank = MutableLiveData<String>()
     val communicationWithTheBank: LiveData<String> = _communicationWithTheBank
 
+
+
     // Uri video Detect
     private val _videoDetectUri = MutableLiveData<Uri>()
     val videoDetectUri: LiveData<Uri> = _videoDetectUri

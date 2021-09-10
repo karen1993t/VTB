@@ -5,13 +5,14 @@ import android.annotation.SuppressLint
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
+import android.util.Size
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.camera.core.*
+import androidx.camera.core.impl.VideoCaptureConfig
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import com.vtb.vtb_project.BuildConfig
@@ -110,12 +111,13 @@ class FaceDetectVideoFragment : Fragment(), View.OnClickListener {
         showBindingCamera?.cameraCaptureButton?.setOnClickListener(this)
         showBindingCamera?.btnBack?.setOnClickListener(this)
         showBindingCamera?.btnClose?.setOnClickListener(this)
-        showBindingCamera?.switchCameraButton?.setOnClickListener(this)
+
 
     }
 
     private fun startCamera() {
         val cameraProviderFuture = ProcessCameraProvider.getInstance(requireContext())
+        val cameraSelector = CameraSelector.DEFAULT_FRONT_CAMERA
 
         cameraProviderFuture.addListener({
             val cameraProvider: ProcessCameraProvider = cameraProviderFuture.get()
@@ -128,60 +130,36 @@ class FaceDetectVideoFragment : Fragment(), View.OnClickListener {
 
             val imageAnalysis = ImageAnalysis.Builder()
                 .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
+                .setTargetResolution(Size(1280, 720))
                 .build()
                 .also {
                     it.setAnalyzer(cameraExecutor, FaceDetectAnalyzer { isFaceDetect ->
-                           TODO("$isFaceDetect used")
+
                     })
                 }
+
             videoCapture = VideoCapture.Builder().build()
-            imageCapture = ImageCapture.Builder().build()
+            imageCapture = ImageCapture.Builder()
 
-            var cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
-            var counter = 0
+                .build()
 
-            // switch camera back to front or  front to back
-            showBindingCamera?.switchCameraButton?.setOnClickListener {
-                val deg = showBindingCamera?.switchCameraButton?.rotation?.plus(-360.0F)?: 0f
-                showBindingCamera?.switchCameraButton?.animate()?.rotation(deg)?.interpolator =
-                    object :AccelerateDecelerateInterpolator(){}
 
-                when(counter){
-                    0 -> { cameraSelector = CameraSelector.DEFAULT_FRONT_CAMERA
-                    counter = 1}
-                    1 -> { cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
-                        counter = 0}
-                }
-                try {
-                    cameraProvider.unbindAll()
-                    cameraProvider.bindToLifecycle(
-                        this,
-                        cameraSelector ,
-                        preview,
-                        videoCapture                       // -> can not open camera, imageCapture -> ok!
-
-                    )
-                } catch (e: Exception) {
-                    Toast.makeText(requireContext(), "Filed Camera !", Toast.LENGTH_SHORT).show()
-                }
-            }
 
             try {
                 cameraProvider.unbindAll()
                 cameraProvider.bindToLifecycle(
-                    this,
+                    viewLifecycleOwner,
                     cameraSelector,
                     preview,
 
-                    videoCapture                       // -> can not open camera, imageCapture -> ok!
+                    videoCapture               // -> can not open camera, imageCapture -> ok!
 
                 )
             } catch (e: Exception) {
                 Toast.makeText(requireContext(), "Filed Camera !", Toast.LENGTH_SHORT).show()
             }
+
         }, ContextCompat.getMainExecutor(requireContext()))
-
-
     }
 
     @SuppressLint("RestrictedApi")

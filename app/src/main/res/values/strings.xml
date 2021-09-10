@@ -329,6 +329,7 @@
     <string name="text_retake_button">Retake</string>
     <string name="text_submit_button">Submit</string>
     <string name="icon_btn_capture_video">icon_btn_capture_video</string>
+    <string name="title_detect_passport_photo">Passport Photo</string>
     <string-array name="slots_type_passport_number">
         <item>___ ____</item>
         <item>____ ______</item>

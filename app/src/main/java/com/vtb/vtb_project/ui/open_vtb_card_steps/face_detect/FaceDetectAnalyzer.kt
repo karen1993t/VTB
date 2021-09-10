@@ -11,12 +11,13 @@ import com.google.mlkit.vision.face.FaceDetectorOptions
 import com.google.mlkit.vision.face.FaceLandmark
 import com.vtb.vtb_project.ui.open_vtb_card_steps.FaceDetectListener
 
-class FaceDetectAnalyzer (private val isFaceDetect : FaceDetectListener) : ImageAnalysis.Analyzer {
+class FaceDetectAnalyzer(private val isFaceDetect: FaceDetectListener) : ImageAnalysis.Analyzer {
     // creating face detect options
     private val optionsFaceDetect = FaceDetectorOptions.Builder()
         .setPerformanceMode(FaceDetectorOptions.PERFORMANCE_MODE_FAST)
         .setLandmarkMode(FaceDetectorOptions.LANDMARK_MODE_ALL)
         .setContourMode(FaceDetectorOptions.CONTOUR_MODE_ALL)
+        .enableTracking()
         .build()
     private val faceDetectScanner = FaceDetection.getClient(optionsFaceDetect)
 
@@ -27,11 +28,13 @@ class FaceDetectAnalyzer (private val isFaceDetect : FaceDetectListener) : Image
             val inputImage =
                 InputImage.fromMediaImage(mediaImage, imageProxy.imageInfo.rotationDegrees)
 
+
             faceDetectScanner.process(inputImage).addOnSuccessListener { faceDetect ->
                 Log.d("test_1", "ok")
                 isFaceDetect(false)
                 for (face in faceDetect) {
                     isFaceDetect(true)
+
                     if (face.leftEyeOpenProbability == 1.0.toFloat()) {
                         val leftEyeOpenProb = face.leftEyeOpenProbability
                         Log.d("test_1", "leftEyarOpen = ${leftEyeOpenProb}")
@@ -43,7 +46,7 @@ class FaceDetectAnalyzer (private val isFaceDetect : FaceDetectListener) : Image
                 .addOnFailureListener {
 
                 }
-                .addOnCompleteListener{
+                .addOnCompleteListener {
                     imageProxy.close()
                 }
         }
