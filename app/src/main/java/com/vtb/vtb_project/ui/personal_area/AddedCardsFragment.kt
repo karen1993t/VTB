@@ -1,5 +1,6 @@
 package com.vtb.vtb_project.ui.personal_area
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -31,6 +32,7 @@ class AddedCardsFragment : Fragment() {
         return bindingAddedCardsFragment?.root
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val recyclerAddCards = bindingAddedCardsFragment?.containerAddedCards
@@ -49,6 +51,7 @@ class AddedCardsFragment : Fragment() {
         recyclerAddCards?.layoutManager = LinearLayoutManager(requireContext())
 
 
+
         liveDataSaveCard.saveCardLiveData.observe(viewLifecycleOwner, {
             it
 
@@ -59,6 +62,7 @@ class AddedCardsFragment : Fragment() {
                 liveDataSetNumberCard.getNumberLiveData.observe(viewLifecycleOwner, {
                     it
                     Log.d("lister","first size= $count")
+
                     listCard.add(
 
                         count,
@@ -69,10 +73,14 @@ class AddedCardsFragment : Fragment() {
                             "balance"
                         )
                     )
+
+
+
+
                     count++
                     Log.d("lister","second size= $count")
 
-
+                    adapter.notifyDataSetChanged()
                 })
 
 

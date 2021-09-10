@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import com.vtb.vtb_project.R
+import com.vtb.vtb_project.adapters.AddCardsAdapter
 import com.vtb.vtb_project.databinding.FragmentAddCardBinding
 import com.vtb.vtb_project.tools.ToolsForEditText
 import com.vtb.vtb_project.view_model.ViewModelPersonalArea
@@ -141,6 +142,7 @@ class AddCardFragment : Fragment() {
                liveDataSaveCard.switchChecker(true)
                Toast.makeText(requireContext(), "Card added successfully", Toast.LENGTH_SHORT)
                    .show()
+
            }
 
             when {

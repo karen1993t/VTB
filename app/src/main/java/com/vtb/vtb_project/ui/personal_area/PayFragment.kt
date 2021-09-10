@@ -44,6 +44,8 @@ class PayFragment() : Fragment() {
     ): View? {
         bindingPayFragment = FragmentPayBinding.inflate(inflater)
 
+        bindingPayFragment?.rect?.height
+
         scanBarcodeViewModel.progressState.observe(viewLifecycleOwner, {
             bindingPayFragment?.fragmentScanBarcodeProgressBar?.visibility = if (it) View.VISIBLE else View.GONE
         })
