@@ -1,5 +1,6 @@
 package com.vtb.vtb_project.view_model
 
+import android.net.Uri
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -68,6 +69,12 @@ class SharedCardStepsViewModel : ViewModel() {
 
     private val _communicationWithTheBank = MutableLiveData<String>()
     val communicationWithTheBank: LiveData<String> = _communicationWithTheBank
+
+
+
+    // Uri video Detect
+    private val _videoDetectUri = MutableLiveData<Uri>()
+    val videoDetectUri: LiveData<Uri> = _videoDetectUri
 
 
     fun setUserFirstName(firstName: String) {
@@ -145,5 +152,8 @@ class SharedCardStepsViewModel : ViewModel() {
 
     fun setCommunicationWithTheBank(typeCommunicationTheBank: String) {
         _communicationWithTheBank.postValue(typeCommunicationTheBank)
+    }
+    fun setUriVideoDetect(uri:Uri){
+        _videoDetectUri.postValue(uri)
     }
 }

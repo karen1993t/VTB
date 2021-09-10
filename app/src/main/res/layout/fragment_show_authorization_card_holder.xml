@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container_layout_user"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_container"
+    app:layoutDescription="@xml/fragment_show_authorization_card_scene"
     tools:context=".ui.create_account_and_visa_card.ShowAuthorizationActivity">
 
 
@@ -112,22 +113,11 @@
         android:layout_width="0dp"
         android:layout_height="55dp"
         android:layout_marginTop="105dp"
-        android:background="@drawable/background_rectangle_2"
+        android:background="@drawable/ic_background_user"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/component"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginBottom="43dp"
-            android:background="@drawable/background_component"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/rectangle_2"
@@ -325,4 +315,6 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
