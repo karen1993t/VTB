@@ -24,21 +24,22 @@
         android:contentDescription="@string/icon_close"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/title_detect_passport"
         android:layout_width="123dp"
         android:layout_height="20dp"
-        app:layout_constraintStart_toEndOf="@id/btn_back"
-        app:layout_constraintEnd_toStartOf="@id/btn_close"
-        app:layout_constraintTop_toTopOf="@id/btn_close"
-        app:layout_constraintBottom_toBottomOf="@id/btn_close"
-        android:text="@string/title_detect_passport_photo"
+        android:fontFamily="@font/gotham_pro"
         android:gravity="center_horizontal|center_vertical"
         android:lineSpacingExtra="5sp"
-        android:textSize="16sp"
+        android:text="@string/title_detect_passport_photo"
         android:textColor="@color/white"
-        android:fontFamily="@font/gotham_pro"
         android:textFontWeight="400"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/btn_close"
+        app:layout_constraintEnd_toStartOf="@id/btn_close"
+        app:layout_constraintStart_toEndOf="@id/btn_back"
+        app:layout_constraintTop_toTopOf="@id/btn_close"
         tools:targetApi="p" />
 
     <ImageButton
@@ -51,13 +52,19 @@
         app:layout_constraintBottom_toBottomOf="@id/btn_close"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/btn_close" />
+
     <ImageView
+        android:id="@+id/passport_detect_box"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/ic_background_passport_detect"
+        app:layout_constraintBottom_toTopOf="@id/camera_capture_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title_detect_passport"
-        app:layout_constraintBottom_toTopOf="@id/camera_capture_button"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_detect_passport" />
 
     <ImageButton
         android:id="@+id/camera_capture_button"
@@ -66,7 +73,6 @@
         android:layout_marginBottom="49dp"
         android:background="@drawable/ic_background_video_capture_button"
         android:contentDescription="@string/icon_btn_capture_video"
-        android:elevation="2dp"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

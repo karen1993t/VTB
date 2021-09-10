@@ -12,7 +12,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.camera.core.*
-import androidx.camera.core.impl.VideoCaptureConfig
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import com.vtb.vtb_project.BuildConfig
@@ -22,7 +21,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import com.vtb.vtb_project.R
 import com.vtb.vtb_project.databinding.FragmentFaceDetectVideoBinding
-import com.vtb.vtb_project.ui.open_vtb_card_steps.face_detect.FaceDetectAnalyzer
+import com.vtb.vtb_project.analyzer.FaceDetectAnalyzer
 import com.vtb.vtb_project.view_model.SharedCardStepsViewModel
 import java.text.SimpleDateFormat
 import java.io.File

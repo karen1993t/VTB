@@ -1,4 +1,4 @@
-package com.vtb.vtb_project.ui.sign_in
+package com.vtb.vtb_project.ui.open_vtb_card_steps.sign_in
 
 import android.os.Bundle
 import android.text.Editable

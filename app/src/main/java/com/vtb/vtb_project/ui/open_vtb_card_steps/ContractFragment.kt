@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
+import com.vtb.vtb_project.R
 import com.vtb.vtb_project.databinding.FragmentContractBinding
 
 class ContractFragment : Fragment() {
@@ -21,7 +23,9 @@ class ContractFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         showBinding?.btnAccept?.setOnClickListener {
-
+             showBinding?.root?.let{
+                 Navigation.findNavController(it).navigate(R.id.action_go_to_enterEmailFragment)
+             }
         }
     }
 

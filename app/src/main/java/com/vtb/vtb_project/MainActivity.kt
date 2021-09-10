@@ -2,7 +2,6 @@ package com.vtb.vtb_project
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -10,7 +9,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.vtb.vtb_project.databinding.ActivityMainBinding
 import com.vtb.vtb_project.ui.create_account_and_visa_card.ShowAuthorizationActivity
 
-import com.vtb.vtb_project.ui.sign_in.SignIn
 import com.vtb.vtb_project.view_model.ViewModelSignIn
 
 
@@ -35,26 +33,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         val someViewModel = ViewModelProvider(this).get(ViewModelSignIn::class.java)
-        //Enter Sign in ......temporary
-        bindingMain?.singInApple?.setOnClickListener {
-            startActivity(Intent(this, SignIn::class.java))
-            bindingMain?.singInApple?.setOnClickListener {
 
-                startActivity(Intent(this, SignIn::class.java))
-                Log.d("log", "1")
 
-//            someViewModel.checkEmailLiveData.observe(this, {
-//                if (it) {
-//                    Log.d("log", it.toString())
-//                    startActivity(Intent(this, PersonalAreaActivity::class.java))
-//                } else {
-//
-//                }
-//            })
 
-            }
-
-        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

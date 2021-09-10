@@ -1,4 +1,4 @@
-package com.vtb.vtb_project.ui.open_vtb_card_steps.face_detect
+package com.vtb.vtb_project.analyzer
 
 import android.annotation.SuppressLint
 import android.util.Log
@@ -6,7 +6,6 @@ import androidx.camera.core.ImageAnalysis
 import androidx.camera.core.ImageProxy
 import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.face.FaceDetection
-import com.google.mlkit.vision.face.FaceDetector
 import com.google.mlkit.vision.face.FaceDetectorOptions
 import com.google.mlkit.vision.face.FaceLandmark
 import com.vtb.vtb_project.ui.open_vtb_card_steps.FaceDetectListener

@@ -16,8 +16,8 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.vtb.vtb_project.analyzer.BarcodeAnalyzer
 import com.vtb.vtb_project.databinding.FragmentPayBinding
-import com.vtb.vtb_project.ui.personal_area.BarcodeAnalyzer
 import com.vtb.vtb_project.ui.personal_area.barcode.ScanBarcodeViewModel
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors

@@ -290,7 +290,15 @@
         android:id="@+id/contractFragment"
         android:name="com.vtb.vtb_project.ui.open_vtb_card_steps.ContractFragment"
         android:label="ContractFragment"
-        tools:layout="@layout/fragment_contract"/>
+        tools:layout="@layout/fragment_contract">
+        <action
+            android:id="@+id/action_go_to_enterEmailFragment"
+            app:destination="@id/enterEmailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
     <fragment
         android:id="@+id/faceDetectCamera"
         android:name="com.vtb.vtb_project.ui.open_vtb_card_steps.FaceDetectVideoFragment"
@@ -344,5 +352,52 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/enterEmailFragment"
+        android:name="com.vtb.vtb_project.ui.open_vtb_card_steps.sign_in.EnterEmailFragment"
+        android:label="fragment_enter_email"
+        tools:layout="@layout/fragment_enter_email" >
+        <action
+            android:id="@+id/action_enterEmailFragment_to_enterPasswordFragment"
+            app:destination="@id/enterPasswordFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/enterPasswordFragment"
+        android:name="com.vtb.vtb_project.ui.open_vtb_card_steps.sign_in.EnterPasswordFragment"
+        android:label="fragment_enter_password"
+        tools:layout="@layout/fragment_enter_password" >
+        <action
+            android:id="@+id/action_enterPasswordFragment_to_repeatPasswordFragment"
+            app:destination="@id/repeatPasswordFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_enterPasswordFragment_to_enterEmailFragment"
+            app:destination="@id/enterEmailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/repeatPasswordFragment"
+        android:name="com.vtb.vtb_project.ui.open_vtb_card_steps.sign_in.RepeatPasswordFragment"
+        android:label="fragment_repeat_password"
+        tools:layout="@layout/fragment_repeat_password" >
+        <action
+            android:id="@+id/action_repeatPasswordFragment_to_enterEmailFragment"
+            app:destination="@id/enterEmailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
     </fragment>
 </navigation>
