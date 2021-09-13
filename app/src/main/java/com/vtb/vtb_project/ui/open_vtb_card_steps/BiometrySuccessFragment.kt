@@ -26,6 +26,8 @@ class BiometrySuccessFragment : Fragment() {
             showBinding?.root?.let { view ->
                 Navigation.findNavController(view).navigate(R.id.action_go_to_passportPhotoFragment)
             }
+
+            
         }
     }
 

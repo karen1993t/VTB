@@ -22,6 +22,7 @@ import androidx.navigation.Navigation
 import com.vtb.vtb_project.R
 import com.vtb.vtb_project.databinding.FragmentFaceDetectVideoBinding
 import com.vtb.vtb_project.analyzer.FaceDetectAnalyzer
+import com.vtb.vtb_project.tools.Constants
 import com.vtb.vtb_project.view_model.SharedCardStepsViewModel
 import java.text.SimpleDateFormat
 import java.io.File
@@ -34,9 +35,7 @@ typealias FaceDetectListener = (isDetect: Boolean) -> Unit
 
 
 class FaceDetectVideoFragment : Fragment(), View.OnClickListener {
-    companion object {
-        private const val FILENAME_FORMAT = "yyyy-MM-dd-HH-mm-ss-SSS"
-    }
+
 
     private lateinit var currentVideoPath: String
     private lateinit var uri: Uri
@@ -207,7 +206,7 @@ class FaceDetectVideoFragment : Fragment(), View.OnClickListener {
 
     @SuppressLint("SimpleDateFormat")
     fun createVideoFile(): File {
-        val timeStamp: String = SimpleDateFormat(FILENAME_FORMAT).format(Date())
+        val timeStamp: String = SimpleDateFormat(Constants.FILENAME_DATE_FORMAT).format(Date())
         val storageDir: File? = activity?.getExternalFilesDir(Environment.DIRECTORY_DCIM)
         return File.createTempFile(
             "Biometric_Video_${timeStamp}",

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/navigation_fill_in_the_form"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_fill_in_the_form"
     app:startDestination="@id/showVtbCardThreeStepsFragment">
 
     <fragment
@@ -150,7 +150,7 @@
         android:id="@+id/bankAuthorizationInvalidFragment"
         android:name="com.vtb.vtb_project.ui.open_vtb_card_steps.BankAuthorizationInvalidFragment"
         android:label="BankAuthorizationInvalidFragment"
-        tools:layout="@layout/fragment_bank_auth_invalid"/>
+        tools:layout="@layout/fragment_bank_auth_invalid" />
     <fragment
         android:id="@+id/bankAuthorizationRejectFragment"
         android:name="com.vtb.vtb_project.ui.open_vtb_card_steps.BankAuthorizationRejectFragment"
@@ -196,7 +196,7 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/biometryVideoFragment"
@@ -246,19 +246,14 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
         <action
-            android:id="@+id/action_go_to_passportPhotoSuccessFragment"
-            app:destination="@id/passportPhotoSuccessFragment"
+            android:id="@+id/action_go_to_detectPassportPhoto"
+            app:destination="@id/detectPassportPhoto"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
-        <action
-            android:id="@+id/action_go_to_bankAuthorizationRejectFragment"
-            app:destination="@id/bankAuthorizationRejectFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
+
+
     </fragment>
     <fragment
         android:id="@+id/passportPhotoSuccessFragment"
@@ -272,6 +267,13 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_passportPhotoSuccessFragment_to_bankAuthorizationRejectFragment"
+            app:destination="@id/bankAuthorizationRejectFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/answerFragment"
@@ -297,7 +299,7 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/faceDetectCamera"
@@ -310,28 +312,28 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
+            app:popExitAnim="@anim/slide_out_right" />
         <action
             android:id="@+id/action_go_to_detectVideoSubmitFragment"
             app:destination="@id/detectVideoSubmitFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
+            app:popExitAnim="@anim/slide_out_right" />
         <action
             android:id="@+id/action_go_to_biometryVideoFragment"
             app:destination="@id/biometryVideoFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
+            app:popExitAnim="@anim/slide_out_right" />
         <action
             android:id="@+id/action_go_to_biometryFragment"
             app:destination="@id/biometryFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/detectVideoSubmitFragment"
@@ -344,20 +346,20 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
+            app:popExitAnim="@anim/slide_out_right" />
         <action
             android:id="@+id/action_go_to_faceDetectCamera"
             app:destination="@id/faceDetectCamera"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/enterEmailFragment"
         android:name="com.vtb.vtb_project.ui.open_vtb_card_steps.sign_in.EnterEmailFragment"
         android:label="fragment_enter_email"
-        tools:layout="@layout/fragment_enter_email" >
+        tools:layout="@layout/fragment_enter_email">
         <action
             android:id="@+id/action_enterEmailFragment_to_enterPasswordFragment"
             app:destination="@id/enterPasswordFragment"
@@ -370,7 +372,7 @@
         android:id="@+id/enterPasswordFragment"
         android:name="com.vtb.vtb_project.ui.open_vtb_card_steps.sign_in.EnterPasswordFragment"
         android:label="fragment_enter_password"
-        tools:layout="@layout/fragment_enter_password" >
+        tools:layout="@layout/fragment_enter_password">
         <action
             android:id="@+id/action_enterPasswordFragment_to_repeatPasswordFragment"
             app:destination="@id/repeatPasswordFragment"
@@ -390,7 +392,7 @@
         android:id="@+id/repeatPasswordFragment"
         android:name="com.vtb.vtb_project.ui.open_vtb_card_steps.sign_in.RepeatPasswordFragment"
         android:label="fragment_repeat_password"
-        tools:layout="@layout/fragment_repeat_password" >
+        tools:layout="@layout/fragment_repeat_password">
         <action
             android:id="@+id/action_repeatPasswordFragment_to_enterEmailFragment"
             app:destination="@id/enterEmailFragment"
@@ -399,5 +401,53 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
 
+    </fragment>
+    <fragment
+        android:id="@+id/detectPassportPhoto"
+        android:name="com.vtb.vtb_project.ui.open_vtb_card_steps.DetectPassportPhotoFragment"
+        android:label="DetectPassportPhotoFragment"
+        tools:layout="@layout/fragment_detect_passport_photo">
+        <action
+            android:id="@+id/action_go_to_detectPassportPhotoSubmitFragment"
+            app:destination="@id/detectPassportPhotoSubmitFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_detectPassportPhoto_to_passportPhotoFragment"
+            app:destination="@id/passportPhotoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_detectPassportPhoto_to_showVtbCardThreeStepsFragment"
+            app:destination="@id/showVtbCardThreeStepsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/detectPassportPhotoSubmitFragment"
+        android:name="com.vtb.vtb_project.ui.open_vtb_card_steps.DetectPassportPhotoSubmitFragment"
+        android:label="DetectPassportPhotoSubmitFragment"
+        tools:layout="@layout/fragment_detect_passport_photo_submit">
+        <action
+            android:id="@+id/action_detectPassportPhotoSubmitFragment_to_detectPassportPhoto"
+            app:destination="@id/detectPassportPhoto"
+
+            app:enterAnim="@anim/slide_out_left"
+            app:exitAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_out_right"
+            app:popExitAnim="@anim/slide_in_left" />
+        <action
+            android:id="@+id/action_detectPassportPhotoSubmitFragment_to_passportPhotoSuccessFragment"
+            app:destination="@id/passportPhotoSuccessFragment"
+            app:enterAnim="@anim/slide_out_left"
+            app:exitAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_out_right"
+            app:popExitAnim="@anim/slide_in_left" />
     </fragment>
 </navigation>

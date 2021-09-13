@@ -3,16 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/grey">
 
-    <androidx.camera.view.PreviewView
-        android:id="@+id/scan_face_preview_view"
+    <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginHorizontal="2dp"
+        android:layout_marginVertical="2dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/passport_detect_box"
+        app:layout_constraintEnd_toEndOf="@id/passport_detect_box"
+        app:layout_constraintStart_toStartOf="@id/passport_detect_box"
+        app:layout_constraintTop_toTopOf="@id/passport_detect_box">
+
+        <androidx.camera.view.PreviewView
+            android:id="@+id/scan_face_preview_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </androidx.cardview.widget.CardView>
 
     <ImageButton
         android:id="@+id/btn_close"
@@ -27,7 +36,7 @@
 
     <TextView
         android:id="@+id/title_detect_passport"
-        android:layout_width="123dp"
+        android:layout_width="0dp"
         android:layout_height="20dp"
         android:fontFamily="@font/gotham_pro"
         android:gravity="center_horizontal|center_vertical"
@@ -61,6 +70,7 @@
         android:layout_marginTop="125dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/ic_background_passport_detect"
+        android:contentDescription="@string/content_description_detect_box"
         app:layout_constraintBottom_toTopOf="@id/camera_capture_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

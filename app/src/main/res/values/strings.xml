@@ -354,6 +354,8 @@
     <string name="qr_code_scanner">QR Code Scanner</string>
     <string name="rect">rect</string>
     <string name="point_your_camera_at_the_qr_code">Point your camera  \n  at the QR code</string>
+    <string name="content_description_passport_photo">passport_photo</string>
+    <string name="content_description_detect_box">content_description_detect_box</string>
 
 
 </resources>

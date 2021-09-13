@@ -22,9 +22,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VtbProject"
         android:allowBackup="false">
-        <activity
-            android:name="com.vtb.vtb_project.ui.open_vtb_card_steps.sign_in.SignIn"
-            android:theme="@style/themeAuth" />
+
         <activity android:name="com.vtb.vtb_project.ui.personal_area.PersonalAreaActivity"
             android:screenOrientation="locked"/>
         <activity
@@ -60,7 +58,8 @@
         </provider>
         <meta-data
             android:name="com.google.mlkit.vision.DEPENDENCIES"
-            android:value="face" />
+            android:value="face,ocr" />
+
 
     </application>
 

@@ -70,11 +70,12 @@ class SharedCardStepsViewModel : ViewModel() {
     private val _communicationWithTheBank = MutableLiveData<String>()
     val communicationWithTheBank: LiveData<String> = _communicationWithTheBank
 
-
-
     // Uri video Detect
     private val _videoDetectUri = MutableLiveData<Uri>()
     val videoDetectUri: LiveData<Uri> = _videoDetectUri
+
+    private val _passportPhotoDetectUri = MutableLiveData<Uri>()
+    val passportPhotoDetectUri: LiveData<Uri> = _passportPhotoDetectUri
 
 
     fun setUserFirstName(firstName: String) {
@@ -155,5 +156,8 @@ class SharedCardStepsViewModel : ViewModel() {
     }
     fun setUriVideoDetect(uri:Uri){
         _videoDetectUri.postValue(uri)
+    }
+    fun  setUriPassportPhoto(uri:Uri){
+        _passportPhotoDetectUri.postValue(uri)
     }
 }
